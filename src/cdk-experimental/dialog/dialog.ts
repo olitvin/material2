@@ -6,40 +6,40 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {
-  TemplateRef,
-  SkipSelf,
-  Optional,
-  Injectable,
-  Injector,
-  Inject,
-  ComponentRef,
-  OnDestroy,
-  Type
-} from '@angular/core';
-import {ComponentPortal, PortalInjector, TemplatePortal} from '@angular/cdk/portal';
-import {of as observableOf, Observable, Subject, defer} from 'rxjs';
-import {DialogRef} from './dialog-ref';
-import {Location} from '@angular/common';
-import {DialogConfig} from './dialog-config';
 import {Directionality} from '@angular/cdk/bidi';
-import {CdkDialogContainer} from './dialog-container';
 import {
   ComponentType,
   Overlay,
-  OverlayRef,
   OverlayConfig,
+  OverlayRef,
   ScrollStrategy,
 } from '@angular/cdk/overlay';
+import {ComponentPortal, PortalInjector, TemplatePortal} from '@angular/cdk/portal';
+import {Location} from '@angular/common';
+import {
+  ComponentRef,
+  Inject,
+  Injectable,
+  Injector,
+  OnDestroy,
+  Optional,
+  SkipSelf,
+  TemplateRef,
+  Type
+} from '@angular/core';
+import {Observable, of as observableOf, Subject} from 'rxjs';
 import {startWith} from 'rxjs/operators';
 
+import {DialogConfig} from './dialog-config';
+import {CdkDialogContainer} from './dialog-container';
 import {
-  DIALOG_SCROLL_STRATEGY,
+  DIALOG_CONFIG,
+  DIALOG_CONTAINER,
   DIALOG_DATA,
   DIALOG_REF,
-  DIALOG_CONTAINER,
-  DIALOG_CONFIG,
+  DIALOG_SCROLL_STRATEGY,
 } from './dialog-injectors';
+import {DialogRef} from './dialog-ref';
 
 
 /**
@@ -54,8 +54,9 @@ export class Dialog implements OnDestroy {
     return this._parentDialog ? this._parentDialog.afterAllClosed : this._afterAllClosedBase;
   }
   _afterAllClosedBase = new Subject<void>();
-  afterAllClosed: Observable<void> = defer<void>(() => this.openDialogs.length ?
-      this._afterAllClosed : this._afterAllClosed.pipe(startWith<void>(undefined)));
+  afterAllClosed: Observable<void> =
+      (this.openDialogs.length ? this._afterAllClosed :
+                                 this._afterAllClosed.pipe(startWith<void>(undefined)));
 
   /** Stream that emits when a dialog is opened. */
   get afterOpened(): Subject<DialogRef<any>> {
@@ -70,15 +71,12 @@ export class Dialog implements OnDestroy {
   _openDialogs: DialogRef<any>[] = [];
 
   constructor(
-      private overlay: Overlay,
-      private injector: Injector,
+      private overlay: Overlay, private injector: Injector,
       @Inject(DIALOG_REF) private dialogRefConstructor: Type<DialogRef<any>>,
       // TODO(crisbeto): the `any` here can be replaced
       // with the proper type once we start using Ivy.
       @Inject(DIALOG_SCROLL_STRATEGY) scrollStrategy: any,
-      @Optional() @SkipSelf() private _parentDialog: Dialog,
-      @Optional() location: Location) {
-
+      @Optional() @SkipSelf() private _parentDialog: Dialog, @Optional() location: Location) {
     // Close all of the dialogs when the user goes forwards/backwards in history or when the
     // location hash changes. Note that this usually doesn't include clicking on links (unless
     // the user is using the `HashLocationStrategy`).
@@ -90,8 +88,8 @@ export class Dialog implements OnDestroy {
   }
 
   /** Gets an open dialog by id. */
-  getById(id: string): DialogRef<any> | undefined {
-    return this._openDialogs.find(ref  => ref.id === id);
+  getById(id: string): DialogRef<any>|undefined {
+    return this._openDialogs.find(ref => ref.id === id);
   }
 
   /** Closes all open dialogs. */
@@ -109,8 +107,8 @@ export class Dialog implements OnDestroy {
 
     const overlayRef = this._createOverlay(config);
     const dialogContainer = this._attachDialogContainer(overlayRef, config);
-    const dialogRef = this._attachDialogContentForComponent(component, dialogContainer,
-      overlayRef, config);
+    const dialogRef =
+        this._attachDialogContentForComponent(component, dialogContainer, overlayRef, config);
 
     this.registerDialogRef(dialogRef);
     return dialogRef;
@@ -126,8 +124,8 @@ export class Dialog implements OnDestroy {
 
     const overlayRef = this._createOverlay(config);
     const dialogContainer = this._attachDialogContainer(overlayRef, config);
-    const dialogRef = this._attachDialogContentForTemplate(template, dialogContainer,
-      overlayRef, config);
+    const dialogRef =
+        this._attachDialogContentForTemplate(template, dialogContainer, overlayRef, config);
 
     this.registerDialogRef(dialogRef);
     return dialogRef;
@@ -196,9 +194,8 @@ export class Dialog implements OnDestroy {
   protected _attachDialogContainer(overlay: OverlayRef, config: DialogConfig): CdkDialogContainer {
     const container = config.containerComponent || this.injector.get(DIALOG_CONTAINER);
     const userInjector = config && config.viewContainerRef && config.viewContainerRef.injector;
-    const injector = new PortalInjector(userInjector || this.injector, new WeakMap([
-      [DialogConfig, config]
-    ]));
+    const injector =
+        new PortalInjector(userInjector || this.injector, new WeakMap([[DialogConfig, config]]));
     const containerPortal = new ComponentPortal(container, config.viewContainerRef, injector);
     const containerRef: ComponentRef<CdkDialogContainer> = overlay.attach(containerPortal);
     containerRef.instance._config = config;
@@ -217,11 +214,8 @@ export class Dialog implements OnDestroy {
    * @returns A promise resolving to the MatDialogRef that should be returned to the user.
    */
   protected _attachDialogContentForComponent<T>(
-      componentOrTemplateRef: ComponentType<T>,
-      dialogContainer: CdkDialogContainer,
-      overlayRef: OverlayRef,
-      config: DialogConfig): DialogRef<any> {
-
+      componentOrTemplateRef: ComponentType<T>, dialogContainer: CdkDialogContainer,
+      overlayRef: OverlayRef, config: DialogConfig): DialogRef<any> {
     // Create a reference to the dialog we're creating in order to give the user a handle
     // to modify and close it.
     const dialogRef = new this.dialogRefConstructor(overlayRef, dialogContainer, config.id);
@@ -233,7 +227,7 @@ export class Dialog implements OnDestroy {
     dialogRef.disableClose = config.disableClose;
 
     dialogRef.updateSize({width: config.width, height: config.height})
-             .updatePosition(config.position);
+        .updatePosition(config.position);
 
     return dialogRef;
   }
@@ -248,20 +242,16 @@ export class Dialog implements OnDestroy {
    * @returns A promise resolving to the MatDialogRef that should be returned to the user.
    */
   protected _attachDialogContentForTemplate<T>(
-      componentOrTemplateRef: TemplateRef<T>,
-      dialogContainer: CdkDialogContainer,
-      overlayRef: OverlayRef,
-      config: DialogConfig): DialogRef<any> {
-
+      componentOrTemplateRef: TemplateRef<T>, dialogContainer: CdkDialogContainer,
+      overlayRef: OverlayRef, config: DialogConfig): DialogRef<any> {
     // Create a reference to the dialog we're creating in order to give the user a handle
     // to modify and close it.
     const dialogRef = new this.dialogRefConstructor(overlayRef, dialogContainer, config.id);
 
-    dialogContainer.attachTemplatePortal(
-      new TemplatePortal<T>(componentOrTemplateRef, null!,
-        <any>{$implicit: config.data, dialogRef}));
+    dialogContainer.attachTemplatePortal(new TemplatePortal<T>(
+        componentOrTemplateRef, null!, <any>{$implicit: config.data, dialogRef}));
     dialogRef.updateSize({width: config.width, height: config.height})
-             .updatePosition(config.position);
+        .updatePosition(config.position);
 
     return dialogRef;
   }
@@ -276,23 +266,17 @@ export class Dialog implements OnDestroy {
    * @returns The custom injector that can be used inside the dialog.
    */
   private _createInjector<T>(
-      config: DialogConfig,
-      dialogRef: DialogRef<T>,
+      config: DialogConfig, dialogRef: DialogRef<T>,
       dialogContainer: CdkDialogContainer): PortalInjector {
-
     const userInjector = config && config.viewContainerRef && config.viewContainerRef.injector;
     const injectionTokens = new WeakMap<any, any>([
       [this.injector.get(DIALOG_REF), dialogRef],
-      [this.injector.get(DIALOG_CONTAINER), dialogContainer],
-      [DIALOG_DATA, config.data]
+      [this.injector.get(DIALOG_CONTAINER), dialogContainer], [DIALOG_DATA, config.data]
     ]);
 
     if (config.direction &&
-        (!userInjector || !userInjector.get<Directionality | null>(Directionality, null))) {
-      injectionTokens.set(Directionality, {
-        value: config.direction,
-        change: observableOf()
-      });
+        (!userInjector || !userInjector.get<Directionality|null>(Directionality, null))) {
+      injectionTokens.set(Directionality, {value: config.direction, change: observableOf()});
     }
 
     return new PortalInjector(userInjector || this.injector, injectionTokens);

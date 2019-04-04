@@ -12,19 +12,20 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  OnDestroy,
-  ViewChild,
-  ViewEncapsulation,
-  Optional,
   Inject,
   Input,
+  OnDestroy,
+  Optional,
+  Renderer2,
+  ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 import {
   CanColor,
-  CanDisable,
-  CanDisableRipple,
   CanColorCtor,
+  CanDisable,
   CanDisableCtor,
+  CanDisableRipple,
   CanDisableRippleCtor,
   MatRipple,
   mixinColor,
@@ -53,12 +54,11 @@ const BUTTON_HOST_ATTRIBUTES = [
 // Boilerplate for applying mixins to MatButton.
 /** @docs-private */
 export class MatButtonBase {
-  constructor(public _elementRef: ElementRef) {}
+  constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
 
-export const _MatButtonMixinBase:
-    CanDisableRippleCtor & CanDisableCtor & CanColorCtor & typeof MatButtonBase =
-        mixinColor(mixinDisabled(mixinDisableRipple(MatButtonBase)));
+export const _MatButtonMixinBase: CanDisableRippleCtor&CanDisableCtor&CanColorCtor&
+    typeof MatButtonBase = mixinColor(mixinDisabled(mixinDisableRipple(MatButtonBase)));
 
 /**
  * Material design button.
@@ -79,9 +79,8 @@ export const _MatButtonMixinBase:
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MatButton extends _MatButtonMixinBase
-    implements OnDestroy, CanDisable, CanColor, CanDisableRipple {
-
+export class MatButton extends _MatButtonMixinBase implements OnDestroy, CanDisable, CanColor,
+                                                              CanDisableRipple {
   /** Whether the button is round. */
   readonly isRoundButton: boolean = this._hasHostAttributes('mat-fab', 'mat-mini-fab');
 
@@ -91,16 +90,16 @@ export class MatButton extends _MatButtonMixinBase
   /** Reference to the MatRipple instance of the button. */
   @ViewChild(MatRipple) ripple: MatRipple;
 
-  constructor(elementRef: ElementRef,
-              /**
-               * @deprecated Platform checks for SSR are no longer needed
-               * @breaking-change 8.0.0
-               */
-              _platform: Platform,
-              private _focusMonitor: FocusMonitor,
-              // @breaking-change 8.0.0 `_animationMode` parameter to be made required.
-              @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string) {
-    super(elementRef);
+  constructor(
+      _renderer: Renderer2, elementRef: ElementRef,
+      /**
+       * @deprecated Platform checks for SSR are no longer needed
+       * @breaking-change 8.0.0
+       */
+      _platform: Platform, private _focusMonitor: FocusMonitor,
+      // @breaking-change 8.0.0 `_animationMode` parameter to be made required.
+      @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string) {
+    super(_renderer, elementRef);
 
     // For each of the variant selectors that is prevent in the button's host
     // attributes, add the correct corresponding class.
@@ -169,12 +168,10 @@ export class MatAnchor extends MatButton {
   @Input() tabIndex: number;
 
   constructor(
-    platform: Platform,
-    focusMonitor: FocusMonitor,
-    elementRef: ElementRef,
-    // @breaking-change 8.0.0 `animationMode` parameter to be made required.
-    @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string) {
-    super(elementRef, platform, focusMonitor, animationMode);
+      platform: Platform, focusMonitor: FocusMonitor, elementRef: ElementRef, _renderer: Renderer2,
+      // @breaking-change 8.0.0 `animationMode` parameter to be made required.
+      @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string) {
+    super(_renderer, elementRef, platform, focusMonitor, animationMode);
   }
 
   _haltDisabledEvents(event: Event) {

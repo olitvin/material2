@@ -17,6 +17,7 @@ import {
   InjectionToken,
   Input,
   Optional,
+  Renderer2,
   ViewEncapsulation,
 } from '@angular/core';
 import {CanColor, CanColorCtor, mixinColor} from '@angular/material/core';
@@ -24,7 +25,7 @@ import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
 
 
 /** Possible mode for a progress spinner. */
-export type ProgressSpinnerMode = 'determinate' | 'indeterminate';
+export type ProgressSpinnerMode = 'determinate'|'indeterminate';
 
 /**
  * Base reference size of the spinner.
@@ -41,9 +42,9 @@ const BASE_STROKE_WIDTH = 10;
 // Boilerplate for applying mixins to MatProgressSpinner.
 /** @docs-private */
 export class MatProgressSpinnerBase {
-  constructor(public _elementRef: ElementRef) {}
+  constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
-export const _MatProgressSpinnerMixinBase: CanColorCtor & typeof MatProgressSpinnerBase =
+export const _MatProgressSpinnerMixinBase: CanColorCtor&typeof MatProgressSpinnerBase =
     mixinColor(MatProgressSpinnerBase, 'primary');
 
 /** Default `mat-progress-spinner` options that can be overridden. */
@@ -124,7 +125,6 @@ const INDETERMINATE_ANIMATION_TEMPLATE = `
   encapsulation: ViewEncapsulation.None,
 })
 export class MatProgressSpinner extends _MatProgressSpinnerMixinBase implements CanColor {
-
   private _value = 0;
   private _strokeWidth: number;
   private _fallbackAnimation = false;
@@ -139,12 +139,14 @@ export class MatProgressSpinner extends _MatProgressSpinnerMixinBase implements 
   private static styleTag: HTMLStyleElement|null = null;
 
   /** Whether the _mat-animation-noopable class should be applied, disabling animations.  */
-  _noopAnimations: boolean = this.animationMode === 'NoopAnimations' && (
-      !!this.defaults && !this.defaults._forceAnimations);
+  _noopAnimations: boolean = this.animationMode === 'NoopAnimations' &&
+      (!!this.defaults && !this.defaults._forceAnimations);
 
   /** The diameter of the progress spinner (will set width and height of svg). */
   @Input()
-  get diameter(): number { return this._diameter; }
+  get diameter(): number {
+    return this._diameter;
+  }
   set diameter(size: number) {
     this._diameter = coerceNumberProperty(size);
 
@@ -175,15 +177,14 @@ export class MatProgressSpinner extends _MatProgressSpinnerMixinBase implements 
     this._value = Math.max(0, Math.min(100, coerceNumberProperty(newValue)));
   }
 
-  constructor(public _elementRef: ElementRef,
-              platform: Platform,
-              @Optional() @Inject(DOCUMENT) private _document: any,
-              // @breaking-change 8.0.0 animationMode and defaults parameters to be made required.
-              @Optional() @Inject(ANIMATION_MODULE_TYPE) private animationMode?: string,
-              @Inject(MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS)
-                  private defaults?: MatProgressSpinnerDefaultOptions) {
-
-    super(_elementRef);
+  constructor(
+      _renderer: Renderer2, public _elementRef: ElementRef, platform: Platform,
+      @Optional() @Inject(DOCUMENT) private _document: any,
+      // @breaking-change 8.0.0 animationMode and defaults parameters to be made required.
+      @Optional() @Inject(ANIMATION_MODULE_TYPE) private animationMode?: string,
+      @Inject(MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS) private defaults?:
+          MatProgressSpinnerDefaultOptions) {
+    super(_renderer, _elementRef);
     this._fallbackAnimation = platform.EDGE || platform.TRIDENT;
 
     if (defaults) {
@@ -199,7 +200,7 @@ export class MatProgressSpinner extends _MatProgressSpinnerMixinBase implements 
     // On IE and Edge, we can't animate the `stroke-dashoffset`
     // reliably so we fall back to a non-spec animation.
     const animationClass =
-      `mat-progress-spinner-indeterminate${this._fallbackAnimation ? '-fallback' : ''}-animation`;
+        `mat-progress-spinner-indeterminate${this._fallbackAnimation ? '-fallback' : ''}-animation`;
 
     _elementRef.nativeElement.classList.add(animationClass);
   }
@@ -291,13 +292,13 @@ export class MatProgressSpinner extends _MatProgressSpinnerMixinBase implements 
   encapsulation: ViewEncapsulation.None,
 })
 export class MatSpinner extends MatProgressSpinner {
-  constructor(elementRef: ElementRef, platform: Platform,
-              @Optional() @Inject(DOCUMENT) document: any,
-              // @breaking-change 8.0.0 animationMode and defaults parameters to be made required.
-              @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string,
-              @Inject(MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS)
-                  defaults?: MatProgressSpinnerDefaultOptions) {
-    super(elementRef, platform, document, animationMode, defaults);
+  constructor(
+      _renderer: Renderer2, elementRef: ElementRef, platform: Platform,
+      @Optional() @Inject(DOCUMENT) document: any,
+      // @breaking-change 8.0.0 animationMode and defaults parameters to be made required.
+      @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string,
+      @Inject(MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS) defaults?: MatProgressSpinnerDefaultOptions) {
+    super(_renderer, elementRef, platform, document, animationMode, defaults);
     this.mode = 'indeterminate';
   }
 }

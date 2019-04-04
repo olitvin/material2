@@ -6,47 +6,46 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {take} from 'rxjs/operators';
+import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {DOCUMENT} from '@angular/common';
 import {
+  AfterViewChecked,
   Attribute,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-  ViewEncapsulation,
-  Optional,
-  InjectionToken,
   inject,
   Inject,
+  InjectionToken,
+  Input,
+  OnChanges,
   OnDestroy,
-  AfterViewChecked,
+  OnInit,
+  Optional,
+  Renderer2,
+  SimpleChanges,
+  ViewEncapsulation,
 } from '@angular/core';
-import {DOCUMENT} from '@angular/common';
 import {CanColor, CanColorCtor, mixinColor} from '@angular/material/core';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {take} from 'rxjs/operators';
+
 import {MatIconRegistry} from './icon-registry';
 
 
 // Boilerplate for applying mixins to MatIcon.
 /** @docs-private */
 export class MatIconBase {
-  constructor(public _elementRef: ElementRef) {}
+  constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
-export const _MatIconMixinBase: CanColorCtor & typeof MatIconBase =
-    mixinColor(MatIconBase);
+export const _MatIconMixinBase: CanColorCtor&typeof MatIconBase = mixinColor(MatIconBase);
 
 /**
  * Injection token used to provide the current location to `MatIcon`.
  * Used to handle server-side rendering and to stub out during unit tests.
  * @docs-private
  */
-export const MAT_ICON_LOCATION = new InjectionToken<MatIconLocation>('mat-icon-location', {
-  providedIn: 'root',
-  factory: MAT_ICON_LOCATION_FACTORY
-});
+export const MAT_ICON_LOCATION = new InjectionToken<MatIconLocation>(
+    'mat-icon-location', {providedIn: 'root', factory: MAT_ICON_LOCATION_FACTORY});
 
 /**
  * Stubbed out location for `MatIcon`.
@@ -71,18 +70,8 @@ export function MAT_ICON_LOCATION_FACTORY(): MatIconLocation {
 
 /** SVG attributes that accept a FuncIRI (e.g. `url(<something>)`). */
 const funcIriAttributes = [
-  'clip-path',
-  'color-profile',
-  'src',
-  'cursor',
-  'fill',
-  'filter',
-  'marker',
-  'marker-start',
-  'marker-mid',
-  'marker-end',
-  'mask',
-  'stroke'
+  'clip-path', 'color-profile', 'src', 'cursor', 'fill', 'filter', 'marker', 'marker-start',
+  'marker-mid', 'marker-end', 'mask', 'stroke'
 ];
 
 /** Selector that can be used to find all elements that are using a `FuncIRI`. */
@@ -135,8 +124,7 @@ const funcIriPattern = /^url\(['"]?#(.*?)['"]?\)$/;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MatIcon extends _MatIconMixinBase implements OnChanges, OnInit, AfterViewChecked,
-  CanColor, OnDestroy {
-
+                                                          CanColor, OnDestroy {
   /**
    * Whether the icon should be inlined, automatically sizing the icon to match the font size of
    * the element the icon is contained in.
@@ -155,7 +143,9 @@ export class MatIcon extends _MatIconMixinBase implements OnChanges, OnInit, Aft
 
   /** Font set that the icon is a part of. */
   @Input()
-  get fontSet(): string { return this._fontSet; }
+  get fontSet(): string {
+    return this._fontSet;
+  }
   set fontSet(value: string) {
     this._fontSet = this._cleanupFontValue(value);
   }
@@ -163,7 +153,9 @@ export class MatIcon extends _MatIconMixinBase implements OnChanges, OnInit, Aft
 
   /** Name of an icon within a font set. */
   @Input()
-  get fontIcon(): string { return this._fontIcon; }
+  get fontIcon(): string {
+    return this._fontIcon;
+  }
   set fontIcon(value: string) {
     this._fontIcon = this._cleanupFontValue(value);
   }
@@ -179,15 +171,14 @@ export class MatIcon extends _MatIconMixinBase implements OnChanges, OnInit, Aft
   private _elementsWithExternalReferences?: Map<Element, {name: string, value: string}[]>;
 
   constructor(
-      elementRef: ElementRef<HTMLElement>,
-      private _iconRegistry: MatIconRegistry,
-      @Attribute('aria-hidden') ariaHidden: string,
+      _renderer: Renderer2, elementRef: ElementRef<HTMLElement>,
+      private _iconRegistry: MatIconRegistry, @Attribute('aria-hidden') ariaHidden: string,
       /**
        * @deprecated `location` parameter to be made required.
        * @breaking-change 8.0.0
        */
       @Optional() @Inject(MAT_ICON_LOCATION) private _location?: MatIconLocation) {
-    super(elementRef);
+    super(_renderer, elementRef);
 
     // If the user has not explicitly set aria-hidden, mark the icon as hidden, as this is
     // the right thing to do for the majority of icon use-cases.
@@ -215,9 +206,12 @@ export class MatIcon extends _MatIconMixinBase implements OnChanges, OnInit, Aft
     }
     const parts = iconName.split(':');
     switch (parts.length) {
-      case 1: return ['', parts[0]]; // Use default namespace.
-      case 2: return <[string, string]>parts;
-      default: throw Error(`Invalid icon name: "${iconName}"`);
+      case 1:
+        return ['', parts[0]];  // Use default namespace.
+      case 2:
+        return <[string, string]>parts;
+      default:
+        throw Error(`Invalid icon name: "${iconName}"`);
     }
   }
 
@@ -229,10 +223,11 @@ export class MatIcon extends _MatIconMixinBase implements OnChanges, OnInit, Aft
       if (this.svgIcon) {
         const [namespace, iconName] = this._splitIconName(this.svgIcon);
 
-        this._iconRegistry.getNamedSvgIcon(iconName, namespace).pipe(take(1)).subscribe(
-          svg => this._setSvgElement(svg),
-          (err: Error) => console.log(`Error retrieving icon: ${err.message}`)
-        );
+        this._iconRegistry.getNamedSvgIcon(iconName, namespace)
+            .pipe(take(1))
+            .subscribe(
+                svg => this._setSvgElement(svg),
+                (err: Error) => console.log(`Error retrieving icon: ${err.message}`));
       } else if (svgIconChanges.previousValue) {
         this._clearSvgElement();
       }
@@ -331,9 +326,8 @@ export class MatIcon extends _MatIconMixinBase implements OnChanges, OnInit, Aft
     }
 
     const elem: HTMLElement = this._elementRef.nativeElement;
-    const fontSetClass = this.fontSet ?
-        this._iconRegistry.classNameForFontAlias(this.fontSet) :
-        this._iconRegistry.getDefaultFontSetClass();
+    const fontSetClass = this.fontSet ? this._iconRegistry.classNameForFontAlias(this.fontSet) :
+                                        this._iconRegistry.getDefaultFontSetClass();
 
     if (fontSetClass != this._previousFontSetClass) {
       if (this._previousFontSetClass) {

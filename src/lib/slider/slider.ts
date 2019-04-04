@@ -12,13 +12,13 @@ import {coerceBooleanProperty, coerceNumberProperty} from '@angular/cdk/coercion
 import {
   DOWN_ARROW,
   END,
+  hasModifierKey,
   HOME,
   LEFT_ARROW,
   PAGE_DOWN,
   PAGE_UP,
   RIGHT_ARROW,
   UP_ARROW,
-  hasModifierKey,
 } from '@angular/cdk/keycodes';
 import {
   Attribute,
@@ -34,6 +34,7 @@ import {
   OnInit,
   Optional,
   Output,
+  Renderer2,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
@@ -85,21 +86,17 @@ export class MatSliderChange {
   source: MatSlider;
 
   /** The new value of the source slider. */
-  value: number | null;
+  value: number|null;
 }
 
 
 // Boilerplate for applying mixins to MatSlider.
 /** @docs-private */
 export class MatSliderBase {
-  constructor(public _elementRef: ElementRef) {}
+  constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
-export const _MatSliderMixinBase:
-    HasTabIndexCtor &
-    CanColorCtor &
-    CanDisableCtor &
-    typeof MatSliderBase =
-        mixinTabIndex(mixinColor(mixinDisabled(MatSliderBase), 'accent'));
+export const _MatSliderMixinBase: HasTabIndexCtor&CanColorCtor&CanDisableCtor&typeof MatSliderBase =
+    mixinTabIndex(mixinColor(mixinDisabled(MatSliderBase), 'accent'));
 
 /**
  * Allows users to select from a range of values by moving the slider thumb. It is similar in
@@ -145,11 +142,14 @@ export const _MatSliderMixinBase:
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MatSlider extends _MatSliderMixinBase
-    implements ControlValueAccessor, OnDestroy, CanDisable, CanColor, OnInit, HasTabIndex {
+export class MatSlider extends _MatSliderMixinBase implements ControlValueAccessor, OnDestroy,
+                                                              CanDisable, CanColor, OnInit,
+                                                              HasTabIndex {
   /** Whether the slider is inverted. */
   @Input()
-  get invert(): boolean { return this._invert; }
+  get invert(): boolean {
+    return this._invert;
+  }
   set invert(value: boolean) {
     this._invert = coerceBooleanProperty(value);
   }
@@ -157,7 +157,9 @@ export class MatSlider extends _MatSliderMixinBase
 
   /** The maximum value that the slider can have. */
   @Input()
-  get max(): number { return this._max; }
+  get max(): number {
+    return this._max;
+  }
   set max(v: number) {
     this._max = coerceNumberProperty(v, this._max);
     this._percent = this._calculatePercentage(this._value);
@@ -169,7 +171,9 @@ export class MatSlider extends _MatSliderMixinBase
 
   /** The minimum value that the slider can have. */
   @Input()
-  get min(): number { return this._min; }
+  get min(): number {
+    return this._min;
+  }
   set min(v: number) {
     this._min = coerceNumberProperty(v, this._min);
 
@@ -186,7 +190,9 @@ export class MatSlider extends _MatSliderMixinBase
 
   /** The values at which the thumb will snap. */
   @Input()
-  get step(): number { return this._step; }
+  get step(): number {
+    return this._step;
+  }
   set step(v: number) {
     this._step = coerceNumberProperty(v, this._step);
 
@@ -201,8 +207,12 @@ export class MatSlider extends _MatSliderMixinBase
 
   /** Whether or not to show the thumb label. */
   @Input()
-  get thumbLabel(): boolean { return this._thumbLabel; }
-  set thumbLabel(value: boolean) { this._thumbLabel = coerceBooleanProperty(value); }
+  get thumbLabel(): boolean {
+    return this._thumbLabel;
+  }
+  set thumbLabel(value: boolean) {
+    this._thumbLabel = coerceBooleanProperty(value);
+  }
   private _thumbLabel: boolean = false;
 
   /**
@@ -210,8 +220,10 @@ export class MatSlider extends _MatSliderMixinBase
    * Ex: Tick interval of 4 with a step of 3 will draw a tick every 4 steps (every 12 values).
    */
   @Input()
-  get tickInterval() { return this._tickInterval; }
-  set tickInterval(value: 'auto' | number) {
+  get tickInterval() {
+    return this._tickInterval;
+  }
+  set tickInterval(value: 'auto'|number) {
     if (value === 'auto') {
       this._tickInterval = 'auto';
     } else if (typeof value === 'number' || typeof value === 'string') {
@@ -220,18 +232,18 @@ export class MatSlider extends _MatSliderMixinBase
       this._tickInterval = 0;
     }
   }
-  private _tickInterval: 'auto' | number = 0;
+  private _tickInterval: 'auto'|number = 0;
 
   /** Value of the slider. */
   @Input()
-  get value(): number | null {
+  get value(): number|null {
     // If the value needs to be read and it is still uninitialized, initialize it to the min.
     if (this._value === null) {
       this.value = this._min;
     }
     return this._value;
   }
-  set value(v: number | null) {
+  set value(v: number|null) {
     if (v !== this._value) {
       let value = coerceNumberProperty(v);
 
@@ -248,18 +260,20 @@ export class MatSlider extends _MatSliderMixinBase
       this._changeDetectorRef.markForCheck();
     }
   }
-  private _value: number | null = null;
+  private _value: number|null = null;
 
   /**
    * Function that will be used to format the value before it is displayed
    * in the thumb label. Can be used to format very large number in order
    * for them to fit into the slider thumb.
    */
-  @Input() displayWith: (value: number | null) => string | number;
+  @Input() displayWith: (value: number|null) => string | number;
 
   /** Whether the slider is vertical. */
   @Input()
-  get vertical(): boolean { return this._vertical; }
+  get vertical(): boolean {
+    return this._vertical;
+  }
   set vertical(value: boolean) {
     this._vertical = coerceBooleanProperty(value);
   }
@@ -276,10 +290,10 @@ export class MatSlider extends _MatSliderMixinBase
    * to facilitate the two-way binding for the `value` input.
    * @docs-private
    */
-  @Output() readonly valueChange: EventEmitter<number | null> = new EventEmitter<number | null>();
+  @Output() readonly valueChange: EventEmitter<number|null> = new EventEmitter<number|null>();
 
   /** The value to be used for display purposes. */
-  get displayValue(): string | number {
+  get displayValue(): string|number {
     if (this.displayWith) {
       return this.displayWith(this.value);
     }
@@ -308,7 +322,9 @@ export class MatSlider extends _MatSliderMixinBase
   onTouched: () => any = () => {};
 
   /** The percentage of the slider that coincides with the value. */
-  get percent(): number { return this._clamp(this._percent); }
+  get percent(): number {
+    return this._clamp(this._percent);
+  }
   private _percent: number = 0;
 
   /**
@@ -354,7 +370,7 @@ export class MatSlider extends _MatSliderMixinBase
   }
 
   /** CSS styles for the track background element. */
-  get _trackBackgroundStyles(): { [key: string]: string } {
+  get _trackBackgroundStyles(): {[key: string]: string} {
     const axis = this.vertical ? 'Y' : 'X';
     const scale = this.vertical ? `1, ${1 - this.percent}, 1` : `${1 - this.percent}, 1, 1`;
     const sign = this._shouldInvertMouseCoords() ? '-' : '';
@@ -366,7 +382,7 @@ export class MatSlider extends _MatSliderMixinBase
   }
 
   /** CSS styles for the track fill element. */
-  get _trackFillStyles(): { [key: string]: string } {
+  get _trackFillStyles(): {[key: string]: string} {
     const axis = this.vertical ? 'Y' : 'X';
     const scale = this.vertical ? `1, ${this.percent}, 1` : `${this.percent}, 1, 1`;
     const sign = this._shouldInvertMouseCoords() ? '' : '-';
@@ -378,19 +394,17 @@ export class MatSlider extends _MatSliderMixinBase
   }
 
   /** CSS styles for the ticks container element. */
-  get _ticksContainerStyles(): { [key: string]: string } {
+  get _ticksContainerStyles(): {[key: string]: string} {
     let axis = this.vertical ? 'Y' : 'X';
     // For a horizontal slider in RTL languages we push the ticks container off the left edge
     // instead of the right edge to avoid causing a horizontal scrollbar to appear.
     let sign = !this.vertical && this._getDirection() == 'rtl' ? '' : '-';
     let offset = this._tickIntervalPercent / 2 * 100;
-    return {
-      'transform': `translate${axis}(${sign}${offset}%)`
-    };
+    return {'transform': `translate${axis}(${sign}${offset}%)`};
   }
 
   /** CSS styles for the ticks element. */
-  get _ticksStyles(): { [key: string]: string } {
+  get _ticksStyles(): {[key: string]: string} {
     let tickSize = this._tickIntervalPercent * 100;
     let backgroundSize = this.vertical ? `2px ${tickSize}%` : `${tickSize}% 2px`;
     let axis = this.vertical ? 'Y' : 'X';
@@ -399,39 +413,36 @@ export class MatSlider extends _MatSliderMixinBase
     // ticks 180 degrees so we're really cutting off the end edge abd not the start.
     let sign = !this.vertical && this._getDirection() == 'rtl' ? '-' : '';
     let rotate = !this.vertical && this._getDirection() == 'rtl' ? ' rotate(180deg)' : '';
-    let styles: { [key: string]: string } = {
+    let styles: {[key: string]: string} = {
       'backgroundSize': backgroundSize,
       // Without translateZ ticks sometimes jitter as the slider moves on Chrome & Firefox.
       'transform': `translateZ(0) translate${axis}(${sign}${tickSize / 2}%)${rotate}`
     };
 
     if (this._isMinValue && this._thumbGap) {
-      let side = this.vertical ?
-          (this._invertAxis ? 'Bottom' : 'Top') :
-          (this._invertAxis ? 'Right' : 'Left');
+      let side = this.vertical ? (this._invertAxis ? 'Bottom' : 'Top') :
+                                 (this._invertAxis ? 'Right' : 'Left');
       styles[`padding${side}`] = `${this._thumbGap}px`;
     }
 
     return styles;
   }
 
-  get _thumbContainerStyles(): { [key: string]: string } {
+  get _thumbContainerStyles(): {[key: string]: string} {
     let axis = this.vertical ? 'Y' : 'X';
     // For a horizontal slider in RTL languages we push the thumb container off the left edge
     // instead of the right edge to avoid causing a horizontal scrollbar to appear.
     let invertOffset =
         (this._getDirection() == 'rtl' && !this.vertical) ? !this._invertAxis : this._invertAxis;
     let offset = (invertOffset ? this.percent : 1 - this.percent) * 100;
-    return {
-      'transform': `translate${axis}(-${offset}%)`
-    };
+    return {'transform': `translate${axis}(-${offset}%)`};
   }
 
   /** The size of a tick interval as a percentage of the size of the track. */
   private _tickIntervalPercent: number = 0;
 
   /** The dimensions of the slider. */
-  private _sliderDimensions: ClientRect | null = null;
+  private _sliderDimensions: ClientRect|null = null;
 
   private _controlValueAccessorChangeFn: (value: any) => void = () => {};
 
@@ -442,7 +453,7 @@ export class MatSlider extends _MatSliderMixinBase
   private _dirChangeSubscription = Subscription.EMPTY;
 
   /** The value of the slider when the slide start event fires. */
-  private _valueOnSlideStart: number | null;
+  private _valueOnSlideStart: number|null;
 
   /** Reference to the inner slider wrapper element. */
   @ViewChild('sliderWrapper') private _sliderWrapper: ElementRef;
@@ -460,25 +471,22 @@ export class MatSlider extends _MatSliderMixinBase
     return (this._dir && this._dir.value == 'rtl') ? 'rtl' : 'ltr';
   }
 
-  constructor(elementRef: ElementRef,
-              private _focusMonitor: FocusMonitor,
-              private _changeDetectorRef: ChangeDetectorRef,
-              @Optional() private _dir: Directionality,
-              @Attribute('tabindex') tabIndex: string,
-              // @breaking-change 8.0.0 `_animationMode` parameter to be made required.
-              @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string) {
-    super(elementRef);
+  constructor(
+      _renderer: Renderer2, elementRef: ElementRef, private _focusMonitor: FocusMonitor,
+      private _changeDetectorRef: ChangeDetectorRef, @Optional() private _dir: Directionality,
+      @Attribute('tabindex') tabIndex: string,
+      // @breaking-change 8.0.0 `_animationMode` parameter to be made required.
+      @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string) {
+    super(_renderer, elementRef);
 
     this.tabIndex = parseInt(tabIndex) || 0;
   }
 
   ngOnInit() {
-    this._focusMonitor
-        .monitor(this._elementRef, true)
-        .subscribe((origin: FocusOrigin) => {
-          this._isActive = !!origin && origin !== 'keyboard';
-          this._changeDetectorRef.detectChanges();
-        });
+    this._focusMonitor.monitor(this._elementRef, true).subscribe((origin: FocusOrigin) => {
+      this._isActive = !!origin && origin !== 'keyboard';
+      this._changeDetectorRef.detectChanges();
+    });
     if (this._dir) {
       this._dirChangeSubscription = this._dir.change.subscribe(() => {
         this._changeDetectorRef.markForCheck();
@@ -544,7 +552,7 @@ export class MatSlider extends _MatSliderMixinBase
     }
   }
 
-  _onSlideStart(event: HammerInput | null) {
+  _onSlideStart(event: HammerInput|null) {
     if (this.disabled || this._isSliding) {
       return;
     }
@@ -723,7 +731,7 @@ export class MatSlider extends _MatSliderMixinBase
   }
 
   /** Calculates the percentage of the slider that a value is. */
-  private _calculatePercentage(value: number | null) {
+  private _calculatePercentage(value: number|null) {
     return ((value || 0) - this.min) / (this.max - this.min);
   }
 

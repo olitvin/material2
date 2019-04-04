@@ -41,3 +41,5 @@ testem.log
 /.chrome
 /.git
 /.firebase
+
+/.history

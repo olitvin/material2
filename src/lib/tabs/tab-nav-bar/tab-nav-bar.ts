@@ -5,6 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+import {FocusMonitor} from '@angular/cdk/a11y';
 import {Directionality} from '@angular/cdk/bidi';
 import {Platform} from '@angular/cdk/platform';
 import {ViewportRuler} from '@angular/cdk/scrolling';
@@ -25,19 +26,25 @@ import {
   OnDestroy,
   Optional,
   QueryList,
+  Renderer2,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 import {
-  CanColor, CanColorCtor,
-  CanDisable, CanDisableCtor,
-  CanDisableRipple, CanDisableRippleCtor,
-  HasTabIndex, HasTabIndexCtor,
+  CanColor,
+  CanColorCtor,
+  CanDisable,
+  CanDisableCtor,
+  CanDisableRipple,
+  CanDisableRippleCtor,
+  HasTabIndex,
+  HasTabIndexCtor,
   MAT_RIPPLE_GLOBAL_OPTIONS,
   mixinColor,
   mixinDisabled,
   mixinDisableRipple,
-  mixinTabIndex, RippleConfig,
+  mixinTabIndex,
+  RippleConfig,
   RippleGlobalOptions,
   RippleRenderer,
   RippleTarget,
@@ -45,16 +52,16 @@ import {
 } from '@angular/material/core';
 import {merge, of as observableOf, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+
 import {MatInkBar} from '../ink-bar';
-import {FocusMonitor} from '@angular/cdk/a11y';
 
 
 // Boilerplate for applying mixins to MatTabNav.
 /** @docs-private */
 export class MatTabNavBase {
-  constructor(public _elementRef: ElementRef) {}
+  constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
-export const _MatTabNavMixinBase: CanDisableRippleCtor & CanColorCtor & typeof MatTabNavBase =
+export const _MatTabNavMixinBase: CanDisableRippleCtor&CanColorCtor&typeof MatTabNavBase =
     mixinDisableRipple(mixinColor(MatTabNavBase, 'primary'));
 
 /**
@@ -72,14 +79,14 @@ export const _MatTabNavMixinBase: CanDisableRippleCtor & CanColorCtor & typeof M
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MatTabNav extends _MatTabNavMixinBase
-    implements AfterContentChecked, AfterContentInit, CanColor, CanDisableRipple, OnDestroy {
-
+export class MatTabNav extends _MatTabNavMixinBase implements AfterContentChecked, AfterContentInit,
+                                                              CanColor, CanDisableRipple,
+                                                              OnDestroy {
   /** Subject that emits when the component has been destroyed. */
   private readonly _onDestroy = new Subject<void>();
 
   private _activeLinkChanged: boolean;
-  private _activeLinkElement: ElementRef<HTMLElement> | null;
+  private _activeLinkElement: ElementRef<HTMLElement>|null;
 
   @ViewChild(MatInkBar) _inkBar: MatInkBar;
 
@@ -89,7 +96,9 @@ export class MatTabNav extends _MatTabNavMixinBase
 
   /** Background color of the tab nav. */
   @Input()
-  get backgroundColor(): ThemePalette { return this._backgroundColor; }
+  get backgroundColor(): ThemePalette {
+    return this._backgroundColor;
+  }
   set backgroundColor(value: ThemePalette) {
     const nativeElement: HTMLElement = this._elementRef.nativeElement;
 
@@ -103,12 +112,11 @@ export class MatTabNav extends _MatTabNavMixinBase
   }
   private _backgroundColor: ThemePalette;
 
-  constructor(elementRef: ElementRef,
-              @Optional() private _dir: Directionality,
-              private _ngZone: NgZone,
-              private _changeDetectorRef: ChangeDetectorRef,
-              private _viewportRuler: ViewportRuler) {
-    super(elementRef);
+  constructor(
+      _renderer: Renderer2, elementRef: ElementRef, @Optional() private _dir: Directionality,
+      private _ngZone: NgZone, private _changeDetectorRef: ChangeDetectorRef,
+      private _viewportRuler: ViewportRuler) {
+    super(_renderer, elementRef);
   }
 
   /**
@@ -162,9 +170,8 @@ export class MatTabNav extends _MatTabNavMixinBase
 
 // Boilerplate for applying mixins to MatTabLink.
 export class MatTabLinkBase {}
-export const _MatTabLinkMixinBase:
-    HasTabIndexCtor & CanDisableRippleCtor & CanDisableCtor & typeof MatTabLinkBase =
-        mixinTabIndex(mixinDisableRipple(mixinDisabled(MatTabLinkBase)));
+export const _MatTabLinkMixinBase: HasTabIndexCtor&CanDisableRippleCtor&CanDisableCtor&
+    typeof MatTabLinkBase = mixinTabIndex(mixinDisableRipple(mixinDisabled(MatTabLinkBase)));
 
 /**
  * Link inside of a `mat-tab-nav-bar`.
@@ -182,9 +189,9 @@ export const _MatTabLinkMixinBase:
     '[class.mat-tab-label-active]': 'active',
   }
 })
-export class MatTabLink extends _MatTabLinkMixinBase
-    implements OnDestroy, CanDisable, CanDisableRipple, HasTabIndex, RippleTarget {
-
+export class MatTabLink extends _MatTabLinkMixinBase implements OnDestroy, CanDisable,
+                                                                CanDisableRipple, HasTabIndex,
+                                                                RippleTarget {
   /** Whether the tab link is active or not. */
   protected _isActive: boolean = false;
 
@@ -193,7 +200,9 @@ export class MatTabLink extends _MatTabLinkMixinBase
 
   /** Whether the link is active. */
   @Input()
-  get active(): boolean { return this._isActive; }
+  get active(): boolean {
+    return this._isActive;
+  }
   set active(value: boolean) {
     if (value !== this._isActive) {
       this._isActive = value;
@@ -207,7 +216,7 @@ export class MatTabLink extends _MatTabLinkMixinBase
    * the tab link ripples.
    * @docs-private
    */
-  rippleConfig: RippleConfig & RippleGlobalOptions;
+  rippleConfig: RippleConfig&RippleGlobalOptions;
 
   /**
    * Whether ripples are disabled on interaction.
@@ -215,21 +224,19 @@ export class MatTabLink extends _MatTabLinkMixinBase
    */
   get rippleDisabled(): boolean {
     return this.disabled || this.disableRipple || this._tabNavBar.disableRipple ||
-      !!this.rippleConfig.disabled;
+        !!this.rippleConfig.disabled;
   }
 
-  constructor(private _tabNavBar: MatTabNav,
-              public _elementRef: ElementRef,
-              ngZone: NgZone,
-              platform: Platform,
-              @Optional() @Inject(MAT_RIPPLE_GLOBAL_OPTIONS)
-              globalRippleOptions: RippleGlobalOptions | null,
-              @Attribute('tabindex') tabIndex: string,
-              /**
-               * @deprecated
-               * @breaking-change 8.0.0 `_focusMonitor` parameter to be made required.
-               */
-              private _focusMonitor?: FocusMonitor) {
+  constructor(
+      private _tabNavBar: MatTabNav, public _elementRef: ElementRef, ngZone: NgZone,
+      platform: Platform,
+      @Optional() @Inject(MAT_RIPPLE_GLOBAL_OPTIONS) globalRippleOptions: RippleGlobalOptions|null,
+      @Attribute('tabindex') tabIndex: string,
+      /**
+       * @deprecated
+       * @breaking-change 8.0.0 `_focusMonitor` parameter to be made required.
+       */
+      private _focusMonitor?: FocusMonitor) {
     super();
 
     this._tabLinkRipple = new RippleRenderer(this, ngZone, _elementRef, platform);

@@ -27,6 +27,7 @@ import {
   Optional,
   Output,
   QueryList,
+  Renderer2,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
@@ -298,7 +299,7 @@ export class MatRadioButtonBase {
   // defined to properly work.
   disabled: boolean;
 
-  constructor(public _elementRef: ElementRef) {}
+  constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
 // As per Material design specifications the selection control radio should use the accent color
 // palette by default. https://material.io/guidelines/components/selection-controls.html
@@ -457,13 +458,12 @@ export class MatRadioButton extends _MatRadioButtonMixinBase
   /** The native `<input type=radio>` element */
   @ViewChild('input') _inputElement: ElementRef<HTMLInputElement>;
 
-  constructor(@Optional() radioGroup: MatRadioGroup,
-              elementRef: ElementRef,
-              private _changeDetector: ChangeDetectorRef,
-              private _focusMonitor: FocusMonitor,
-              private _radioDispatcher: UniqueSelectionDispatcher,
-              @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string) {
-    super(elementRef);
+  constructor(
+      @Optional() radioGroup: MatRadioGroup, _renderer: Renderer2, elementRef: ElementRef,
+      private _changeDetector: ChangeDetectorRef, private _focusMonitor: FocusMonitor,
+      private _radioDispatcher: UniqueSelectionDispatcher,
+      @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string) {
+    super(_renderer, elementRef);
 
     // Assertions. Ideally these should be stripped out by the compiler.
     // TODO(jelbourn): Assert that there's no name binding AND a parent radio group.

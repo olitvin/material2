@@ -32,6 +32,7 @@ import {
   OnDestroy,
   Optional,
   Output,
+  Renderer2,
   ViewChild,
   ViewContainerRef,
   ViewEncapsulation,
@@ -46,11 +47,12 @@ import {
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {merge, Subject, Subscription} from 'rxjs';
 import {filter, take} from 'rxjs/operators';
+
 import {MatCalendar} from './calendar';
+import {MatCalendarCellCssClasses} from './calendar-body';
 import {matDatepickerAnimations} from './datepicker-animations';
 import {createMissingDateImplError} from './datepicker-errors';
 import {MatDatepickerInput} from './datepicker-input';
-import {MatCalendarCellCssClasses} from './calendar-body';
 
 /** Used to generate a unique ID for each datepicker instance. */
 let datepickerUid = 0;
@@ -74,7 +76,7 @@ export const MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER = {
 // Boilerplate for applying mixins to MatDatepickerContent.
 /** @docs-private */
 export class MatDatepickerContentBase {
-  constructor(public _elementRef: ElementRef) { }
+  constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
 export const _MatDatepickerContentMixinBase: CanColorCtor & typeof MatDatepickerContentBase =
     mixinColor(MatDatepickerContentBase);
@@ -117,8 +119,8 @@ export class MatDatepickerContent<D> extends _MatDatepickerContentMixinBase
   /** Whether the datepicker is above or below the input. */
   _isAbove: boolean;
 
-  constructor(elementRef: ElementRef) {
-    super(elementRef);
+  constructor(_renderer: Renderer2, elementRef: ElementRef) {
+    super(_renderer, elementRef);
   }
 
   ngAfterViewInit() {

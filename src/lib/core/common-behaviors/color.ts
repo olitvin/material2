@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
+import {ElementRef, Renderer2} from '@angular/core';
 import {Constructor} from './constructor';
-import {ElementRef} from '@angular/core';
 
 /** @docs-private */
 export interface CanColor {
@@ -21,27 +21,30 @@ export type CanColorCtor = Constructor<CanColor>;
 /** @docs-private */
 export interface HasElementRef {
   _elementRef: ElementRef;
+  _renderer: Renderer2;
 }
 
 /** Possible color palette values. */
-export type ThemePalette = 'primary' | 'accent' | 'warn' | undefined;
+export type ThemePalette = 'primary'|'accent'|'warn'|undefined;
 
 /** Mixin to augment a directive with a `color` property. */
 export function mixinColor<T extends Constructor<HasElementRef>>(
-    base: T, defaultColor?: ThemePalette): CanColorCtor & T {
+    base: T, defaultColor?: ThemePalette): CanColorCtor&T {
   return class extends base {
     private _color: ThemePalette;
 
-    get color(): ThemePalette { return this._color; }
+    get color(): ThemePalette {
+      return this._color;
+    }
     set color(value: ThemePalette) {
       const colorPalette = value || defaultColor;
 
       if (colorPalette !== this._color) {
         if (this._color) {
-          this._elementRef.nativeElement.classList.remove(`mat-${this._color}`);
+          this._renderer.removeClass(this._elementRef.nativeElement, `mat-${this._color}`);
         }
         if (colorPalette) {
-          this._elementRef.nativeElement.classList.add(`mat-${colorPalette}`);
+          this._renderer.addClass(this._elementRef.nativeElement, `mat-${colorPalette}`);
         }
 
         this._color = colorPalette;
@@ -56,4 +59,3 @@ export function mixinColor<T extends Constructor<HasElementRef>>(
     }
   };
 }
-

@@ -5,28 +5,30 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+import {DOCUMENT} from '@angular/common';
 import {
-  Component,
-  ChangeDetectionStrategy,
-  ElementRef,
-  Inject,
-  Input,
-  Output,
-  EventEmitter,
-  Optional,
-  NgZone,
-  ViewEncapsulation,
   AfterViewInit,
-  ViewChild,
-  OnDestroy,
-  InjectionToken,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Inject,
   inject,
+  InjectionToken,
+  Input,
+  NgZone,
+  OnDestroy,
+  Optional,
+  Output,
+  Renderer2,
+  ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
+import {CanColor, CanColorCtor, mixinColor} from '@angular/material/core';
+import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
 import {fromEvent, Subscription} from 'rxjs';
 import {filter} from 'rxjs/operators';
-import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
-import {CanColor, CanColorCtor, mixinColor} from '@angular/material/core';
-import {DOCUMENT} from '@angular/common';
+
 
 // TODO(josephperrott): Benchpress tests.
 // TODO(josephperrott): Add ARIA attributes for progress bar "for".
@@ -34,7 +36,7 @@ import {DOCUMENT} from '@angular/common';
 // Boilerplate for applying mixins to MatProgressBar.
 /** @docs-private */
 export class MatProgressBarBase {
-  constructor(public _elementRef: ElementRef) { }
+  constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
 
 /** Last animation end data. */
@@ -42,7 +44,7 @@ export interface ProgressAnimationEnd {
   value: number;
 }
 
-export const _MatProgressBarMixinBase: CanColorCtor & typeof MatProgressBarBase =
+export const _MatProgressBarMixinBase: CanColorCtor&typeof MatProgressBarBase =
     mixinColor(MatProgressBarBase, 'primary');
 
 /**
@@ -51,9 +53,7 @@ export const _MatProgressBarMixinBase: CanColorCtor & typeof MatProgressBarBase 
  * @docs-private
  */
 export const MAT_PROGRESS_BAR_LOCATION = new InjectionToken<MatProgressBarLocation>(
-  'mat-progress-bar-location',
-  {providedIn: 'root', factory: MAT_PROGRESS_BAR_LOCATION_FACTORY}
-);
+    'mat-progress-bar-location', {providedIn: 'root', factory: MAT_PROGRESS_BAR_LOCATION_FACTORY});
 
 /**
  * Stubbed out location for `MatProgressBar`.
@@ -101,16 +101,17 @@ let progressbarId = 0;
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class MatProgressBar extends _MatProgressBarMixinBase implements CanColor,
-                                                      AfterViewInit, OnDestroy {
-  constructor(public _elementRef: ElementRef, private _ngZone: NgZone,
-              @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string,
-              /**
-               * @deprecated `location` parameter to be made required.
-               * @breaking-change 8.0.0
-               */
-              @Optional() @Inject(MAT_PROGRESS_BAR_LOCATION) location?: MatProgressBarLocation) {
-    super(_elementRef);
+export class MatProgressBar extends _MatProgressBarMixinBase implements CanColor, AfterViewInit,
+                                                                        OnDestroy {
+  constructor(
+      _renderer: Renderer2, public _elementRef: ElementRef, private _ngZone: NgZone,
+      @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string,
+      /**
+       * @deprecated `location` parameter to be made required.
+       * @breaking-change 8.0.0
+       */
+      @Optional() @Inject(MAT_PROGRESS_BAR_LOCATION) location?: MatProgressBarLocation) {
+    super(_renderer, _elementRef);
 
     // We need to prefix the SVG reference with the current path, otherwise they won't work
     // in Safari if the page has a `<base>` tag. Note that we need quotes inside the `url()`,
@@ -129,7 +130,9 @@ export class MatProgressBar extends _MatProgressBarMixinBase implements CanColor
 
   /** Value of the progress bar. Defaults to zero. Mirrored to aria-valuenow. */
   @Input()
-  get value(): number { return this._value; }
+  get value(): number {
+    return this._value;
+  }
   set value(v: number) {
     this._value = clamp(v || 0);
 
@@ -142,8 +145,12 @@ export class MatProgressBar extends _MatProgressBarMixinBase implements CanColor
 
   /** Buffer value of the progress bar. Defaults to zero. */
   @Input()
-  get bufferValue(): number { return this._bufferValue; }
-  set bufferValue(v: number) { this._bufferValue = clamp(v || 0); }
+  get bufferValue(): number {
+    return this._bufferValue;
+  }
+  set bufferValue(v: number) {
+    this._bufferValue = clamp(v || 0);
+  }
   private _bufferValue: number = 0;
 
   @ViewChild('primaryValueBar') _primaryValueBar: ElementRef;
@@ -165,7 +172,7 @@ export class MatProgressBar extends _MatProgressBarMixinBase implements CanColor
    * 'determinate'.
    * Mirrored to mode attribute.
    */
-  @Input() mode: 'determinate' | 'indeterminate' | 'buffer' | 'query' = 'determinate';
+  @Input() mode: 'determinate'|'indeterminate'|'buffer'|'query' = 'determinate';
 
   /** ID of the progress bar. */
   progressbarId = `mat-progress-bar-${progressbarId++}`;
@@ -197,9 +204,9 @@ export class MatProgressBar extends _MatProgressBarMixinBase implements CanColor
       this._ngZone.runOutsideAngular((() => {
         this._animationEndSubscription =
             fromEvent<TransitionEvent>(this._primaryValueBar.nativeElement, 'transitionend')
-            .pipe(filter(((e: TransitionEvent) =>
-              e.target === this._primaryValueBar.nativeElement)))
-            .subscribe(_ => this._ngZone.run(() => this.emitAnimationEnd()));
+                .pipe(filter(
+                    ((e: TransitionEvent) => e.target === this._primaryValueBar.nativeElement)))
+                .subscribe(_ => this._ngZone.run(() => this.emitAnimationEnd()));
       }));
     }
   }

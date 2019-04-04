@@ -19,28 +19,34 @@ import {
   ElementRef,
   EventEmitter,
   forwardRef,
+  Inject,
   Input,
+  NgZone,
   OnDestroy,
+  Optional,
   Output,
+  Renderer2,
   ViewChild,
   ViewEncapsulation,
-  NgZone,
-  Optional,
-  Inject,
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {
-  CanColor, CanColorCtor,
-  CanDisable, CanDisableCtor,
-  CanDisableRipple, CanDisableRippleCtor,
+  CanColor,
+  CanColorCtor,
+  CanDisable,
+  CanDisableCtor,
+  CanDisableRipple,
+  CanDisableRippleCtor,
   HammerInput,
-  HasTabIndex, HasTabIndexCtor,
+  HasTabIndex,
+  HasTabIndexCtor,
   mixinColor,
   mixinDisabled,
   mixinDisableRipple,
   mixinTabIndex,
 } from '@angular/material/core';
 import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+
 import {
   MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS,
   MatSlideToggleDefaultOptions
@@ -59,23 +65,19 @@ export const MAT_SLIDE_TOGGLE_VALUE_ACCESSOR: any = {
 /** Change event object emitted by a MatSlideToggle. */
 export class MatSlideToggleChange {
   constructor(
-    /** The source MatSlideToggle of the event. */
-    public source: MatSlideToggle,
-    /** The new `checked` value of the MatSlideToggle. */
-    public checked: boolean) { }
+      /** The source MatSlideToggle of the event. */
+      public source: MatSlideToggle,
+      /** The new `checked` value of the MatSlideToggle. */
+      public checked: boolean) {}
 }
 
 // Boilerplate for applying mixins to MatSlideToggle.
 /** @docs-private */
 export class MatSlideToggleBase {
-  constructor(public _elementRef: ElementRef) {}
+  constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
-export const _MatSlideToggleMixinBase:
-    HasTabIndexCtor &
-    CanColorCtor &
-    CanDisableRippleCtor &
-    CanDisableCtor &
-    typeof MatSlideToggleBase =
+export const _MatSlideToggleMixinBase: HasTabIndexCtor&CanColorCtor&CanDisableRippleCtor&
+    CanDisableCtor&typeof MatSlideToggleBase =
         mixinTabIndex(mixinColor(mixinDisableRipple(mixinDisabled(MatSlideToggleBase)), 'accent'));
 
 /** Represents a slidable "switch" toggle that can be moved between on and off. */
@@ -132,35 +134,41 @@ export class MatSlideToggle extends _MatSlideToggleMixinBase implements OnDestro
   @ViewChild('toggleBar') _thumbBarEl: ElementRef;
 
   /** Name value will be applied to the input element if present. */
-  @Input() name: string | null = null;
+  @Input() name: string|null = null;
 
   /** A unique id for the slide-toggle input. If none is supplied, it will be auto-generated. */
   @Input() id: string = this._uniqueId;
 
   /** Whether the label should appear after or before the slide-toggle. Defaults to 'after'. */
-  @Input() labelPosition: 'before' | 'after' = 'after';
+  @Input() labelPosition: 'before'|'after' = 'after';
 
   /** Used to set the aria-label attribute on the underlying input element. */
-  @Input('aria-label') ariaLabel: string | null = null;
+  @Input('aria-label') ariaLabel: string|null = null;
 
   /** Used to set the aria-labelledby attribute on the underlying input element. */
-  @Input('aria-labelledby') ariaLabelledby: string | null = null;
+  @Input('aria-labelledby') ariaLabelledby: string|null = null;
 
   /** Whether the slide-toggle is required. */
   @Input()
-  get required(): boolean { return this._required; }
-  set required(value) { this._required = coerceBooleanProperty(value); }
+  get required(): boolean {
+    return this._required;
+  }
+  set required(value) {
+    this._required = coerceBooleanProperty(value);
+  }
 
   /** Whether the slide-toggle element is checked or not. */
   @Input()
-  get checked(): boolean { return this._checked; }
+  get checked(): boolean {
+    return this._checked;
+  }
   set checked(value) {
     this._checked = coerceBooleanProperty(value);
     this._changeDetectorRef.markForCheck();
   }
   /** An event will be dispatched each time the slide-toggle changes its value. */
-  @Output() readonly change: EventEmitter<MatSlideToggleChange> =
-      new EventEmitter<MatSlideToggleChange>();
+  @Output()
+  readonly change: EventEmitter<MatSlideToggleChange> = new EventEmitter<MatSlideToggleChange>();
 
   /**
    * An event will be dispatched each time the slide-toggle input is toggled.
@@ -179,42 +187,40 @@ export class MatSlideToggle extends _MatSlideToggleMixinBase implements OnDestro
   @Output() readonly dragChange: EventEmitter<void> = new EventEmitter<void>();
 
   /** Returns the unique id for the visual hidden input. */
-  get inputId(): string { return `${this.id || this._uniqueId}-input`; }
+  get inputId(): string {
+    return `${this.id || this._uniqueId}-input`;
+  }
 
   /** Reference to the underlying input element. */
   @ViewChild('input') _inputElement: ElementRef<HTMLInputElement>;
 
-  constructor(elementRef: ElementRef,
-              /**
-               * @deprecated The `_platform` parameter to be removed.
-               * @breaking-change 8.0.0
-               */
-              _platform: Platform,
-              private _focusMonitor: FocusMonitor,
-              private _changeDetectorRef: ChangeDetectorRef,
-              @Attribute('tabindex') tabIndex: string,
-              private _ngZone: NgZone,
-              @Inject(MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS)
-                  public defaults: MatSlideToggleDefaultOptions,
-              @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string,
-              @Optional() private _dir?: Directionality) {
-    super(elementRef);
+  constructor(
+      _renderer: Renderer2, elementRef: ElementRef,
+      /**
+       * @deprecated The `_platform` parameter to be removed.
+       * @breaking-change 8.0.0
+       */
+      _platform: Platform, private _focusMonitor: FocusMonitor,
+      private _changeDetectorRef: ChangeDetectorRef, @Attribute('tabindex') tabIndex: string,
+      private _ngZone: NgZone,
+      @Inject(MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS) public defaults: MatSlideToggleDefaultOptions,
+      @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string,
+      @Optional() private _dir?: Directionality) {
+    super(_renderer, elementRef);
     this.tabIndex = parseInt(tabIndex) || 0;
   }
 
   ngAfterContentInit() {
-    this._focusMonitor
-      .monitor(this._elementRef, true)
-      .subscribe(focusOrigin => {
-        if (!focusOrigin) {
-          // When a focused element becomes disabled, the browser *immediately* fires a blur event.
-          // Angular does not expect events to be raised during change detection, so any state
-          // change (such as a form control's 'ng-touched') will cause a changed-after-checked
-          // error. See https://github.com/angular/angular/issues/17793. To work around this,
-          // we defer telling the form control it has been touched until the next tick.
-          Promise.resolve().then(() => this.onTouched());
-        }
-      });
+    this._focusMonitor.monitor(this._elementRef, true).subscribe(focusOrigin => {
+      if (!focusOrigin) {
+        // When a focused element becomes disabled, the browser *immediately* fires a blur event.
+        // Angular does not expect events to be raised during change detection, so any state
+        // change (such as a form control's 'ng-touched') will cause a changed-after-checked
+        // error. See https://github.com/angular/angular/issues/17793. To work around this,
+        // we defer telling the form control it has been touched until the next tick.
+        Promise.resolve().then(() => this.onTouched());
+      }
+    });
   }
 
   ngOnDestroy() {
@@ -349,15 +355,16 @@ export class MatSlideToggle extends _MatSlideToggleMixinBase implements OnDestro
       // The drag should be stopped outside of the current event handler, otherwise the
       // click event will be fired before it and will revert the drag change.
       this._ngZone.runOutsideAngular(() => setTimeout(() => {
-        if (this._dragging) {
-          this._dragging = false;
-          this._thumbEl.nativeElement.classList.remove('mat-dragging');
+                                       if (this._dragging) {
+                                         this._dragging = false;
+                                         this._thumbEl.nativeElement.classList.remove(
+                                             'mat-dragging');
 
-          // Reset the transform because the component will take care
-          // of the thumb position after drag.
-          this._thumbEl.nativeElement.style.transform = '';
-        }
-      }));
+                                         // Reset the transform because the component will take care
+                                         // of the thumb position after drag.
+                                         this._thumbEl.nativeElement.style.transform = '';
+                                       }
+                                     }));
     }
   }
 

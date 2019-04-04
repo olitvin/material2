@@ -8,6 +8,7 @@
 
 import {Directionality} from '@angular/cdk/bidi';
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {Platform} from '@angular/cdk/platform';
 import {
   AfterContentChecked,
   AfterContentInit,
@@ -22,21 +23,26 @@ import {
   InjectionToken,
   Input,
   NgZone,
+  OnDestroy,
   Optional,
   QueryList,
+  Renderer2,
   ViewChild,
   ViewEncapsulation,
-  OnDestroy,
 } from '@angular/core';
+import {NgControl} from '@angular/forms';
 import {
-  CanColor, CanColorCtor,
+  CanColor,
+  CanColorCtor,
   FloatLabelType,
   LabelOptions,
   MAT_LABEL_GLOBAL_OPTIONS,
   mixinColor,
 } from '@angular/material/core';
+import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
 import {fromEvent, merge, Subject} from 'rxjs';
 import {startWith, take, takeUntil} from 'rxjs/operators';
+
 import {MatError} from './error';
 import {matFormFieldAnimations} from './form-field-animations';
 import {MatFormFieldControl} from './form-field-control';
@@ -50,9 +56,6 @@ import {MatLabel} from './label';
 import {MatPlaceholder} from './placeholder';
 import {MatPrefix} from './prefix';
 import {MatSuffix} from './suffix';
-import {Platform} from '@angular/cdk/platform';
-import {NgControl} from '@angular/forms';
-import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
 
 
 let nextUniqueId = 0;
@@ -65,18 +68,18 @@ const outlineGapPadding = 5;
  * @docs-private
  */
 export class MatFormFieldBase {
-  constructor(public _elementRef: ElementRef) { }
+  constructor(public _elementRef: ElementRef, public _renderer: Renderer2) {}
 }
 
 /**
  * Base class to which we're applying the form field mixins.
  * @docs-private
  */
-export const _MatFormFieldMixinBase: CanColorCtor & typeof MatFormFieldBase =
+export const _MatFormFieldMixinBase: CanColorCtor&typeof MatFormFieldBase =
     mixinColor(MatFormFieldBase, 'primary');
 
 /** Possible appearance styles for the form field. */
-export type MatFormFieldAppearance = 'legacy' | 'standard' | 'fill' | 'outline';
+export type MatFormFieldAppearance = 'legacy'|'standard'|'fill'|'outline';
 
 /**
  * Represents the default options for the form field that can be configured
@@ -142,8 +145,10 @@ export const MAT_FORM_FIELD_DEFAULT_OPTIONS =
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class MatFormField extends _MatFormFieldMixinBase
-    implements AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy, CanColor {
+export class MatFormField extends _MatFormFieldMixinBase implements AfterContentInit,
+                                                                    AfterContentChecked,
+                                                                    AfterViewInit, OnDestroy,
+                                                                    CanColor {
   private _labelOptions: LabelOptions;
 
   /**
@@ -159,7 +164,9 @@ export class MatFormField extends _MatFormFieldMixinBase
 
   /** The form-field appearance style. */
   @Input()
-  get appearance(): MatFormFieldAppearance { return this._appearance; }
+  get appearance(): MatFormFieldAppearance {
+    return this._appearance;
+  }
   set appearance(value: MatFormFieldAppearance) {
     const oldValue = this._appearance;
 
@@ -173,7 +180,9 @@ export class MatFormField extends _MatFormFieldMixinBase
 
   /** Whether the required marker should be hidden. */
   @Input()
-  get hideRequiredMarker(): boolean { return this._hideRequiredMarker; }
+  get hideRequiredMarker(): boolean {
+    return this._hideRequiredMarker;
+  }
   set hideRequiredMarker(value: boolean) {
     this._hideRequiredMarker = coerceBooleanProperty(value);
   }
@@ -188,14 +197,18 @@ export class MatFormField extends _MatFormFieldMixinBase
   }
 
   /** Whether the label can float or not. */
-  get _canLabelFloat(): boolean { return this.floatLabel !== 'never'; }
+  get _canLabelFloat(): boolean {
+    return this.floatLabel !== 'never';
+  }
 
   /** State of the mat-hint and mat-error animations. */
   _subscriptAnimationState: string = '';
 
   /** Text for the form field hint. */
   @Input()
-  get hintLabel(): string { return this._hintLabel; }
+  get hintLabel(): string {
+    return this._hintLabel;
+  }
   set hintLabel(value: string) {
     this._hintLabel = value;
     this._processHints();
@@ -249,17 +262,16 @@ export class MatFormField extends _MatFormFieldMixinBase
   @ContentChildren(MatSuffix) _suffixChildren: QueryList<MatSuffix>;
 
   constructor(
-      public _elementRef: ElementRef,
+      public _elementRef: ElementRef, public _renderer: Renderer2,
       private _changeDetectorRef: ChangeDetectorRef,
       @Optional() @Inject(MAT_LABEL_GLOBAL_OPTIONS) labelOptions: LabelOptions,
       @Optional() private _dir: Directionality,
-      @Optional() @Inject(MAT_FORM_FIELD_DEFAULT_OPTIONS)
-          private _defaults: MatFormFieldDefaultOptions,
+      @Optional() @Inject(MAT_FORM_FIELD_DEFAULT_OPTIONS) private _defaults:
+          MatFormFieldDefaultOptions,
       // @breaking-change 8.0.0 _platform, _ngZone and _animationMode to be made required.
-      private _platform?: Platform,
-      private _ngZone?: NgZone,
+      private _platform?: Platform, private _ngZone?: NgZone,
       @Optional() @Inject(ANIMATION_MODULE_TYPE) _animationMode?: string) {
-    super(_elementRef);
+    super(_elementRef, _renderer);
 
     this._labelOptions = labelOptions ? labelOptions : {};
     this.floatLabel = this._labelOptions.float || 'auto';
@@ -295,9 +307,8 @@ export class MatFormField extends _MatFormFieldMixinBase
 
     // Run change detection if the value changes.
     if (control.ngControl && control.ngControl.valueChanges) {
-      control.ngControl.valueChanges
-        .pipe(takeUntil(this._destroyed))
-        .subscribe(() => this._changeDetectorRef.markForCheck());
+      control.ngControl.valueChanges.pipe(takeUntil(this._destroyed))
+          .subscribe(() => this._changeDetectorRef.markForCheck());
     }
 
     // @breaking-change 7.0.0 Remove this check once _ngZone is required. Also reconsider
@@ -388,9 +399,10 @@ export class MatFormField extends _MatFormFieldMixinBase
   }
 
   /** Determines whether to display hints or errors. */
-  _getDisplayedMessages(): 'error' | 'hint' {
-    return (this._errorChildren && this._errorChildren.length > 0 &&
-        this._control.errorState) ? 'error' : 'hint';
+  _getDisplayedMessages(): 'error'|'hint' {
+    return (this._errorChildren && this._errorChildren.length > 0 && this._control.errorState) ?
+        'error' :
+        'hint';
   }
 
   /** Animates the placeholder up and locks it in position. */
@@ -460,10 +472,10 @@ export class MatFormField extends _MatFormFieldMixinBase
       let ids: string[] = [];
 
       if (this._getDisplayedMessages() === 'hint') {
-        const startHint = this._hintChildren ?
-            this._hintChildren.find(hint => hint.align === 'start') : null;
-        const endHint = this._hintChildren ?
-            this._hintChildren.find(hint => hint.align === 'end') : null;
+        const startHint =
+            this._hintChildren ? this._hintChildren.find(hint => hint.align === 'start') : null;
+        const endHint =
+            this._hintChildren ? this._hintChildren.find(hint => hint.align === 'end') : null;
 
         if (startHint) {
           ids.push(startHint.id);
@@ -552,8 +564,8 @@ export class MatFormField extends _MatFormFieldMixinBase
       gapEls.item(i).style.width = `${gapWidth}px`;
     }
 
-    this._outlineGapCalculationNeededOnStable =
-        this._outlineGapCalculationNeededImmediately = false;
+    this._outlineGapCalculationNeededOnStable = this._outlineGapCalculationNeededImmediately =
+        false;
   }
 
   /** Gets the start end of the rect considering the current directionality. */
