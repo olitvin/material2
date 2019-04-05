@@ -1,11 +1,12 @@
-import {LEFT_ARROW} from '@angular/cdk/keycodes';
-import {dispatchFakeEvent, dispatchKeyboardEvent} from '@angular/cdk/testing';
+import {CommonModule} from '@angular/common';
 import {Component, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {CommonModule} from '@angular/common';
+import {LEFT_ARROW} from '@cdk/keycodes';
+import {dispatchFakeEvent, dispatchKeyboardEvent} from '@cdk/testing';
 import {Observable} from 'rxjs';
+
 import {MatTab, MatTabGroup, MatTabHeaderPosition, MatTabsModule} from './index';
 
 

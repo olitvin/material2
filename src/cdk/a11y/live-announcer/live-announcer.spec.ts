@@ -1,8 +1,10 @@
-import {MutationObserverFactory} from '@angular/cdk/observers';
 import {Component, Input} from '@angular/core';
 import {ComponentFixture, fakeAsync, flush, inject, TestBed, tick} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
+import {MutationObserverFactory} from '@cdk/observers';
+
 import {A11yModule} from '../index';
+
 import {LiveAnnouncer} from './live-announcer';
 import {LIVE_ANNOUNCER_ELEMENT_TOKEN} from './live-announcer-token';
 

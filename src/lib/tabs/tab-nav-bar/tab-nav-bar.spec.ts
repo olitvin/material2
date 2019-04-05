@@ -1,10 +1,11 @@
+import {Component, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {Component, ViewChild, ViewChildren, QueryList} from '@angular/core';
-import {MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions} from '@angular/material/core';
 import {By} from '@angular/platform-browser';
-import {dispatchFakeEvent, dispatchMouseEvent} from '@angular/cdk/testing';
-import {Direction, Directionality} from '@angular/cdk/bidi';
+import {Direction, Directionality} from '@cdk/bidi';
+import {dispatchFakeEvent, dispatchMouseEvent} from '@cdk/testing';
+import {MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions} from '@material/core';
 import {Subject} from 'rxjs';
+
 import {MatTabLink, MatTabNav, MatTabsModule} from '../index';
 
 

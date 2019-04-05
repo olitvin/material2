@@ -1,8 +1,9 @@
-import {ComponentFixture, TestBed, fakeAsync} from '@angular/core/testing';
 import {Component, DebugElement, ViewEncapsulation} from '@angular/core';
+import {ComponentFixture, fakeAsync, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
+import {ThemePalette} from '@material/core';
+
 import {MatBadge, MatBadgeModule} from './index';
-import {ThemePalette} from '@angular/material/core';
 
 describe('MatBadge', () => {
   let fixture: ComponentFixture<any>;

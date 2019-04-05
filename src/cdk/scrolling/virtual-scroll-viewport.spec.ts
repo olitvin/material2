@@ -1,11 +1,3 @@
-import {ArrayDataSource} from '@angular/cdk/collections';
-import {
-  CdkVirtualForOf,
-  CdkVirtualScrollViewport,
-  ScrollDispatcher,
-  ScrollingModule
-} from '@angular/cdk/scrolling';
-import {dispatchFakeEvent} from '@angular/cdk/testing';
 import {
   Component,
   Input,
@@ -15,6 +7,14 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {async, ComponentFixture, fakeAsync, flush, inject, TestBed} from '@angular/core/testing';
+import {ArrayDataSource} from '@cdk/collections';
+import {
+  CdkVirtualForOf,
+  CdkVirtualScrollViewport,
+  ScrollDispatcher,
+  ScrollingModule
+} from '@cdk/scrolling';
+import {dispatchFakeEvent} from '@cdk/testing';
 import {animationFrameScheduler, Subject} from 'rxjs';
 
 

@@ -1,10 +1,12 @@
-import {TestBed, inject} from '@angular/core/testing';
-import {dispatchKeyboardEvent} from '@angular/cdk/testing';
-import {ESCAPE} from '@angular/cdk/keycodes';
 import {Component, NgModule} from '@angular/core';
-import {OverlayModule, OverlayContainer, Overlay} from '../index';
+import {inject, TestBed} from '@angular/core/testing';
+import {ESCAPE} from '@cdk/keycodes';
+import {ComponentPortal} from '@cdk/portal';
+import {dispatchKeyboardEvent} from '@cdk/testing';
+
+import {Overlay, OverlayContainer, OverlayModule} from '../index';
+
 import {OverlayKeyboardDispatcher} from './overlay-keyboard-dispatcher';
-import {ComponentPortal} from '@angular/cdk/portal';
 
 
 describe('OverlayKeyboardDispatcher', () => {

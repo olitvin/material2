@@ -1,5 +1,5 @@
-import {defineJasmineTestCases, findBazelVersionTestCases} from '@angular/cdk/schematics/testing';
-import {getAllVersionNames} from '@angular/cdk/schematics';
+import {getAllVersionNames} from '@cdk/schematics';
+import {defineJasmineTestCases, findBazelVersionTestCases} from '@cdk/schematics/testing';
 
 /** Path to the schematic collection that includes the migrations. */
 export const migrationCollection = require.resolve('../../migration.json');

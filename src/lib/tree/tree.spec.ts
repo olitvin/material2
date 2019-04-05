@@ -5,10 +5,11 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import {FlatTreeControl, NestedTreeControl, TreeControl} from '@angular/cdk/tree';
-import {Component, ViewChild, Type} from '@angular/core';
+import {Component, Type, ViewChild} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {FlatTreeControl, NestedTreeControl, TreeControl} from '@cdk/tree';
 import {BehaviorSubject, Observable} from 'rxjs';
+
 import {
   MatTree,
   MatTreeFlatDataSource,

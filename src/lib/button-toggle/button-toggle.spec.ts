@@ -1,8 +1,9 @@
-import {dispatchMouseEvent} from '@angular/cdk/testing';
 import {Component, DebugElement, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {ComponentFixture, fakeAsync, flush, TestBed, tick} from '@angular/core/testing';
 import {FormControl, FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
 import {By} from '@angular/platform-browser';
+import {dispatchMouseEvent} from '@cdk/testing';
+
 import {
   MatButtonToggle,
   MatButtonToggleChange,

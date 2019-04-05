@@ -1,9 +1,10 @@
-import {TestBed, async, ComponentFixture} from '@angular/core/testing';
 import {Component, DebugElement, Type} from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
-import {dispatchFakeEvent} from '@angular/cdk/testing';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatProgressBarModule, MAT_PROGRESS_BAR_LOCATION} from './index';
+import {dispatchFakeEvent} from '@cdk/testing';
+
+import {MAT_PROGRESS_BAR_LOCATION, MatProgressBarModule} from './index';
 import {MatProgressBar} from './progress-bar';
 
 

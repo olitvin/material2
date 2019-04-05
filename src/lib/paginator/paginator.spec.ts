@@ -1,11 +1,12 @@
-import {async, ComponentFixture, TestBed, inject, tick, fakeAsync} from '@angular/core/testing';
 import {Component, ViewChild} from '@angular/core';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {dispatchMouseEvent} from '@angular/cdk/testing';
-import {ThemePalette} from '@angular/material/core';
-import {MatSelect} from '@angular/material/select';
+import {async, ComponentFixture, fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
-import {MatPaginatorModule, MatPaginator, MatPaginatorIntl} from './index';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {dispatchMouseEvent} from '@cdk/testing';
+import {ThemePalette} from '@material/core';
+import {MatSelect} from '@material/select';
+
+import {MatPaginator, MatPaginatorIntl, MatPaginatorModule} from './index';
 
 
 describe('MatPaginator', () => {

@@ -1,18 +1,20 @@
-import {CollectionViewer, DataSource} from '@angular/cdk/collections';
-import {CdkTableModule} from '@angular/cdk/table';
+import {Component, ElementRef, ViewChild} from '@angular/core';
+import {async, ComponentFixture, fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {CollectionViewer, DataSource} from '@cdk/collections';
+import {CdkTableModule} from '@cdk/table';
 import {
   createFakeEvent,
   createMouseEvent,
   dispatchMouseEvent,
   wrappedErrorMessage
-} from '@angular/cdk/testing';
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {async, ComponentFixture, fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+} from '@cdk/testing';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+
 import {MatTableModule} from '../table/index';
+
 import {
   MatSort,
   MatSortHeader,

@@ -1,15 +1,16 @@
-import {async, TestBed, fakeAsync, tick, ComponentFixture, flush} from '@angular/core/testing';
 import {Component, ViewChild} from '@angular/core';
+import {async, ComponentFixture, fakeAsync, flush, TestBed, tick} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {ENTER, SPACE} from '@cdk/keycodes';
+import {createKeyboardEvent, dispatchEvent, dispatchKeyboardEvent} from '@cdk/testing';
+
 import {
+  MAT_EXPANSION_PANEL_DEFAULT_OPTIONS,
   MatExpansionModule,
   MatExpansionPanel,
   MatExpansionPanelHeader,
-  MAT_EXPANSION_PANEL_DEFAULT_OPTIONS,
 } from './index';
-import {SPACE, ENTER} from '@angular/cdk/keycodes';
-import {dispatchKeyboardEvent, createKeyboardEvent, dispatchEvent} from '@angular/cdk/testing';
 
 
 describe('MatExpansionPanel', () => {

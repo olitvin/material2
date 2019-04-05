@@ -1,4 +1,18 @@
-import {Direction, Directionality} from '@angular/cdk/bidi';
+import {Component, DebugElement, EventEmitter, OnInit, Provider, Type} from '@angular/core';
+import {ComponentFixture, fakeAsync, flush, inject, TestBed} from '@angular/core/testing';
+import {
+  AbstractControl,
+  AsyncValidatorFn,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  ValidationErrors,
+  Validators
+} from '@angular/forms';
+import {By} from '@angular/platform-browser';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {Direction, Directionality} from '@cdk/bidi';
 import {
   DOWN_ARROW,
   END,
@@ -8,36 +22,19 @@ import {
   RIGHT_ARROW,
   SPACE,
   UP_ARROW,
-} from '@angular/cdk/keycodes';
-import {
-  StepperOrientation,
-  STEPPER_GLOBAL_OPTIONS,
-  STEP_STATE,
-  CdkStep
-} from '@angular/cdk/stepper';
-import {dispatchKeyboardEvent, createKeyboardEvent, dispatchEvent} from '@angular/cdk/testing';
-import {Component, DebugElement, EventEmitter, OnInit, Type, Provider} from '@angular/core';
-import {ComponentFixture, fakeAsync, flush, inject, TestBed} from '@angular/core/testing';
-import {
-  AbstractControl,
-  AsyncValidatorFn,
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  ValidationErrors,
-  Validators,
-  FormBuilder
-} from '@angular/forms';
-import {By} from '@angular/platform-browser';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+} from '@cdk/keycodes';
+import {CdkStep, STEP_STATE, STEPPER_GLOBAL_OPTIONS, StepperOrientation} from '@cdk/stepper';
+import {createKeyboardEvent, dispatchEvent, dispatchKeyboardEvent} from '@cdk/testing';
+import {MatFormFieldModule} from '@material/form-field';
 import {Observable, Subject} from 'rxjs';
 import {map, take} from 'rxjs/operators';
+
+import {MatInputModule} from '../input/input-module';
+
 import {MatStepperModule} from './index';
 import {MatHorizontalStepper, MatStep, MatStepper, MatVerticalStepper} from './stepper';
 import {MatStepperNext, MatStepperPrevious} from './stepper-button';
 import {MatStepperIntl} from './stepper-intl';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '../input/input-module';
 
 
 const VALID_REGEX = /valid/;

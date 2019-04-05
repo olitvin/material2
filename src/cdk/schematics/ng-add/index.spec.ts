@@ -16,7 +16,7 @@ describe('CDK ng-add', () => {
     const packageJson = JSON.parse(getFileContent(tree, '/package.json'));
     const dependencies = packageJson.dependencies;
 
-    expect(dependencies['@angular/cdk']).toBeDefined();
+    expect(dependencies['@cdk']).toBeDefined();
     expect(Object.keys(dependencies)).toEqual(Object.keys(dependencies).sort(),
         'Expected the modified "dependencies" to be sorted alphabetically.');
   });

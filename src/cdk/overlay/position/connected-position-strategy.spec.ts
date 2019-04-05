@@ -1,9 +1,10 @@
-import {ComponentPortal, PortalModule} from '@angular/cdk/portal';
-import {CdkScrollable, ScrollingModule} from '@angular/cdk/scrolling';
-import {MockNgZone} from '@angular/cdk/testing';
 import {Component, ElementRef, NgModule, NgZone} from '@angular/core';
 import {inject, TestBed} from '@angular/core/testing';
+import {ComponentPortal, PortalModule} from '@cdk/portal';
+import {CdkScrollable, ScrollingModule} from '@cdk/scrolling';
+import {MockNgZone} from '@cdk/testing';
 import {Subscription} from 'rxjs';
+
 import {
   ConnectedOverlayPositionChange,
   ConnectedPositionStrategy,

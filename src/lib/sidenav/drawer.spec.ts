@@ -1,22 +1,23 @@
-import {
-  fakeAsync,
-  async,
-  tick,
-  ComponentFixture,
-  TestBed,
-  discardPeriodicTasks,
-  flush,
-} from '@angular/core/testing';
 import {Component, ElementRef, ViewChild} from '@angular/core';
+import {
+  async,
+  ComponentFixture,
+  discardPeriodicTasks,
+  fakeAsync,
+  flush,
+  TestBed,
+  tick,
+} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatDrawer, MatSidenavModule, MatDrawerContainer} from './index';
-import {Direction} from '@angular/cdk/bidi';
-import {A11yModule} from '@angular/cdk/a11y';
-import {PlatformModule} from '@angular/cdk/platform';
-import {ESCAPE} from '@angular/cdk/keycodes';
-import {dispatchKeyboardEvent} from '@angular/cdk/testing';
-import {CdkScrollable} from '@angular/cdk/scrolling';
+import {A11yModule} from '@cdk/a11y';
+import {Direction} from '@cdk/bidi';
+import {ESCAPE} from '@cdk/keycodes';
+import {PlatformModule} from '@cdk/platform';
+import {CdkScrollable} from '@cdk/scrolling';
+import {dispatchKeyboardEvent} from '@cdk/testing';
+
+import {MatDrawer, MatDrawerContainer, MatSidenavModule} from './index';
 
 
 describe('MatDrawer', () => {

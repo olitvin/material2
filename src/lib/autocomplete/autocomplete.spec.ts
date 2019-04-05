@@ -1,15 +1,3 @@
-import {Directionality} from '@angular/cdk/bidi';
-import {DOWN_ARROW, ENTER, ESCAPE, SPACE, TAB, UP_ARROW} from '@angular/cdk/keycodes';
-import {Overlay, OverlayContainer} from '@angular/cdk/overlay';
-import {ScrollDispatcher} from '@angular/cdk/scrolling';
-import {
-  createKeyboardEvent,
-  dispatchFakeEvent,
-  dispatchKeyboardEvent,
-  MockNgZone,
-  typeInElement,
-  dispatchEvent,
-} from '@angular/cdk/testing';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -18,9 +6,9 @@ import {
   OnInit,
   Provider,
   QueryList,
+  Type,
   ViewChild,
   ViewChildren,
-  Type,
 } from '@angular/core';
 import {
   async,
@@ -32,22 +20,36 @@ import {
   tick,
 } from '@angular/core/testing';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatOption, MatOptionSelectionChange} from '@angular/material/core';
-import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import {By} from '@angular/platform-browser';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {Observable, Subject, Subscription, EMPTY} from 'rxjs';
+import {Directionality} from '@cdk/bidi';
+import {DOWN_ARROW, ENTER, ESCAPE, SPACE, TAB, UP_ARROW} from '@cdk/keycodes';
+import {Overlay, OverlayContainer} from '@cdk/overlay';
+import {ScrollDispatcher} from '@cdk/scrolling';
+import {
+  createKeyboardEvent,
+  dispatchEvent,
+  dispatchFakeEvent,
+  dispatchKeyboardEvent,
+  MockNgZone,
+  typeInElement,
+} from '@cdk/testing';
+import {MatOption, MatOptionSelectionChange} from '@material/core';
+import {MatFormField, MatFormFieldModule} from '@material/form-field';
+import {EMPTY, Observable, Subject, Subscription} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+
 import {MatInputModule} from '../input/index';
+
 import {
   getMatAutocompleteMissingPanelError,
   MAT_AUTOCOMPLETE_DEFAULT_OPTIONS,
   MAT_AUTOCOMPLETE_SCROLL_STRATEGY,
   MatAutocomplete,
   MatAutocompleteModule,
+  MatAutocompleteOrigin,
   MatAutocompleteSelectedEvent,
   MatAutocompleteTrigger,
-  MatAutocompleteOrigin,
 } from './index';
 
 

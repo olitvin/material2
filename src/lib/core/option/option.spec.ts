@@ -1,13 +1,14 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {Component, DebugElement} from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
+import {ENTER, SPACE} from '@cdk/keycodes';
 import {
-  dispatchFakeEvent,
-  dispatchKeyboardEvent,
   createKeyboardEvent,
   dispatchEvent,
-} from '@angular/cdk/testing';
-import {SPACE, ENTER} from '@angular/cdk/keycodes';
+  dispatchFakeEvent,
+  dispatchKeyboardEvent,
+} from '@cdk/testing';
+
 import {MatOption, MatOptionModule} from './index';
 
 describe('MatOption component', () => {

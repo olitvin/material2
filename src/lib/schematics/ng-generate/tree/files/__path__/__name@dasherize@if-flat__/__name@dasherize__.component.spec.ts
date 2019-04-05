@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatButtonModule, MatIconModule, MatTreeModule } from '@angular/material';
+import {MatButtonModule, MatIconModule, MatTreeModule} from '@material';
 
 import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 

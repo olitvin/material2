@@ -1,48 +1,49 @@
-import {ComponentFixture, fakeAsync, flush, inject, TestBed, tick} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {
   Component,
   ElementRef,
   EventEmitter,
   Input,
-  Output,
   NgZone,
+  Output,
+  Provider,
+  QueryList,
   TemplateRef,
+  Type,
   ViewChild,
   ViewChildren,
-  QueryList,
-  Type,
-  Provider,
 } from '@angular/core';
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {OverlayContainer, Overlay} from '@angular/cdk/overlay';
-import {ESCAPE, LEFT_ARROW, RIGHT_ARROW, DOWN_ARROW, TAB} from '@angular/cdk/keycodes';
+import {ComponentFixture, fakeAsync, flush, inject, TestBed, tick} from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {FocusMonitor} from '@cdk/a11y';
+import {Direction, Directionality} from '@cdk/bidi';
+import {DOWN_ARROW, ESCAPE, LEFT_ARROW, RIGHT_ARROW, TAB} from '@cdk/keycodes';
+import {Overlay, OverlayContainer} from '@cdk/overlay';
+import {ScrollDispatcher} from '@cdk/scrolling';
+import {
+  createKeyboardEvent,
+  createMouseEvent,
+  dispatchEvent,
+  dispatchFakeEvent,
+  dispatchKeyboardEvent,
+  dispatchMouseEvent,
+  MockNgZone,
+  patchElementFocus,
+} from '@cdk/testing';
+import {MatRipple} from '@material/core';
+import {Subject} from 'rxjs';
+
 import {
   MAT_MENU_DEFAULT_OPTIONS,
   MatMenu,
+  MatMenuItem,
   MatMenuModule,
   MatMenuPanel,
   MatMenuTrigger,
   MenuPositionX,
   MenuPositionY,
-  MatMenuItem,
 } from './index';
-import {MENU_PANEL_TOP_PADDING, MAT_MENU_SCROLL_STRATEGY} from './menu-trigger';
-import {MatRipple} from '@angular/material/core';
-import {
-  dispatchKeyboardEvent,
-  dispatchMouseEvent,
-  dispatchEvent,
-  createKeyboardEvent,
-  createMouseEvent,
-  dispatchFakeEvent,
-  patchElementFocus,
-  MockNgZone,
-} from '@angular/cdk/testing';
-import {Subject} from 'rxjs';
-import {ScrollDispatcher} from '@angular/cdk/scrolling';
-import {FocusMonitor} from '@angular/cdk/a11y';
+import {MAT_MENU_SCROLL_STRATEGY, MENU_PANEL_TOP_PADDING} from './menu-trigger';
 
 
 describe('MatMenu', () => {

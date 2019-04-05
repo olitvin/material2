@@ -1,5 +1,5 @@
 import {SchematicTestRunner} from '@angular-devkit/schematics/testing';
-import {createTestApp, getFileContent} from '@angular/cdk/schematics/testing';
+import {createTestApp, getFileContent} from '@cdk/schematics/testing';
 import {Schema} from './schema';
 
 describe('material-table-schematic', () => {
@@ -48,8 +48,9 @@ describe('material-table-schematic', () => {
     expect(moduleContent).toContain('MatPaginatorModule');
     expect(moduleContent).toContain('MatSortModule');
 
-    expect(moduleContent).toContain(
-      `import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';`);
+    expect(moduleContent)
+        .toContain(
+            `import { MatTableModule, MatPaginatorModule, MatSortModule } from '@material';`);
   });
 
   it('should throw if no name has been specified', () => {

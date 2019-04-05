@@ -1,6 +1,7 @@
-import {CdkVirtualScrollViewport, ScrollingModule} from '@angular/cdk/scrolling';
 import {Component, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import {async, ComponentFixture, fakeAsync, flush, TestBed} from '@angular/core/testing';
+import {CdkVirtualScrollViewport, ScrollingModule} from '@cdk/scrolling';
+
 import {ScrollingModule as ExperimentalScrollingModule} from './scrolling-module';
 
 

@@ -1,13 +1,14 @@
-import {async, inject, TestBed} from '@angular/core/testing';
 import {Component, NgModule} from '@angular/core';
+import {async, inject, TestBed} from '@angular/core/testing';
+import {ComponentPortal, PortalModule} from '@cdk/portal';
 import {Subject} from 'rxjs';
-import {ComponentPortal, PortalModule} from '@angular/cdk/portal';
+
 import {
   Overlay,
+  OverlayConfig,
   OverlayContainer,
   OverlayModule,
   OverlayRef,
-  OverlayConfig,
   ScrollDispatcher,
 } from '../index';
 

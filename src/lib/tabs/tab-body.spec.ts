@@ -1,12 +1,13 @@
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {PortalModule, TemplatePortal} from '@angular/cdk/portal';
 import {CommonModule} from '@angular/common';
 import {AfterContentInit, Component, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {MatRippleModule} from '@angular/material/core';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatTabBody, MatTabBodyPortal} from './tab-body';
+import {Direction, Directionality} from '@cdk/bidi';
+import {PortalModule, TemplatePortal} from '@cdk/portal';
+import {MatRippleModule} from '@material/core';
 import {Subject} from 'rxjs';
+
+import {MatTabBody, MatTabBodyPortal} from './tab-body';
 
 
 describe('MatTabBody', () => {

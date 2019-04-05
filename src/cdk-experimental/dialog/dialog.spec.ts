@@ -1,12 +1,5 @@
-import {
-  ComponentFixture,
-  fakeAsync,
-  flushMicrotasks,
-  inject,
-  TestBed,
-  tick,
-  flush,
-} from '@angular/core/testing';
+import {Location} from '@angular/common';
+import {SpyLocation} from '@angular/common/testing';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -18,16 +11,24 @@ import {
   ViewChild,
   ViewContainerRef
 } from '@angular/core';
+import {
+  ComponentFixture,
+  fakeAsync,
+  flush,
+  flushMicrotasks,
+  inject,
+  TestBed,
+  tick,
+} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {Location} from '@angular/common';
-import {SpyLocation} from '@angular/common/testing';
-import {Directionality} from '@angular/cdk/bidi';
+import {Directionality} from '@cdk/bidi';
+import {A, ESCAPE} from '@cdk/keycodes';
+import {OverlayContainer} from '@cdk/overlay';
+import {dispatchKeyboardEvent} from '@cdk/testing';
+
 import {CdkDialogContainer} from './dialog-container';
-import {OverlayContainer} from '@angular/cdk/overlay';
-import {A, ESCAPE} from '@angular/cdk/keycodes';
-import {dispatchKeyboardEvent} from '@angular/cdk/testing';
-import {DIALOG_DATA, Dialog, DialogModule, DialogRef} from './index';
+import {Dialog, DIALOG_DATA, DialogModule, DialogRef} from './index';
 
 describe('Dialog', () => {
   let dialog: Dialog;

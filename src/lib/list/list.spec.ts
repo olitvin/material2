@@ -1,8 +1,9 @@
-import {async, TestBed, fakeAsync, tick} from '@angular/core/testing';
 import {Component, QueryList, ViewChildren} from '@angular/core';
-import {defaultRippleAnimationConfig} from '@angular/material/core';
-import {dispatchMouseEvent} from '@angular/cdk/testing';
+import {async, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
+import {dispatchMouseEvent} from '@cdk/testing';
+import {defaultRippleAnimationConfig} from '@material/core';
+
 import {MatListItem, MatListModule} from './index';
 
 describe('MatList', () => {

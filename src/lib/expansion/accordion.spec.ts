@@ -1,16 +1,17 @@
-import {async, TestBed, inject} from '@angular/core/testing';
-import {Component, ViewChild, QueryList, ViewChildren} from '@angular/core';
+import {Component, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {async, inject, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FocusMonitor} from '@cdk/a11y';
+import {DOWN_ARROW, END, HOME, UP_ARROW} from '@cdk/keycodes';
+import {dispatchKeyboardEvent} from '@cdk/testing';
+
 import {
-  MatExpansionModule,
   MatAccordion,
+  MatExpansionModule,
   MatExpansionPanel,
   MatExpansionPanelHeader,
 } from './index';
-import {dispatchKeyboardEvent} from '@angular/cdk/testing';
-import {DOWN_ARROW, UP_ARROW, HOME, END} from '@angular/cdk/keycodes';
-import {FocusMonitor} from '@angular/cdk/a11y';
 
 
 describe('MatAccordion', () => {

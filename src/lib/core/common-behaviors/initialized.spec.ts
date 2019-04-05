@@ -1,5 +1,6 @@
+import {HasInitialized} from '@material/core';
+
 import {mixinInitialized} from './initialized';
-import {HasInitialized} from '@angular/material/core';
 
 describe('MixinHasInitialized', () => {
   class EmptyClass { }

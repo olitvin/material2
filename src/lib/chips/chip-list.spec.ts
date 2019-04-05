@@ -1,25 +1,4 @@
 import {animate, style, transition, trigger} from '@angular/animations';
-import {FocusKeyManager} from '@angular/cdk/a11y';
-import {Directionality, Direction} from '@angular/cdk/bidi';
-import {
-  BACKSPACE,
-  DELETE,
-  ENTER,
-  LEFT_ARROW,
-  RIGHT_ARROW,
-  SPACE,
-  TAB,
-  HOME,
-  END,
-} from '@angular/cdk/keycodes';
-import {
-  createKeyboardEvent,
-  dispatchFakeEvent,
-  dispatchKeyboardEvent,
-  dispatchMouseEvent,
-  typeInElement,
-  MockNgZone,
-} from '@angular/cdk/testing';
 import {
   Component,
   DebugElement,
@@ -32,11 +11,34 @@ import {
 } from '@angular/core';
 import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import {FormControl, FormsModule, NgForm, ReactiveFormsModule, Validators} from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import {By} from '@angular/platform-browser';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {FocusKeyManager} from '@cdk/a11y';
+import {Direction, Directionality} from '@cdk/bidi';
+import {
+  BACKSPACE,
+  DELETE,
+  END,
+  ENTER,
+  HOME,
+  LEFT_ARROW,
+  RIGHT_ARROW,
+  SPACE,
+  TAB,
+} from '@cdk/keycodes';
+import {
+  createKeyboardEvent,
+  dispatchFakeEvent,
+  dispatchKeyboardEvent,
+  dispatchMouseEvent,
+  MockNgZone,
+  typeInElement,
+} from '@cdk/testing';
+import {MatFormFieldModule} from '@material/form-field';
 import {Subject} from 'rxjs';
+
 import {MatInputModule} from '../input/index';
+
 import {MatChip} from './chip';
 import {MatChipInputEvent} from './chip-input';
 import {MatChipEvent, MatChipList, MatChipRemove, MatChipsModule} from './index';

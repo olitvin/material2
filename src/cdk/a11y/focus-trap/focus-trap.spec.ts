@@ -1,7 +1,8 @@
-import {Platform} from '@angular/cdk/platform';
 import {Component, PLATFORM_ID, ViewChild} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {A11yModule, FocusTrap, CdkTrapFocus} from '../index';
+import {Platform} from '@cdk/platform';
+
+import {A11yModule, CdkTrapFocus, FocusTrap} from '../index';
 
 
 describe('FocusTrap', () => {

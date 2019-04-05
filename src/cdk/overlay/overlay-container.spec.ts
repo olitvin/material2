@@ -1,6 +1,7 @@
-import {async, inject, TestBed} from '@angular/core/testing';
 import {Component, NgModule, ViewChild, ViewContainerRef} from '@angular/core';
-import {PortalModule, CdkPortal} from '@angular/cdk/portal';
+import {async, inject, TestBed} from '@angular/core/testing';
+import {CdkPortal, PortalModule} from '@cdk/portal';
+
 import {Overlay, OverlayContainer, OverlayModule} from './index';
 
 describe('OverlayContainer', () => {

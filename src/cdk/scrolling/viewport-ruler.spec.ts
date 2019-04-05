@@ -1,8 +1,9 @@
-import {TestBed, inject, fakeAsync, tick} from '@angular/core/testing';
+import {NgZone} from '@angular/core';
+import {fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
+import {dispatchFakeEvent} from '@cdk/testing';
+
 import {ScrollingModule} from './public-api';
 import {ViewportRuler} from './viewport-ruler';
-import {dispatchFakeEvent} from '@angular/cdk/testing';
-import {NgZone} from '@angular/core';
 
 // For all tests, we assume the browser window is 1024x786 (outerWidth x outerHeight).
 // The karma config has been set to this for local tests, and it is the default size

@@ -1,14 +1,16 @@
-import {TAB} from '@angular/cdk/keycodes';
+import {Component, NgZone} from '@angular/core';
+import {ComponentFixture, fakeAsync, flush, inject, TestBed, tick} from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
+import {TAB} from '@cdk/keycodes';
 import {
   dispatchFakeEvent,
   dispatchKeyboardEvent,
   dispatchMouseEvent,
   patchElementFocus,
-} from '@angular/cdk/testing';
-import {Component, NgZone} from '@angular/core';
-import {ComponentFixture, fakeAsync, flush, inject, TestBed, tick} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
+} from '@cdk/testing';
+
 import {A11yModule} from '../index';
+
 import {FocusMonitor, FocusOrigin, TOUCH_BUFFER_MS} from './focus-monitor';
 
 

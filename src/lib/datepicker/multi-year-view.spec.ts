@@ -1,4 +1,7 @@
-import {Direction, Directionality} from '@angular/cdk/bidi';
+import {Component, ViewChild} from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
+import {Direction, Directionality} from '@cdk/bidi';
 import {
   DOWN_ARROW,
   END,
@@ -8,13 +11,11 @@ import {
   PAGE_UP,
   RIGHT_ARROW,
   UP_ARROW,
-} from '@angular/cdk/keycodes';
-import {dispatchFakeEvent, dispatchKeyboardEvent} from '@angular/cdk/testing';
-import {Component, ViewChild} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {MatNativeDateModule} from '@angular/material/core';
-import {JAN} from '@angular/material/testing';
-import {By} from '@angular/platform-browser';
+} from '@cdk/keycodes';
+import {dispatchFakeEvent, dispatchKeyboardEvent} from '@cdk/testing';
+import {MatNativeDateModule} from '@material/core';
+import {JAN} from '@material/testing';
+
 import {MatCalendarBody} from './calendar-body';
 import {MatMultiYearView, yearsPerPage, yearsPerRow} from './multi-year-view';
 

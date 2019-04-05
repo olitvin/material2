@@ -7,7 +7,7 @@ import {
   MatInputModule,
   MatRadioModule,
   MatSelectModule,
-} from '@angular/material';
+} from '@material';
 
 import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 

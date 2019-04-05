@@ -1,12 +1,5 @@
-import {
-  ComponentFixture,
-  fakeAsync,
-  flushMicrotasks,
-  inject,
-  TestBed,
-  tick,
-  flush,
-} from '@angular/core/testing';
+import {Location} from '@angular/common';
+import {SpyLocation} from '@angular/common/testing';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -18,24 +11,32 @@ import {
   ViewChild,
   ViewContainerRef
 } from '@angular/core';
+import {
+  ComponentFixture,
+  fakeAsync,
+  flush,
+  flushMicrotasks,
+  inject,
+  TestBed,
+  tick,
+} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {Location} from '@angular/common';
-import {SpyLocation} from '@angular/common/testing';
-import {Directionality} from '@angular/cdk/bidi';
+import {Directionality} from '@cdk/bidi';
+import {A, ESCAPE} from '@cdk/keycodes';
+import {Overlay, OverlayContainer, ScrollStrategy} from '@cdk/overlay';
+import {ScrollDispatcher} from '@cdk/scrolling';
+import {dispatchKeyboardEvent} from '@cdk/testing';
+import {Subject} from 'rxjs';
+
 import {MatDialogContainer} from './dialog-container';
-import {OverlayContainer, ScrollStrategy, Overlay} from '@angular/cdk/overlay';
-import {ScrollDispatcher} from '@angular/cdk/scrolling';
-import {A, ESCAPE} from '@angular/cdk/keycodes';
-import {dispatchKeyboardEvent} from '@angular/cdk/testing';
 import {
   MAT_DIALOG_DATA,
+  MAT_DIALOG_DEFAULT_OPTIONS,
   MatDialog,
   MatDialogModule,
-  MatDialogRef,
-  MAT_DIALOG_DEFAULT_OPTIONS
+  MatDialogRef
 } from './index';
-import {Subject} from 'rxjs';
 
 
 describe('MatDialog', () => {

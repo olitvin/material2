@@ -1,11 +1,12 @@
-import {inject, async, fakeAsync, tick, TestBed} from '@angular/core/testing';
-import {SafeResourceUrl, DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {Component} from '@angular/core';
-import {MatIconModule, MAT_ICON_LOCATION} from './index';
-import {MatIconRegistry, getMatIconNoHttpProviderError} from './icon-registry';
+import {async, fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
+import {DomSanitizer, SafeHtml, SafeResourceUrl} from '@angular/platform-browser';
+import {wrappedErrorMessage} from '@cdk/testing';
+
 import {FAKE_SVGS} from './fake-svgs';
-import {wrappedErrorMessage} from '@angular/cdk/testing';
+import {getMatIconNoHttpProviderError, MatIconRegistry} from './icon-registry';
+import {MAT_ICON_LOCATION, MatIconModule} from './index';
 
 
 /** Returns the CSS classes assigned to an element as a sorted array. */

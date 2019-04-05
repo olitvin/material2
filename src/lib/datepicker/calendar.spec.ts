@@ -1,16 +1,17 @@
-import {Directionality} from '@angular/cdk/bidi';
-import {ENTER, RIGHT_ARROW, SPACE} from '@angular/cdk/keycodes';
+import {Component, NgZone} from '@angular/core';
+import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
+import {Directionality} from '@cdk/bidi';
+import {ENTER, RIGHT_ARROW, SPACE} from '@cdk/keycodes';
 import {
   dispatchFakeEvent,
   dispatchKeyboardEvent,
   dispatchMouseEvent,
   MockNgZone,
-} from '@angular/cdk/testing';
-import {Component, NgZone} from '@angular/core';
-import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
-import {DateAdapter, MatNativeDateModule} from '@angular/material/core';
-import {DEC, FEB, JAN, JUL, NOV} from '@angular/material/testing';
-import {By} from '@angular/platform-browser';
+} from '@cdk/testing';
+import {DateAdapter, MatNativeDateModule} from '@material/core';
+import {DEC, FEB, JAN, JUL, NOV} from '@material/testing';
+
 import {MatCalendar} from './calendar';
 import {MatDatepickerIntl} from './datepicker-intl';
 import {MatDatepickerModule} from './datepicker-module';

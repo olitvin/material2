@@ -1,16 +1,17 @@
-import {QueryList, ViewChildren, Component} from '@angular/core';
-import {fakeAsync, TestBed, ComponentFixture, inject} from '@angular/core/testing';
+import {Component, QueryList, ViewChildren} from '@angular/core';
+import {ComponentFixture, fakeAsync, inject, TestBed} from '@angular/core/testing';
 import {
   createMouseEvent,
-  dispatchMouseEvent,
   createTouchEvent,
-  dispatchTouchEvent,
   dispatchFakeEvent,
-} from '@angular/cdk/testing';
-import {DragDropRegistry} from './drag-drop-registry';
-import {DragDropModule} from './drag-drop-module';
+  dispatchMouseEvent,
+  dispatchTouchEvent,
+} from '@cdk/testing';
+
 import {CdkDrag} from './directives/drag';
 import {CdkDropList} from './directives/drop-list';
+import {DragDropModule} from './drag-drop-module';
+import {DragDropRegistry} from './drag-drop-registry';
 
 describe('DragDropRegistry', () => {
   let fixture: ComponentFixture<SimpleDropZone>;

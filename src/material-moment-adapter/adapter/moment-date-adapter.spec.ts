@@ -8,12 +8,12 @@
 
 import {LOCALE_ID} from '@angular/core';
 import {async, inject, TestBed} from '@angular/core/testing';
-import {DateAdapter, MAT_DATE_LOCALE} from '@angular/material/core';
-import {DEC, FEB, JAN, MAR} from '@angular/material/testing';
+import {DateAdapter, MAT_DATE_LOCALE} from '@material/core';
+import {DEC, FEB, JAN, MAR} from '@material/testing';
+import * as moment from 'moment';
+
 import {MomentDateModule} from './index';
 import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter} from './moment-date-adapter';
-
-import * as moment from 'moment';
 
 describe('MomentDateAdapter', () => {
   let adapter: MomentDateAdapter;

@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   NgZone,
@@ -9,27 +10,28 @@ import {
   ViewChild,
   ViewChildren,
   ViewEncapsulation,
-  ChangeDetectionStrategy,
 } from '@angular/core';
-import {TestBed, ComponentFixture, fakeAsync, flush, tick} from '@angular/core/testing';
-import {DragDropModule} from '../drag-drop-module';
+import {ComponentFixture, fakeAsync, flush, TestBed, tick} from '@angular/core/testing';
+import {Directionality} from '@cdk/bidi';
 import {
   createMouseEvent,
+  createTouchEvent,
   dispatchEvent,
   dispatchMouseEvent,
   dispatchTouchEvent,
-  createTouchEvent,
-} from '@angular/cdk/testing';
-import {Directionality} from '@angular/cdk/bidi';
+} from '@cdk/testing';
 import {of as observableOf} from 'rxjs';
-import {CdkDrag, CDK_DRAG_CONFIG} from './drag';
+
+import {DragDropModule} from '../drag-drop-module';
 import {CdkDragDrop} from '../drag-events';
-import {moveItemInArray} from '../drag-utils';
-import {CdkDropList} from './drop-list';
-import {CdkDragHandle} from './drag-handle';
-import {CdkDropListGroup} from './drop-list-group';
-import {extendStyles} from '../drag-styling';
 import {DragRefConfig} from '../drag-ref';
+import {extendStyles} from '../drag-styling';
+import {moveItemInArray} from '../drag-utils';
+
+import {CDK_DRAG_CONFIG, CdkDrag} from './drag';
+import {CdkDragHandle} from './drag-handle';
+import {CdkDropList} from './drop-list';
+import {CdkDropListGroup} from './drop-list-group';
 
 const ITEM_HEIGHT = 25;
 const ITEM_WIDTH = 75;

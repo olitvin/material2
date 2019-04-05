@@ -1,6 +1,7 @@
 import {SchematicTestRunner} from '@angular-devkit/schematics/testing';
+import {createTestApp, getFileContent} from '@cdk/schematics/testing';
+
 import {Schema} from './schema';
-import {createTestApp, getFileContent} from '@angular/cdk/schematics/testing';
 
 describe('material-nav-schematic', () => {
   let runner: SchematicTestRunner;
@@ -39,10 +40,11 @@ describe('material-nav-schematic', () => {
     expect(moduleContent).toContain('MatIconModule');
     expect(moduleContent).toContain('MatListModule');
 
-    expect(moduleContent).toContain(`import { LayoutModule } from '@angular/cdk/layout';`);
-    expect(moduleContent).toContain(
-      `import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, ` +
-      `MatListModule } from '@angular/material';`);
+    expect(moduleContent).toContain(`import { LayoutModule } from '@cdk/layout';`);
+    expect(moduleContent)
+        .toContain(
+            `import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, ` +
+            `MatListModule } from '@material';`);
   });
 
   it('should throw if no name has been specified', () => {

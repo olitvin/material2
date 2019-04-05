@@ -1,14 +1,15 @@
-import {inject, TestBed, fakeAsync} from '@angular/core/testing';
-import {NgModule, Component, NgZone} from '@angular/core';
+import {Component, NgModule, NgZone} from '@angular/core';
+import {fakeAsync, inject, TestBed} from '@angular/core/testing';
+import {ComponentPortal, PortalModule} from '@cdk/portal';
+import {ScrollDispatcher, ViewportRuler} from '@cdk/scrolling';
 import {Subject} from 'rxjs';
-import {ComponentPortal, PortalModule} from '@angular/cdk/portal';
-import {ScrollDispatcher, ViewportRuler} from '@angular/cdk/scrolling';
+
 import {
   Overlay,
   OverlayConfig,
-  OverlayRef,
-  OverlayModule,
   OverlayContainer,
+  OverlayModule,
+  OverlayRef,
 } from '../index';
 
 

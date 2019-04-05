@@ -1,5 +1,4 @@
-import {DataSource} from '@angular/cdk/collections';
-import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {
   async,
   ComponentFixture,
@@ -9,9 +8,12 @@ import {
   tick,
 } from '@angular/core/testing';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {DataSource} from '@cdk/collections';
 import {BehaviorSubject, Observable} from 'rxjs';
+
 import {MatPaginator, MatPaginatorModule} from '../paginator/index';
 import {MatSort, MatSortHeader, MatSortModule} from '../sort/index';
+
 import {MatTableModule} from './index';
 import {MatTable} from './table';
 import {MatTableDataSource} from './table-data-source';

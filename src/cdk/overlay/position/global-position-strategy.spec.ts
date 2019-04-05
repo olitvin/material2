@@ -1,8 +1,9 @@
-import {NgModule, NgZone, Component} from '@angular/core';
-import {TestBed, inject} from '@angular/core/testing';
-import {MockNgZone} from '@angular/cdk/testing';
-import {PortalModule, ComponentPortal} from '@angular/cdk/portal';
-import {OverlayModule, Overlay, OverlayConfig, OverlayRef, OverlayContainer} from '../index';
+import {Component, NgModule, NgZone} from '@angular/core';
+import {inject, TestBed} from '@angular/core/testing';
+import {ComponentPortal, PortalModule} from '@cdk/portal';
+import {MockNgZone} from '@cdk/testing';
+
+import {Overlay, OverlayConfig, OverlayContainer, OverlayModule, OverlayRef} from '../index';
 
 
 describe('GlobalPositonStrategy', () => {

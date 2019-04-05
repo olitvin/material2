@@ -1,17 +1,18 @@
-import {Directionality} from '@angular/cdk/bidi';
-import {ENTER, COMMA} from '@angular/cdk/keycodes';
-import {PlatformModule} from '@angular/cdk/platform';
-import {createKeyboardEvent} from '@angular/cdk/testing';
 import {Component, DebugElement, ViewChild} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {Directionality} from '@cdk/bidi';
+import {COMMA, ENTER} from '@cdk/keycodes';
+import {PlatformModule} from '@cdk/platform';
+import {createKeyboardEvent} from '@cdk/testing';
+import {MatFormFieldModule} from '@material/form-field';
 import {Subject} from 'rxjs';
-import {MatChipInput, MatChipInputEvent} from './chip-input';
-import {MatChipsModule} from './index';
+
 import {MAT_CHIPS_DEFAULT_OPTIONS, MatChipsDefaultOptions} from './chip-default-options';
+import {MatChipInput, MatChipInputEvent} from './chip-input';
 import {MatChipList} from './chip-list';
+import {MatChipsModule} from './index';
 
 
 describe('MatChipInput', () => {

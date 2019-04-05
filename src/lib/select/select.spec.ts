@@ -1,26 +1,3 @@
-import {Directionality} from '@angular/cdk/bidi';
-import {
-  DOWN_ARROW,
-  END,
-  ENTER,
-  HOME,
-  LEFT_ARROW,
-  RIGHT_ARROW,
-  SPACE,
-  TAB,
-  UP_ARROW,
-  A,
-} from '@angular/cdk/keycodes';
-import {OverlayContainer} from '@angular/cdk/overlay';
-import {Platform} from '@angular/cdk/platform';
-import {ScrollDispatcher, ViewportRuler} from '@angular/cdk/scrolling';
-import {
-  createKeyboardEvent,
-  dispatchEvent,
-  dispatchFakeEvent,
-  dispatchKeyboardEvent,
-  wrappedErrorMessage,
-} from '@angular/cdk/testing';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -49,19 +26,43 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import {By} from '@angular/platform-browser';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {LiveAnnouncer} from '@cdk/a11y';
+import {Directionality} from '@cdk/bidi';
+import {
+  A,
+  DOWN_ARROW,
+  END,
+  ENTER,
+  HOME,
+  LEFT_ARROW,
+  RIGHT_ARROW,
+  SPACE,
+  TAB,
+  UP_ARROW,
+} from '@cdk/keycodes';
+import {OverlayContainer} from '@cdk/overlay';
+import {Platform} from '@cdk/platform';
+import {ScrollDispatcher, ViewportRuler} from '@cdk/scrolling';
+import {
+  createKeyboardEvent,
+  dispatchEvent,
+  dispatchFakeEvent,
+  dispatchKeyboardEvent,
+  wrappedErrorMessage,
+} from '@cdk/testing';
 import {
   ErrorStateMatcher,
   FloatLabelType,
   MAT_LABEL_GLOBAL_OPTIONS,
   MatOption,
   MatOptionSelectionChange,
-} from '@angular/material/core';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {By} from '@angular/platform-browser';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {Subject, Subscription, EMPTY, Observable} from 'rxjs';
+} from '@material/core';
+import {MatFormFieldModule} from '@material/form-field';
+import {EMPTY, Observable, Subject, Subscription} from 'rxjs';
 import {map} from 'rxjs/operators';
+
 import {MatSelectModule} from './index';
 import {MatSelect} from './select';
 import {

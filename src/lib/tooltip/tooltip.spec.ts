@@ -1,3 +1,12 @@
+import {AnimationEvent} from '@angular/animations';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DebugElement,
+  ElementRef,
+  NgZone,
+  ViewChild,
+} from '@angular/core';
 import {
   async,
   ComponentFixture,
@@ -8,34 +17,26 @@ import {
   TestBed,
   tick
 } from '@angular/core/testing';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  DebugElement,
-  ElementRef,
-  ViewChild,
-  NgZone,
-} from '@angular/core';
-import {AnimationEvent} from '@angular/animations';
 import {By} from '@angular/platform-browser';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {OverlayContainer, OverlayModule, CdkScrollable} from '@angular/cdk/overlay';
-import {Platform} from '@angular/cdk/platform';
+import {FocusMonitor} from '@cdk/a11y';
+import {Direction, Directionality} from '@cdk/bidi';
+import {ESCAPE} from '@cdk/keycodes';
+import {CdkScrollable, OverlayContainer, OverlayModule} from '@cdk/overlay';
+import {Platform} from '@cdk/platform';
 import {
   dispatchFakeEvent,
   dispatchKeyboardEvent,
-  patchElementFocus,
   dispatchMouseEvent,
-} from '@angular/cdk/testing';
-import {ESCAPE} from '@angular/cdk/keycodes';
-import {FocusMonitor} from '@angular/cdk/a11y';
+  patchElementFocus,
+} from '@cdk/testing';
+
 import {
+  MAT_TOOLTIP_DEFAULT_OPTIONS,
   MatTooltip,
   MatTooltipModule,
   SCROLL_THROTTLE_MS,
   TOOLTIP_PANEL_CLASS,
-  MAT_TOOLTIP_DEFAULT_OPTIONS,
 } from './index';
 
 

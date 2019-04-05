@@ -1,32 +1,33 @@
+import {CommonModule} from '@angular/common';
 import {
-  inject,
-  ComponentFixture,
-  TestBed,
-  fakeAsync,
-  tick,
-  flush,
-} from '@angular/core/testing';
-import {
-  NgModule,
   Component,
   Directive,
+  Inject,
+  NgModule,
+  TemplateRef,
   ViewChild,
   ViewContainerRef,
-  Inject,
-  TemplateRef,
 } from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {OverlayContainer} from '@angular/cdk/overlay';
-import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {
-  MatSnackBarModule,
-  MatSnackBar,
-  MatSnackBarConfig,
-  MatSnackBarRef,
-  SimpleSnackBar,
+  ComponentFixture,
+  fakeAsync,
+  flush,
+  inject,
+  TestBed,
+  tick,
+} from '@angular/core/testing';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {LiveAnnouncer} from '@cdk/a11y';
+import {OverlayContainer} from '@cdk/overlay';
+
+import {
   MAT_SNACK_BAR_DATA,
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
+  MatSnackBar,
+  MatSnackBarConfig,
+  MatSnackBarModule,
+  MatSnackBarRef,
+  SimpleSnackBar,
 } from './index';
 
 describe('MatSnackBar', () => {

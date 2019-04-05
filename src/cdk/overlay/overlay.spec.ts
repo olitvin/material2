@@ -1,30 +1,26 @@
-import {async, fakeAsync, tick, ComponentFixture, inject, TestBed} from '@angular/core/testing';
-import {
-  Component,
-  NgModule,
-  ViewChild,
-  ViewContainerRef,
-  ErrorHandler,
-  Injectable,
-  EventEmitter,
-  NgZone,
-} from '@angular/core';
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {dispatchFakeEvent, MockNgZone} from '@angular/cdk/testing';
-import {
-  ComponentPortal,
-  PortalModule,
-  TemplatePortal,
-  CdkPortal
-} from '@angular/cdk/portal';
 import {Location} from '@angular/common';
 import {SpyLocation} from '@angular/common/testing';
 import {
+  Component,
+  ErrorHandler,
+  EventEmitter,
+  Injectable,
+  NgModule,
+  NgZone,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
+import {async, ComponentFixture, fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
+import {Direction, Directionality} from '@cdk/bidi';
+import {CdkPortal, ComponentPortal, PortalModule, TemplatePortal} from '@cdk/portal';
+import {dispatchFakeEvent, MockNgZone} from '@cdk/testing';
+
+import {
   Overlay,
+  OverlayConfig,
   OverlayContainer,
   OverlayModule,
   OverlayRef,
-  OverlayConfig,
   PositionStrategy,
   ScrollStrategy,
 } from './index';

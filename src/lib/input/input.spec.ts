@@ -1,18 +1,11 @@
-import {Platform, PlatformModule} from '@angular/cdk/platform';
-import {
-  createFakeEvent,
-  dispatchFakeEvent,
-  wrappedErrorMessage,
-  MockNgZone,
-} from '@angular/cdk/testing';
 import {
   ChangeDetectionStrategy,
   Component,
-  ViewChild,
-  Type,
-  Provider,
-  NgZone,
   Directive,
+  NgZone,
+  Provider,
+  Type,
+  ViewChild,
 } from '@angular/core';
 import {ComponentFixture, fakeAsync, flush, TestBed} from '@angular/core/testing';
 import {
@@ -24,12 +17,22 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import {By} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {Direction, Directionality} from '@cdk/bidi';
+import {Platform, PlatformModule} from '@cdk/platform';
+import {
+  createFakeEvent,
+  dispatchFakeEvent,
+  MockNgZone,
+  wrappedErrorMessage,
+} from '@cdk/testing';
 import {
   ErrorStateMatcher,
   FloatLabelType,
   MAT_LABEL_GLOBAL_OPTIONS,
   ShowOnDirtyErrorStateMatcher,
-} from '@angular/material/core';
+} from '@material/core';
 import {
   getMatFormFieldDuplicatedHintError,
   getMatFormFieldMissingControlError,
@@ -38,15 +41,13 @@ import {
   MatFormField,
   MatFormFieldAppearance,
   MatFormFieldModule,
-} from '@angular/material/form-field';
-import {By} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatTabsModule} from '@angular/material/tabs';
-import {Directionality, Direction} from '@angular/cdk/bidi';
+} from '@material/form-field';
+import {MatStepperModule} from '@material/stepper';
+import {MatTabsModule} from '@material/tabs';
 import {Subject} from 'rxjs';
-import {MatInputModule, MatInput, MAT_INPUT_VALUE_ACCESSOR} from './index';
+
 import {MatTextareaAutosize} from './autosize';
+import {MAT_INPUT_VALUE_ACCESSOR, MatInput, MatInputModule} from './index';
 
 describe('MatInput without forms', () => {
   it('should default to floating labels', fakeAsync(() => {

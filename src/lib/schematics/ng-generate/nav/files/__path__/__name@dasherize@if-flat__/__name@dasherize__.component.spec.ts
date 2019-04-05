@@ -1,13 +1,13 @@
-import { LayoutModule } from '@angular/cdk/layout';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {LayoutModule} from '@cdk/layout';
 import {
   MatButtonModule,
   MatIconModule,
   MatListModule,
   MatSidenavModule,
   MatToolbarModule,
-} from '@angular/material';
+} from '@material';
 
 import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 

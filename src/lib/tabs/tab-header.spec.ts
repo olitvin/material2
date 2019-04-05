@@ -1,13 +1,3 @@
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {END, ENTER, HOME, LEFT_ARROW, RIGHT_ARROW, SPACE} from '@angular/cdk/keycodes';
-import {PortalModule} from '@angular/cdk/portal';
-import {ScrollingModule, ViewportRuler} from '@angular/cdk/scrolling';
-import {
-  dispatchFakeEvent,
-  dispatchKeyboardEvent,
-  createKeyboardEvent,
-  dispatchEvent,
-} from '@angular/cdk/testing';
 import {CommonModule} from '@angular/common';
 import {Component, ViewChild} from '@angular/core';
 import {
@@ -18,13 +8,24 @@ import {
   TestBed,
   tick,
 } from '@angular/core/testing';
-import {MatRippleModule} from '@angular/material/core';
 import {By} from '@angular/platform-browser';
+import {Direction, Directionality} from '@cdk/bidi';
+import {END, ENTER, HOME, LEFT_ARROW, RIGHT_ARROW, SPACE} from '@cdk/keycodes';
+import {MutationObserverFactory, ObserversModule} from '@cdk/observers';
+import {PortalModule} from '@cdk/portal';
+import {ScrollingModule, ViewportRuler} from '@cdk/scrolling';
+import {
+  createKeyboardEvent,
+  dispatchEvent,
+  dispatchFakeEvent,
+  dispatchKeyboardEvent,
+} from '@cdk/testing';
+import {MatRippleModule} from '@material/core';
+import {Subject} from 'rxjs';
+
 import {MatInkBar} from './ink-bar';
 import {MatTabHeader} from './tab-header';
 import {MatTabLabelWrapper} from './tab-label-wrapper';
-import {Subject} from 'rxjs';
-import {ObserversModule, MutationObserverFactory} from '@angular/cdk/observers';
 
 
 describe('MatTabHeader', () => {

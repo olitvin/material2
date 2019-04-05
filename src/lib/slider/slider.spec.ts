@@ -1,4 +1,8 @@
-import {BidiModule} from '@angular/cdk/bidi';
+import {Component, DebugElement, Type, ViewChild} from '@angular/core';
+import {ComponentFixture, fakeAsync, flush, TestBed} from '@angular/core/testing';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {By, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
+import {BidiModule} from '@cdk/bidi';
 import {
   BACKSPACE,
   DOWN_ARROW,
@@ -9,20 +13,17 @@ import {
   PAGE_UP,
   RIGHT_ARROW,
   UP_ARROW,
-} from '@angular/cdk/keycodes';
+} from '@cdk/keycodes';
 import {
+  createKeyboardEvent,
   createMouseEvent,
   dispatchEvent,
   dispatchFakeEvent,
   dispatchKeyboardEvent,
   dispatchMouseEvent,
-  createKeyboardEvent,
-} from '@angular/cdk/testing';
-import {Component, DebugElement, Type, ViewChild} from '@angular/core';
-import {ComponentFixture, fakeAsync, flush, TestBed} from '@angular/core/testing';
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {TestGestureConfig} from '@angular/material/testing';
-import {By, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
+} from '@cdk/testing';
+import {TestGestureConfig} from '@material/testing';
+
 import {MatSlider, MatSliderModule} from './index';
 
 describe('MatSlider', () => {

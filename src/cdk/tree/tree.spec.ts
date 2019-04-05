@@ -5,18 +5,17 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import {ComponentFixture, TestBed, fakeAsync, flush} from '@angular/core/testing';
-import {Component, ViewChild, TrackByFunction, Type, EventEmitter} from '@angular/core';
-
-import {CollectionViewer, DataSource} from '@angular/cdk/collections';
-import {Directionality, Direction} from '@angular/cdk/bidi';
-import {combineLatest, BehaviorSubject, Observable} from 'rxjs';
+import {Component, EventEmitter, TrackByFunction, Type, ViewChild} from '@angular/core';
+import {ComponentFixture, fakeAsync, flush, TestBed} from '@angular/core/testing';
+import {Direction, Directionality} from '@cdk/bidi';
+import {CollectionViewer, DataSource} from '@cdk/collections';
+import {BehaviorSubject, combineLatest, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 import {BaseTreeControl} from './control/base-tree-control';
-import {TreeControl} from './control/tree-control';
 import {FlatTreeControl} from './control/flat-tree-control';
 import {NestedTreeControl} from './control/nested-tree-control';
+import {TreeControl} from './control/tree-control';
 import {CdkTreeModule} from './index';
 import {CdkTree, CdkTreeNode} from './tree';
 import {getTreeControlFunctionsMissingError} from './tree-errors';

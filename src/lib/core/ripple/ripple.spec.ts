@@ -1,18 +1,23 @@
-import {TestBed, ComponentFixture, fakeAsync, tick, inject} from '@angular/core/testing';
 import {Component, ViewChild} from '@angular/core';
-import {Platform} from '@angular/cdk/platform';
+import {ComponentFixture, fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {Platform} from '@cdk/platform';
 import {
-  dispatchEvent,
+  createMouseEvent,
   createTouchEvent,
+  dispatchEvent,
   dispatchMouseEvent,
   dispatchTouchEvent,
-  createMouseEvent,
-} from '@angular/cdk/testing';
-import {defaultRippleAnimationConfig, RippleAnimationConfig} from './ripple-renderer';
+} from '@cdk/testing';
+
 import {
-  MatRipple, MatRippleModule, MAT_RIPPLE_GLOBAL_OPTIONS, RippleState, RippleGlobalOptions
+  MAT_RIPPLE_GLOBAL_OPTIONS,
+  MatRipple,
+  MatRippleModule,
+  RippleGlobalOptions,
+  RippleState
 } from './index';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {defaultRippleAnimationConfig, RippleAnimationConfig} from './ripple-renderer';
 
 /** Shorthands for the enter and exit duration of ripples. */
 const {enterDuration, exitDuration} = defaultRippleAnimationConfig;

@@ -1,4 +1,4 @@
-import {createKeyboardEvent} from '@angular/cdk/testing';
+import {createKeyboardEvent} from '@cdk/testing';
 import {hasModifierKey} from './modifiers';
 
 describe('keyboard modifiers', () => {

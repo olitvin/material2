@@ -1,8 +1,5 @@
-import {Directionality} from '@angular/cdk/bidi';
-import {A, ESCAPE} from '@angular/cdk/keycodes';
-import {OverlayContainer} from '@angular/cdk/overlay';
-import {ViewportRuler} from '@angular/cdk/scrolling';
-import {dispatchKeyboardEvent} from '@angular/cdk/testing';
+import {Location} from '@angular/common';
+import {SpyLocation} from '@angular/common/testing';
 import {
   Component,
   Directive,
@@ -22,10 +19,14 @@ import {
   TestBed,
   tick,
 } from '@angular/core/testing';
-import {Location} from '@angular/common';
-import {SpyLocation} from '@angular/common/testing';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatBottomSheet, MAT_BOTTOM_SHEET_DEFAULT_OPTIONS} from './bottom-sheet';
+import {Directionality} from '@cdk/bidi';
+import {A, ESCAPE} from '@cdk/keycodes';
+import {OverlayContainer} from '@cdk/overlay';
+import {ViewportRuler} from '@cdk/scrolling';
+import {dispatchKeyboardEvent} from '@cdk/testing';
+
+import {MAT_BOTTOM_SHEET_DEFAULT_OPTIONS, MatBottomSheet} from './bottom-sheet';
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetConfig} from './bottom-sheet-config';
 import {MatBottomSheetModule} from './bottom-sheet-module';
 import {MatBottomSheetRef} from './bottom-sheet-ref';

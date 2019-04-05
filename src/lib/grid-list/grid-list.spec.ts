@@ -1,9 +1,10 @@
-import {TestBed, ComponentFixture} from '@angular/core/testing';
 import {Component, DebugElement, Type, ViewChild} from '@angular/core';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
-import {MatGridList, MatGridListModule} from './index';
+import {Directionality} from '@cdk/bidi';
+
 import {MatGridTile, MatGridTileText} from './grid-tile';
-import {Directionality} from '@angular/cdk/bidi';
+import {MatGridList, MatGridListModule} from './index';
 
 
 describe('MatGridList', () => {

@@ -5,10 +5,11 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+import {async, inject, TestBed} from '@angular/core/testing';
+import {Platform} from '@cdk/platform';
+
 import {LayoutModule} from './index';
 import {MediaMatcher} from './media-matcher';
-import {async, TestBed, inject} from '@angular/core/testing';
-import {Platform} from '@angular/cdk/platform';
 
 describe('MediaMatcher', () => {
   let mediaMatcher: MediaMatcher;

@@ -1,21 +1,23 @@
-import {CollectionViewer, DataSource} from '@angular/cdk/collections';
 import {
   AfterContentInit,
+  AfterViewInit,
   Component,
   ContentChild,
   ContentChildren,
   Input,
   QueryList,
   Type,
-  ViewChild,
-  AfterViewInit
+  ViewChild
 } from '@angular/core';
 import {ComponentFixture, fakeAsync, flush, TestBed} from '@angular/core/testing';
+import {BidiModule} from '@cdk/bidi';
+import {CollectionViewer, DataSource} from '@cdk/collections';
 import {BehaviorSubject, combineLatest, Observable, of as observableOf} from 'rxjs';
 import {map} from 'rxjs/operators';
+
 import {CdkColumnDef} from './cell';
 import {CdkTableModule} from './index';
-import {CdkHeaderRowDef, CdkRowDef, CdkCellOutlet} from './row';
+import {CdkCellOutlet, CdkHeaderRowDef, CdkRowDef} from './row';
 import {CdkTable} from './table';
 import {
   getTableDuplicateColumnNameError,
@@ -25,7 +27,6 @@ import {
   getTableUnknownColumnError,
   getTableUnknownDataSourceError
 } from './table-errors';
-import {BidiModule} from '@angular/cdk/bidi';
 
 describe('CdkTable', () => {
   let fixture: ComponentFixture<any>;

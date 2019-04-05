@@ -1,17 +1,18 @@
+import {ChangeDetectionStrategy, Component, DebugElement, Type, ViewChild} from '@angular/core';
 import {
   ComponentFixture,
   fakeAsync,
-  TestBed,
   flush,
   flushMicrotasks,
+  TestBed,
 } from '@angular/core/testing';
 import {FormControl, FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
-import {Component, DebugElement, ViewChild, Type, ChangeDetectionStrategy} from '@angular/core';
 import {By} from '@angular/platform-browser';
-import {dispatchFakeEvent} from '@angular/cdk/testing';
-import {MatCheckbox, MatCheckboxChange, MatCheckboxModule} from './index';
+import {MutationObserverFactory} from '@cdk/observers';
+import {dispatchFakeEvent} from '@cdk/testing';
+
 import {MAT_CHECKBOX_CLICK_ACTION} from './checkbox-config';
-import {MutationObserverFactory} from '@angular/cdk/observers';
+import {MatCheckbox, MatCheckboxChange, MatCheckboxModule} from './index';
 
 
 describe('MatCheckbox', () => {

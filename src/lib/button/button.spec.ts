@@ -1,8 +1,9 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {Component, DebugElement} from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
-import {MatButtonModule, MatButton} from './index';
-import {MatRipple, ThemePalette} from '@angular/material/core';
+import {MatRipple, ThemePalette} from '@material/core';
+
+import {MatButton, MatButtonModule} from './index';
 
 
 describe('MatButton', () => {

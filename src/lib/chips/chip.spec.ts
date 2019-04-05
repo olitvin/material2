@@ -1,11 +1,12 @@
-import {Directionality} from '@angular/cdk/bidi';
-import {BACKSPACE, DELETE, SPACE} from '@angular/cdk/keycodes';
-import {createKeyboardEvent, dispatchFakeEvent} from '@angular/cdk/testing';
 import {Component, DebugElement} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions} from '@angular/material/core';
 import {By} from '@angular/platform-browser';
+import {Directionality} from '@cdk/bidi';
+import {BACKSPACE, DELETE, SPACE} from '@cdk/keycodes';
+import {createKeyboardEvent, dispatchFakeEvent} from '@cdk/testing';
+import {MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions} from '@material/core';
 import {Subject} from 'rxjs';
+
 import {MatChip, MatChipEvent, MatChipSelectionChange, MatChipsModule} from './index';
 
 

@@ -1,7 +1,8 @@
-import {inject, TestBed, async, fakeAsync, ComponentFixture, tick} from '@angular/core/testing';
-import {NgModule, Component, ViewChild, ElementRef} from '@angular/core';
+import {Component, ElementRef, NgModule, ViewChild} from '@angular/core';
+import {async, ComponentFixture, fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
+import {dispatchFakeEvent} from '@cdk/testing';
+
 import {CdkScrollable, ScrollDispatcher, ScrollingModule} from './public-api';
-import {dispatchFakeEvent} from '@angular/cdk/testing';
 
 describe('ScrollDispatcher', () => {
 

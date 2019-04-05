@@ -1,28 +1,24 @@
-import {DOWN_ARROW, SPACE, ENTER, UP_ARROW, HOME, END, A} from '@angular/cdk/keycodes';
 import {
-  createKeyboardEvent,
-  dispatchFakeEvent,
-  dispatchEvent,
-  dispatchKeyboardEvent,
-  dispatchMouseEvent,
-} from '@angular/cdk/testing';
-import {
+  ChangeDetectionStrategy,
   Component,
   DebugElement,
-  ChangeDetectionStrategy,
   QueryList,
   ViewChildren,
 } from '@angular/core';
-import {async, ComponentFixture, fakeAsync, TestBed, tick, flush} from '@angular/core/testing';
-import {MatRipple, defaultRippleAnimationConfig} from '@angular/material/core';
-import {By} from '@angular/platform-browser';
-import {
-  MatListModule,
-  MatListOption,
-  MatSelectionList,
-  MatSelectionListChange
-} from './index';
+import {async, ComponentFixture, fakeAsync, flush, TestBed, tick} from '@angular/core/testing';
 import {FormControl, FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
+import {By} from '@angular/platform-browser';
+import {A, DOWN_ARROW, END, ENTER, HOME, SPACE, UP_ARROW} from '@cdk/keycodes';
+import {
+  createKeyboardEvent,
+  dispatchEvent,
+  dispatchFakeEvent,
+  dispatchKeyboardEvent,
+  dispatchMouseEvent,
+} from '@cdk/testing';
+import {defaultRippleAnimationConfig, MatRipple} from '@material/core';
+
+import {MatListModule, MatListOption, MatSelectionList, MatSelectionListChange} from './index';
 
 describe('MatSelectionList without forms', () => {
   describe('with list option', () => {
