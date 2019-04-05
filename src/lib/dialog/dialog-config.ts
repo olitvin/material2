@@ -7,8 +7,8 @@
  */
 
 import {ViewContainerRef} from '@angular/core';
-import {Direction} from '@angular/cdk/bidi';
-import {ScrollStrategy} from '@angular/cdk/overlay';
+import {Direction} from '@cdk/bidi';
+import {ScrollStrategy} from '@cdk/overlay';
 
 /** Valid ARIA roles for a dialog element. */
 export type DialogRole = 'dialog' | 'alertdialog';

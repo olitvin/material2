@@ -30,7 +30,7 @@ A set of default media queries are available corresponding to breakpoints for di
 types.
 
 ```ts
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {BreakpointObserver, Breakpoints} from '@cdk/layout';
 
 @Component({...})
 class MyComponent {

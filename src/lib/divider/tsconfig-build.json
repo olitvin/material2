@@ -8,7 +8,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/material/divider",
+    "flatModuleId": "@material/divider",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

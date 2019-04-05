@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Portal} from '@angular/cdk/portal';
-import {Direction, Directionality} from '@angular/cdk/bidi';
+import {Direction, Directionality} from '@cdk/bidi';
+import {Portal} from '@cdk/portal';
 
 /**
  * Basic interface for an overlay. Used to avoid circular type references between

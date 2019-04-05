@@ -6,20 +6,21 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  Inject,
   Input,
   OnDestroy,
   OnInit,
   Optional,
   ViewEncapsulation,
-  Inject,
 } from '@angular/core';
-import {CanDisable, CanDisableCtor, mixinDisabled} from '@angular/material/core';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {CanDisable, CanDisableCtor, mixinDisabled} from '@material/core';
 import {merge, Subscription} from 'rxjs';
+
 import {MatSort, MatSortable} from './sort';
 import {matSortAnimations} from './sort-animations';
 import {SortDirection} from './sort-direction';

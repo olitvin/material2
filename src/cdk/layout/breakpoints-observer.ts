@@ -7,10 +7,11 @@
  */
 
 import {Injectable, NgZone, OnDestroy} from '@angular/core';
-import {MediaMatcher} from './media-matcher';
+import {coerceArray} from '@cdk/coercion';
 import {asapScheduler, combineLatest, fromEventPattern, Observable, Subject} from 'rxjs';
 import {debounceTime, map, startWith, takeUntil} from 'rxjs/operators';
-import {coerceArray} from '@angular/cdk/coercion';
+
+import {MediaMatcher} from './media-matcher';
 
 
 /** The current state of a layout breakpoint. */

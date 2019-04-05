@@ -6,8 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusMonitor, FocusableOption, FocusOrigin} from '@angular/cdk/a11y';
-import {ENTER, SPACE, hasModifierKey} from '@angular/cdk/keycodes';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -15,19 +13,22 @@ import {
   Directive,
   ElementRef,
   Host,
+  Inject,
   Input,
   OnDestroy,
-  ViewEncapsulation,
   Optional,
-  Inject,
+  ViewEncapsulation,
 } from '@angular/core';
-import {merge, Subscription, EMPTY} from 'rxjs';
+import {FocusableOption, FocusMonitor, FocusOrigin} from '@cdk/a11y';
+import {ENTER, hasModifierKey, SPACE} from '@cdk/keycodes';
+import {EMPTY, merge, Subscription} from 'rxjs';
 import {filter} from 'rxjs/operators';
+
 import {matExpansionAnimations} from './expansion-animations';
 import {
+  MAT_EXPANSION_PANEL_DEFAULT_OPTIONS,
   MatExpansionPanel,
   MatExpansionPanelDefaultOptions,
-  MAT_EXPANSION_PANEL_DEFAULT_OPTIONS,
 } from './expansion-panel';
 
 

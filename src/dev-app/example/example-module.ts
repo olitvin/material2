@@ -8,8 +8,8 @@
 
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {MatExpansionModule} from '@angular/material';
-import {ExampleModule as ExampleDataModule} from '@angular/material-examples';
+import {MatExpansionModule} from '@material';
+import {ExampleModule as ExampleDataModule} from '@material-examples';
 import {Example} from './example';
 
 

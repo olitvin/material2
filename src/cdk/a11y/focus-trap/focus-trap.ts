@@ -6,21 +6,22 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {DOCUMENT} from '@angular/common';
 import {
   AfterContentInit,
   Directive,
+  DoCheck,
   ElementRef,
   Inject,
   Injectable,
   Input,
+  isDevMode,
   NgZone,
   OnDestroy,
-  DoCheck,
-  isDevMode,
 } from '@angular/core';
+import {coerceBooleanProperty} from '@cdk/coercion';
 import {take} from 'rxjs/operators';
+
 import {InteractivityChecker} from '../interactivity-checker/interactivity-checker';
 
 

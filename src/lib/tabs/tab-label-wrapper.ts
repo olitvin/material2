@@ -7,7 +7,7 @@
  */
 
 import {Directive, ElementRef} from '@angular/core';
-import {CanDisable, CanDisableCtor, mixinDisabled} from '@angular/material/core';
+import {CanDisable, CanDisableCtor, mixinDisabled} from '@material/core';
 
 
 // Boilerplate for applying mixins to MatTabLabelWrapper.

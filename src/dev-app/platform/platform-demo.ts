@@ -7,7 +7,7 @@
  */
 
 import {Component} from '@angular/core';
-import {Platform, getSupportedInputTypes} from '@angular/cdk/platform';
+import {getSupportedInputTypes, Platform} from '@cdk/platform';
 
 
 @Component({

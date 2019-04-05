@@ -6,17 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {ESCAPE, UP_ARROW} from '@angular/cdk/keycodes';
-import {
-  Overlay,
-  OverlayConfig,
-  OverlayRef,
-  PositionStrategy,
-  ScrollStrategy,
-} from '@angular/cdk/overlay';
-import {ComponentPortal, ComponentType} from '@angular/cdk/portal';
 import {DOCUMENT} from '@angular/common';
 import {
   AfterViewInit,
@@ -37,14 +26,25 @@ import {
   ViewContainerRef,
   ViewEncapsulation,
 } from '@angular/core';
+import {Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {ESCAPE, UP_ARROW} from '@cdk/keycodes';
+import {
+  Overlay,
+  OverlayConfig,
+  OverlayRef,
+  PositionStrategy,
+  ScrollStrategy,
+} from '@cdk/overlay';
+import {ComponentPortal, ComponentType} from '@cdk/portal';
 import {
   CanColor,
   CanColorCtor,
   DateAdapter,
   mixinColor,
   ThemePalette,
-} from '@angular/material/core';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+} from '@material/core';
+import {MatDialog, MatDialogRef} from '@material/dialog';
 import {merge, Subject, Subscription} from 'rxjs';
 import {filter, take} from 'rxjs/operators';
 

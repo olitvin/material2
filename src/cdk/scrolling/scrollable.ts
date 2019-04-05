@@ -6,15 +6,12 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
-import {
-  getRtlScrollAxisType,
-  RtlScrollAxisType,
-  supportsScrollBehavior
-} from '@angular/cdk/platform';
 import {Directive, ElementRef, NgZone, OnDestroy, OnInit, Optional} from '@angular/core';
-import {fromEvent, Observable, Subject, Observer} from 'rxjs';
+import {Directionality} from '@cdk/bidi';
+import {getRtlScrollAxisType, RtlScrollAxisType, supportsScrollBehavior} from '@cdk/platform';
+import {fromEvent, Observable, Observer, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+
 import {ScrollDispatcher} from './scroll-dispatcher';
 
 export type _Without<T> = {[P in keyof T]?: never};

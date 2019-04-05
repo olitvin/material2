@@ -11,7 +11,7 @@ import {
   addModuleImportToModule,
   buildComponent,
   findModuleFromOptions,
-} from '@angular/cdk/schematics';
+} from '@cdk/schematics';
 import {Schema} from './schema';
 
 /**
@@ -34,12 +34,12 @@ export default function(options: Schema): Rule {
 function addNavModulesToModule(options: Schema) {
   return (host: Tree) => {
     const modulePath = findModuleFromOptions(host, options)!;
-    addModuleImportToModule(host, modulePath, 'LayoutModule', '@angular/cdk/layout');
-    addModuleImportToModule(host, modulePath, 'MatToolbarModule', '@angular/material');
-    addModuleImportToModule(host, modulePath, 'MatButtonModule', '@angular/material');
-    addModuleImportToModule(host, modulePath, 'MatSidenavModule', '@angular/material');
-    addModuleImportToModule(host, modulePath, 'MatIconModule', '@angular/material');
-    addModuleImportToModule(host, modulePath, 'MatListModule', '@angular/material');
+    addModuleImportToModule(host, modulePath, 'LayoutModule', '@cdk/layout');
+    addModuleImportToModule(host, modulePath, 'MatToolbarModule', '@material');
+    addModuleImportToModule(host, modulePath, 'MatButtonModule', '@material');
+    addModuleImportToModule(host, modulePath, 'MatSidenavModule', '@material');
+    addModuleImportToModule(host, modulePath, 'MatIconModule', '@material');
+    addModuleImportToModule(host, modulePath, 'MatListModule', '@material');
     return host;
   };
 }

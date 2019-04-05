@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {CdkVirtualScrollViewport} from '@angular/cdk/scrolling';
 import {ChangeDetectionStrategy, Component, OnDestroy, ViewEncapsulation} from '@angular/core';
+import {CdkVirtualScrollViewport} from '@cdk/scrolling';
 import {BehaviorSubject} from 'rxjs';
 
 

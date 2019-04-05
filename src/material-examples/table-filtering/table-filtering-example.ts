@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {MatTableDataSource} from '@angular/material';
+import {MatTableDataSource} from '@material';
 
 export interface PeriodicElement {
   name: string;

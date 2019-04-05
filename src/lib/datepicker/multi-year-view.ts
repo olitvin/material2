@@ -7,18 +7,6 @@
  */
 
 import {
-  DOWN_ARROW,
-  END,
-  ENTER,
-  HOME,
-  LEFT_ARROW,
-  PAGE_DOWN,
-  PAGE_UP,
-  RIGHT_ARROW,
-  UP_ARROW,
-  SPACE,
-} from '@angular/cdk/keycodes';
-import {
   AfterContentInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -30,8 +18,21 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import {DateAdapter} from '@angular/material/core';
-import {Directionality} from '@angular/cdk/bidi';
+import {Directionality} from '@cdk/bidi';
+import {
+  DOWN_ARROW,
+  END,
+  ENTER,
+  HOME,
+  LEFT_ARROW,
+  PAGE_DOWN,
+  PAGE_UP,
+  RIGHT_ARROW,
+  SPACE,
+  UP_ARROW,
+} from '@cdk/keycodes';
+import {DateAdapter} from '@material/core';
+
 import {MatCalendarBody, MatCalendarCell} from './calendar-body';
 import {createMissingDateImplError} from './datepicker-errors';
 

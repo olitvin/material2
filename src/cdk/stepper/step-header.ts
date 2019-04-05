@@ -7,7 +7,7 @@
  */
 
 import {Directive, ElementRef} from '@angular/core';
-import {FocusableOption} from '@angular/cdk/a11y';
+import {FocusableOption} from '@cdk/a11y';
 
 
 @Directive({

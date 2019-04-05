@@ -7,13 +7,6 @@
  */
 
 import {
-  CDK_TREE_NODE_OUTLET_NODE,
-  CdkNestedTreeNode,
-  CdkTree,
-  CdkTreeNode,
-  CdkTreeNodeDef,
-} from '@angular/cdk/tree';
-import {
   AfterContentInit,
   Attribute,
   ContentChildren,
@@ -25,13 +18,20 @@ import {
   QueryList,
 } from '@angular/core';
 import {
+  CDK_TREE_NODE_OUTLET_NODE,
+  CdkNestedTreeNode,
+  CdkTree,
+  CdkTreeNode,
+  CdkTreeNodeDef,
+} from '@cdk/tree';
+import {
   CanDisable,
   CanDisableCtor,
   HasTabIndex,
   HasTabIndexCtor,
   mixinDisabled,
   mixinTabIndex,
-} from '@angular/material/core';
+} from '@material/core';
 
 import {MatTreeNodeOutlet} from './outlet';
 

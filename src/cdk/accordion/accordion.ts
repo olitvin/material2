@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {Directive, Input, OnChanges, OnDestroy, SimpleChanges} from '@angular/core';
+import {coerceBooleanProperty} from '@cdk/coercion';
 import {Subject} from 'rxjs';
 
 /** Used to generate unique ID for each accordion. */

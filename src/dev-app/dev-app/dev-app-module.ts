@@ -8,14 +8,15 @@
 
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 import {
   MatButtonModule,
   MatIconModule,
   MatListModule,
   MatSidenavModule,
   MatToolbarModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {DevApp404} from './dev-app-404';
 import {DevAppHome} from './dev-app-home';
 import {DevAppLayout} from './dev-app-layout';

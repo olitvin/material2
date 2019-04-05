@@ -25,7 +25,7 @@ export function composeRelease(buildPackage: BuildPackage) {
   const {name, sourceDir} = buildPackage;
   const packageOut = buildPackage.outputDir;
   const releasePath = join(outputDir, 'releases', name);
-  const importAsName = `@angular/${name}`;
+  const importAsName = `@${name}`;
 
   inlinePackageMetadataFiles(packageOut);
 
@@ -70,7 +70,7 @@ export function composeRelease(buildPackage: BuildPackage) {
 
   if (buildPackage.exportsSecondaryEntryPointsAtRoot) {
     // Add re-exports to the root d.ts file to prevent errors of the form
-    // "@angular/material/material has no exported member 'MATERIAL_SANITY_CHECKS."
+    // "@material/material has no exported member 'MATERIAL_SANITY_CHECKS."
     const es2015Exports = buildPackage.secondaryEntryPoints
         .map(p => `export * from './${p}';`).join('\n');
     appendFileSync(join(releasePath, `${name}.d.ts`), es2015Exports, 'utf-8');
@@ -96,7 +96,7 @@ function createFilesForSecondaryEntryPoint(buildPackage: BuildPackage, releasePa
     // * An index.d.ts file that re-exports the index.d.ts from the typings/ directory
     // * A metadata.json re-export for this entry-point's metadata.
     const entryPointDir = join(releasePath, entryPointName);
-    const importAsName = `@angular/${name}/${entryPointName}`;
+    const importAsName = `@${name}/${entryPointName}`;
 
     mkdirpSync(entryPointDir);
     createEntryPointPackageJson(entryPointDir, name, entryPointName);

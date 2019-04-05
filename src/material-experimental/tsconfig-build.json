@@ -28,12 +28,12 @@
     "skipLibCheck": true,
     "types": [],
     "paths": {
-      "@angular/material/*": ["../../dist/packages/material/*"],
-      "@angular/material": ["../../dist/packages/material"],
-      "@angular/cdk/*": ["../../dist/packages/cdk/*"],
-      "@angular/cdk": ["../../dist/packages/cdk"],
-      "@angular/cdk-experimental/*": ["../../dist/packages/cdk-experimental/*"],
-      "@angular/cdk-experimental": ["../../dist/packages/cdk-experimental"]
+      "@material/*": ["../../dist/packages/material/*"],
+      "@material": ["../../dist/packages/material"],
+      "@cdk/*": ["../../dist/packages/cdk/*"],
+      "@cdk": ["../../dist/packages/cdk"],
+      "@cdk-experimental/*": ["../../dist/packages/cdk-experimental/*"],
+      "@cdk-experimental": ["../../dist/packages/cdk-experimental"]
     }
   },
   "files": [
@@ -44,7 +44,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/material-experimental",
+    "flatModuleId": "@material-experimental",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   },

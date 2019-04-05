@@ -7,20 +7,21 @@
  */
 
 import {
+  AfterContentInit,
+  ChangeDetectionStrategy,
   Component,
-  ViewEncapsulation,
+  ContentChildren,
+  Directive,
   ElementRef,
+  Inject,
   Input,
   Optional,
-  ContentChildren,
   QueryList,
-  AfterContentInit,
-  Directive,
-  ChangeDetectionStrategy,
-  Inject,
+  ViewEncapsulation,
 } from '@angular/core';
-import {MatLine, setLines} from '@angular/material/core';
-import {coerceNumberProperty} from '@angular/cdk/coercion';
+import {coerceNumberProperty} from '@cdk/coercion';
+import {MatLine, setLines} from '@material/core';
+
 import {MAT_GRID_LIST, MatGridListBase} from './grid-list-base';
 
 @Component({

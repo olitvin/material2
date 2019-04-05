@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild<% if(!!viewEncapsulation) { %>, ViewEncapsulation<% }%><% if(changeDetection !== 'Default') { %>, ChangeDetectionStrategy<% }%> } from '@angular/core';
-import { MatPaginator, MatSort } from '@angular/material';
+import {MatPaginator, MatSort} from '@material';
 import { <%= classify(name) %>DataSource } from './<%= dasherize(name) %>-datasource';
 
 @Component({

@@ -7,11 +7,12 @@
  */
 
 import {ElementRef} from '@angular/core';
-import {DragDropRegistry} from './drag-drop-registry';
-import {Direction} from '@angular/cdk/bidi';
+import {Direction} from '@cdk/bidi';
 import {Subject} from 'rxjs';
-import {moveItemInArray} from './drag-utils';
+
+import {DragDropRegistry} from './drag-drop-registry';
 import {DragRefInternal as DragRef} from './drag-ref';
+import {moveItemInArray} from './drag-utils';
 
 
 /** Counter used to generate unique ids for drop refs. */

@@ -1,5 +1,5 @@
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {Component} from '@angular/core';
+import {CdkDragDrop, moveItemInArray} from '@cdk/drag-drop';
 
 export interface Vegetable {
   name: string;

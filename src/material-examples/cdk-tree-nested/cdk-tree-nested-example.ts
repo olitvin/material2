@@ -1,6 +1,6 @@
-import {ArrayDataSource} from '@angular/cdk/collections';
 import {Component} from '@angular/core';
-import {NestedTreeControl} from '@angular/cdk/tree';
+import {ArrayDataSource} from '@cdk/collections';
+import {NestedTreeControl} from '@cdk/tree';
 
 /**
  * Food data with nested structure.

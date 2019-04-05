@@ -7,7 +7,7 @@
  */
 
 import {Component} from '@angular/core';
-import {MatChipInputEvent, MatSnackBar} from '@angular/material';
+import {MatChipInputEvent, MatSnackBar} from '@material';
 
 
 export interface Person {

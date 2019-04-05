@@ -75,7 +75,7 @@ if (require.main === module) {
         // our package source folder does not align with the entry-point name.
         const entryPointIndexPath = `${entryPointPath.replace('material', 'lib')}/index.ts`;
 
-        tsParser.options.paths![`@angular/${entryPointPath}`] = [entryPointIndexPath];
+        tsParser.options.paths![`@${entryPointPath}`] = [entryPointIndexPath];
         readTypeScriptModules.sourceFiles.push(entryPointIndexPath);
       });
     }

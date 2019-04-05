@@ -6,9 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {A11yModule} from '@angular/cdk/a11y';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {A11yModule} from '@cdk/a11y';
+
 import {FocusOriginDemo} from './focus-origin-demo';
 
 @NgModule({

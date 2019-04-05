@@ -6,10 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {CdkAccordionModule} from '@cdk/accordion';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -18,8 +19,8 @@ import {
   MatInputModule,
   MatRadioModule,
   MatSlideToggleModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {ExpansionDemo} from './expansion-demo';
 
 @NgModule({

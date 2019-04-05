@@ -3,7 +3,7 @@ import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
-} from '@angular/material';
+} from '@material';
 
 /**
  * @title Snack-bar with configurable position

@@ -1,6 +1,6 @@
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {Component} from '@angular/core';
-import {MatChipInputEvent} from '@angular/material';
+import {COMMA, ENTER} from '@cdk/keycodes';
+import {MatChipInputEvent} from '@material';
 
 export interface Fruit {
   name: string;

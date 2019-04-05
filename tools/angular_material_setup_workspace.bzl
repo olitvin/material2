@@ -17,7 +17,7 @@ def angular_material_setup_workspace():
   # https://github.com/bazelbuild/rules_nodejs#bazel-managed-vs-self-managed-dependencies
   # Note: The repository_rule name is `@matdeps` so it does not conflict with the `@npm` repository
   # name downstream when building Angular Material from source. In the future when Angular + Bazel
-  # users can build using the @angular/material npm bundles (depends on Ivy) this can be changed
+  # users can build using the @material npm bundles (depends on Ivy) this can be changed
   # to `@npm`.
   yarn_install(
     name = "matdeps",

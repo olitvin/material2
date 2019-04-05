@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import {ViewContainerRef} from '@angular/core';
-import {Direction} from '@angular/cdk/bidi';
-import {ComponentType} from '@angular/cdk/overlay';
+import {Direction} from '@cdk/bidi';
+import {ComponentType} from '@cdk/overlay';
 import {CdkDialogContainer} from './dialog-container';
 
 /** Valid ARIA roles for a dialog element. */

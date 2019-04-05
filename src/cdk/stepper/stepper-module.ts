@@ -6,13 +6,14 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {NgModule} from '@angular/core';
-import {CdkStepper, CdkStep} from './stepper';
 import {CommonModule} from '@angular/common';
-import {CdkStepLabel} from './step-label';
-import {CdkStepperNext, CdkStepperPrevious} from './stepper-button';
+import {NgModule} from '@angular/core';
+import {BidiModule} from '@cdk/bidi';
+
 import {CdkStepHeader} from './step-header';
-import {BidiModule} from '@angular/cdk/bidi';
+import {CdkStepLabel} from './step-label';
+import {CdkStep, CdkStepper} from './stepper';
+import {CdkStepperNext, CdkStepperPrevious} from './stepper-button';
 
 @NgModule({
   imports: [BidiModule, CommonModule],

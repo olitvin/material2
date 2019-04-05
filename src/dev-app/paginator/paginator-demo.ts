@@ -7,7 +7,7 @@
  */
 
 import {Component, ViewEncapsulation} from '@angular/core';
-import {PageEvent} from '@angular/material';
+import {PageEvent} from '@material';
 
 @Component({
   moduleId: module.id,

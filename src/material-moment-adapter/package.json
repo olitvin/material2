@@ -1,5 +1,5 @@
 {
-  "name": "@angular/material-moment-adapter",
+  "name": "@material-moment-adapter",
   "version": "0.0.0-PLACEHOLDER",
   "description": "Angular Material Moment Adapter",
   "main": "./bundles/material-moment-adapter.umd.js",
@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/angular/material2#readme",
   "peerDependencies": {
-    "@angular/material": "0.0.0-PLACEHOLDER",
+    "@material": "0.0.0-PLACEHOLDER",
     "@angular/core": "0.0.0-NG",
     "moment": "^2.18.1"
   },
@@ -25,9 +25,9 @@
   },
   "ng-update": {
     "packageGroup": [
-      "@angular/material",
-      "@angular/cdk",
-      "@angular/material-moment-adapter"
+      "@material",
+      "@cdk",
+      "@material-moment-adapter"
     ]
   }
 }

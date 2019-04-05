@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Direction, Directionality} from '@angular/cdk/bidi';
 import {EventEmitter, Injectable, OnDestroy} from '@angular/core';
+import {Direction, Directionality} from '@cdk/bidi';
 
 @Injectable()
 export class DevAppDirectionality implements Directionality, OnDestroy {

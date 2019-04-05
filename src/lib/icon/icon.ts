@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {DOCUMENT} from '@angular/common';
 import {
   AfterViewChecked,
@@ -26,7 +25,8 @@ import {
   SimpleChanges,
   ViewEncapsulation,
 } from '@angular/core';
-import {CanColor, CanColorCtor, mixinColor} from '@angular/material/core';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {CanColor, CanColorCtor, mixinColor} from '@material/core';
 import {take} from 'rxjs/operators';
 
 import {MatIconRegistry} from './icon-registry';

@@ -10,7 +10,7 @@ export const dashCaseToCamelCase =
 function generateRollupEntryPoints(packageName: string, entryPoints: string[]):
     {[k: string]: string} {
   return entryPoints.reduce((globals: {[k: string]: string}, entryPoint: string) => {
-    globals[`@angular/${packageName}/${entryPoint}`] =
+    globals[`@${packageName}/${entryPoint}`] =
         `ng.${dashCaseToCamelCase(packageName)}.${dashCaseToCamelCase(entryPoint)}`;
     return globals;
   }, {});
@@ -57,12 +57,12 @@ export const rollupGlobals = {
   '@angular/router': 'ng.router',
 
   // Some packages are not really needed for the UMD bundles, but for the missingRollupGlobals rule.
-  '@angular/cdk': 'ng.cdk',
-  '@angular/cdk-experimental': 'ng.cdkExperimental',
-  '@angular/material': 'ng.material',
-  '@angular/material-examples': 'ng.materialExamples',
-  '@angular/material-experimental': 'ng.materialExperimental',
-  '@angular/material-moment-adapter': 'ng.materialMomentAdapter',
+  '@cdk': 'ng.cdk',
+  '@cdk-experimental': 'ng.cdkExperimental',
+  '@material': 'ng.material',
+  '@material-examples': 'ng.materialExamples',
+  '@material-experimental': 'ng.materialExperimental',
+  '@material-moment-adapter': 'ng.materialMomentAdapter',
 
   // Include secondary entry-points of the cdk and material packages
   ...rollupCdkEntryPoints,

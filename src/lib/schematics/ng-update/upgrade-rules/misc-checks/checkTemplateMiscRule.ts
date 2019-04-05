@@ -11,7 +11,7 @@ import {
   ExternalResource,
   findInputsOnElementWithTag,
   findOutputsOnElementWithTag,
-} from '@angular/cdk/schematics';
+} from '@cdk/schematics';
 import {bold, green, red} from 'chalk';
 import {RuleFailure, Rules} from 'tslint';
 import * as ts from 'typescript';

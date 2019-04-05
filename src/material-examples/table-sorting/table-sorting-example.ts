@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort, MatTableDataSource} from '@angular/material';
+import {MatSort, MatTableDataSource} from '@material';
 
 export interface PeriodicElement {
   name: string;

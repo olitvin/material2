@@ -9,14 +9,15 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 import {
   MatAutocompleteModule,
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule,
   MatInputModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {AutocompleteDemo} from './autocomplete-demo';
 
 @NgModule({

@@ -9,7 +9,7 @@ styles for the component. An Angular Material theme definition is a Sass map.
 For example, if building a custom carousel component:
 ```scss
 // Import library functions for theme creation.
-@import '~@angular/material/theming';
+@import '~@material/theming';
 
 // Define a mixin that accepts a theme and outputs the theme-specific styles.
 @mixin candy-carousel-theme($theme) {
@@ -55,7 +55,7 @@ including Angular Material's built-in theme mixins.
 
 ```scss
 // Import library functions for theme creation.
-@import '~@angular/material/theming';
+@import '~@material/theming';
 
 // Include non-theme styles for core.
 @include mat-core();
@@ -75,12 +75,12 @@ $theme: mat-light-theme($primary, $accent);
 
 #### Note: using the `mat-color` function to extract colors from a palette
 You can consume the theming functions and Material Design color palettes from
-`@angular/material/theming`. The `mat-color` Sass function extracts a specific color from a palette.
+`@material/theming`. The `mat-color` Sass function extracts a specific color from a palette.
 For example:
 
 ```scss
 // Import theming functions
-@import '~@angular/material/theming';
+@import '~@material/theming';
 
 .candy-carousel {
   // Get the default hue for a palette.

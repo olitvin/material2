@@ -92,7 +92,7 @@ least enough buffer to get back to `maxBufferPx`. In this case, it renders 4 ite
 
 Other virtual scrolling strategies can be implemented by extending `VirtualScrollStrategy`. An
 autosize strategy that works on elements of differing sizes is currently being developed in
-`@angular/cdk-experimental`, but it is not ready for production use yet. 
+`@cdk-experimental`, but it is not ready for production use yet. 
 
 ### Viewport orientation
 The virtual-scroll viewport defaults to a vertical orientation, but can also be set to

@@ -6,33 +6,34 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
+import {AnimationEvent} from '@angular/animations';
+import {DOCUMENT} from '@angular/common';
 import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ComponentRef,
-  EmbeddedViewRef,
-  ViewChild,
-  OnDestroy,
   ElementRef,
-  ChangeDetectionStrategy,
-  ViewEncapsulation,
-  ChangeDetectorRef,
+  EmbeddedViewRef,
   EventEmitter,
   Inject,
+  OnDestroy,
   Optional,
+  ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
-import {AnimationEvent} from '@angular/animations';
+import {FocusTrap, FocusTrapFactory} from '@cdk/a11y';
+import {BreakpointObserver, Breakpoints} from '@cdk/layout';
 import {
   BasePortalOutlet,
+  CdkPortalOutlet,
   ComponentPortal,
   TemplatePortal,
-  CdkPortalOutlet,
-} from '@angular/cdk/portal';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {MatBottomSheetConfig} from './bottom-sheet-config';
-import {matBottomSheetAnimations} from './bottom-sheet-animations';
+} from '@cdk/portal';
 import {Subscription} from 'rxjs';
-import {DOCUMENT} from '@angular/common';
-import {FocusTrap, FocusTrapFactory} from '@angular/cdk/a11y';
+
+import {matBottomSheetAnimations} from './bottom-sheet-animations';
+import {MatBottomSheetConfig} from './bottom-sheet-config';
 
 // TODO(crisbeto): consolidate some logic between this, MatDialog and MatSnackBar
 

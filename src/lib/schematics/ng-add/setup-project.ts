@@ -13,10 +13,11 @@ import {
   getProjectMainFile,
   getProjectStyleFile,
   hasNgModuleImport,
-} from '@angular/cdk/schematics';
-import {red, bold, italic} from 'chalk';
+} from '@cdk/schematics';
 import {getWorkspace} from '@schematics/angular/utility/config';
 import {getAppModulePath} from '@schematics/angular/utility/ng-ast-utils';
+import {bold, italic, red} from 'chalk';
+
 import {addFontsToIndex} from './fonts/material-fonts';
 import {addHammerJsToMain} from './gestures/hammerjs-import';
 import {Schema} from './schema';

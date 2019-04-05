@@ -214,8 +214,8 @@ The easiest way to ensure this is just to import one of the pre-made modules:
 
 |Module               |Date type|Supported locales                                                      |Dependencies                      |Import from                       |
 |---------------------|---------|-----------------------------------------------------------------------|----------------------------------|----------------------------------|
-|`MatNativeDateModule`|`Date`   |en-US                                                                  |None                              |`@angular/material`               |
-|`MatMomentDateModule`|`Moment` |[See project](https://github.com/moment/moment/tree/develop/src/locale)|[Moment.js](https://momentjs.com/)|`@angular/material-moment-adapter`|
+|`MatNativeDateModule`|`Date`   |en-US                                                                  |None                              |`@material`               |
+|`MatMomentDateModule`|`Moment` |[See project](https://github.com/moment/moment/tree/develop/src/locale)|[Moment.js](https://momentjs.com/)|`@material-moment-adapter`|
 
 *Please note: `MatNativeDateModule` is based off of the functionality available in JavaScript's
 native `Date` object, and is thus not suitable for many locales. One of the biggest shortcomings of

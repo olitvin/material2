@@ -7,7 +7,7 @@ load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite"
 ng_module(
   name = "toolbar",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/toolbar",
+  module_name = "@material/toolbar",
   assets = [":toolbar.css"] + glob(["**/*.html"]),
   deps = [
     "@angular//packages/common",

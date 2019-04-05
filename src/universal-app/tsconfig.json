@@ -5,9 +5,9 @@
     "rootDir": "..",
     "baseUrl": ".",
     "paths": {
-      "@angular/cdk/*": ["../cdk/*"],
-      "@angular/material/*": ["../lib/*"],
-      "@angular/material": ["../lib/public_api"]
+      "@cdk/*": ["../cdk/*"],
+      "@material/*": ["../lib/*"],
+      "@material": ["../lib/public_api"]
     }
   },
   "include": ["./**/*.ts"]

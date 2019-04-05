@@ -6,9 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {NgModule, InjectionToken, Optional, Inject, isDevMode} from '@angular/core';
-import {HammerLoader, HAMMER_LOADER} from '@angular/platform-browser';
-import {BidiModule} from '@angular/cdk/bidi';
+import {Inject, InjectionToken, isDevMode, NgModule, Optional} from '@angular/core';
+import {HAMMER_LOADER, HammerLoader} from '@angular/platform-browser';
+import {BidiModule} from '@cdk/bidi';
 
 
 /** Injection token that configures whether the Material sanity checks are enabled. */

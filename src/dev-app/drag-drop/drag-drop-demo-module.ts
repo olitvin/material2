@@ -6,12 +6,13 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {DragDropModule} from '@angular/cdk/drag-drop';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatFormFieldModule, MatIconModule, MatSelectModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {DragDropModule} from '@cdk/drag-drop';
+import {MatFormFieldModule, MatIconModule, MatSelectModule} from '@material';
+
 import {DragAndDropDemo} from './drag-drop-demo';
 
 @NgModule({

@@ -7,7 +7,7 @@
  */
 
 import {Directive} from '@angular/core';
-import {CdkStepper, CdkStepperNext, CdkStepperPrevious} from '@angular/cdk/stepper';
+import {CdkStepper, CdkStepperNext, CdkStepperPrevious} from '@cdk/stepper';
 import {MatStepper} from './stepper';
 
 /** Button that moves to the next step in a stepper workflow. */

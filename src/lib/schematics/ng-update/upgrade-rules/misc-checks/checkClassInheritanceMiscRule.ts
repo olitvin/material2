@@ -6,10 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
+import {determineBaseTypes} from '@cdk/schematics';
 import {bold, green} from 'chalk';
 import {ProgramAwareRuleWalker, RuleFailure, Rules} from 'tslint';
 import * as ts from 'typescript';
-import {determineBaseTypes} from '@angular/cdk/schematics';
 
 /**
  * Rule that checks for classes that extend Angular Material classes which have changed

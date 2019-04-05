@@ -7,7 +7,7 @@
  */
 
 import {ChangeDetectionStrategy, Component, Input, ViewEncapsulation} from '@angular/core';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {coerceBooleanProperty} from '@cdk/coercion';
 
 @Component({
   moduleId: module.id,

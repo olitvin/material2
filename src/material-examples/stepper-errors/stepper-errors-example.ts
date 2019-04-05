@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import {STEPPER_GLOBAL_OPTIONS} from '@cdk/stepper';
 
 /**
  * @title Stepper that displays errors in the steps

@@ -9,6 +9,7 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 import {
   MatButtonModule,
   MatCardModule,
@@ -17,8 +18,8 @@ import {
   MatInputModule,
   MatSelectModule,
   MatToolbarModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {SelectDemo} from './select-demo';
 
 @NgModule({

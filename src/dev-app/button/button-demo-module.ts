@@ -7,8 +7,9 @@
  */
 
 import {NgModule} from '@angular/core';
-import {MatButtonModule, MatIconModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatIconModule} from '@material';
+
 import {ButtonDemo} from './button-demo';
 
 @NgModule({

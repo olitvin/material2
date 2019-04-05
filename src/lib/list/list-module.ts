@@ -13,17 +13,18 @@ import {
   MatLineModule,
   MatPseudoCheckboxModule,
   MatRippleModule,
-} from '@angular/material/core';
+} from '@material/core';
+import {MatDividerModule} from '@material/divider';
+
 import {
   MatList,
-  MatNavList,
   MatListAvatarCssMatStyler,
   MatListIconCssMatStyler,
   MatListItem,
   MatListSubheaderCssMatStyler,
+  MatNavList,
 } from './list';
 import {MatListOption, MatSelectionList} from './selection-list';
-import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({

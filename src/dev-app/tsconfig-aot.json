@@ -20,16 +20,16 @@
       "../../dist/packages/dev-app"
     ],
     "paths": {
-      "@angular/material/*": ["../../dist/releases/material/*"],
-      "@angular/material": ["../../dist/releases/material"],
-      "@angular/cdk/*": ["../../dist/releases/cdk/*"],
-      "@angular/cdk": ["../../dist/releases/cdk"],
-      "@angular/material-experimental/*": ["../../dist/releases/material-experimental/*"],
-      "@angular/material-experimental": ["../../dist/releases/material-experimental"],
-      "@angular/cdk-experimental/*": ["../../dist/releases/cdk-experimental/*"],
-      "@angular/cdk-experimental": ["../../dist/releases/cdk-experimental"],
-      "@angular/material-moment-adapter": ["../../dist/releases/material-moment-adapter"],
-      "@angular/material-examples": ["../../dist/releases/material-examples"]
+      "@material/*": ["../../dist/releases/material/*"],
+      "@material": ["../../dist/releases/material"],
+      "@cdk/*": ["../../dist/releases/cdk/*"],
+      "@cdk": ["../../dist/releases/cdk"],
+      "@material-experimental/*": ["../../dist/releases/material-experimental/*"],
+      "@material-experimental": ["../../dist/releases/material-experimental"],
+      "@cdk-experimental/*": ["../../dist/releases/cdk-experimental/*"],
+      "@cdk-experimental": ["../../dist/releases/cdk-experimental"],
+      "@material-moment-adapter": ["../../dist/releases/material-moment-adapter"],
+      "@material-examples": ["../../dist/releases/material-examples"]
     }
   },
   "include": [

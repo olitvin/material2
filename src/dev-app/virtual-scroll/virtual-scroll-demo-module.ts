@@ -6,18 +6,14 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ScrollingModule as ExperimentalScrollingModule} from '@angular/cdk-experimental/scrolling';
-import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {
-  MatButtonModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatSelectModule
-} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {ScrollingModule as ExperimentalScrollingModule} from '@cdk-experimental/scrolling';
+import {ScrollingModule} from '@cdk/scrolling';
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@material';
+
 import {VirtualScrollDemo} from './virtual-scroll-demo';
 
 @NgModule({

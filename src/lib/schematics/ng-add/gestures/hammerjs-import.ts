@@ -7,7 +7,7 @@
  */
 
 import {Rule, Tree} from '@angular-devkit/schematics';
-import {getProjectFromWorkspace, getProjectMainFile} from '@angular/cdk/schematics';
+import {getProjectFromWorkspace, getProjectMainFile} from '@cdk/schematics';
 import {getWorkspace} from '@schematics/angular/utility/config';
 import {Schema} from '../schema';
 

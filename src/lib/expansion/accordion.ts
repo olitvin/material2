@@ -6,11 +6,12 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directive, Input, ContentChildren, QueryList, AfterContentInit} from '@angular/core';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {CdkAccordion} from '@angular/cdk/accordion';
-import {FocusKeyManager} from '@angular/cdk/a11y';
-import {HOME, END} from '@angular/cdk/keycodes';
+import {AfterContentInit, ContentChildren, Directive, Input, QueryList} from '@angular/core';
+import {FocusKeyManager} from '@cdk/a11y';
+import {CdkAccordion} from '@cdk/accordion';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {END, HOME} from '@cdk/keycodes';
+
 import {MAT_ACCORDION, MatAccordionBase, MatAccordionDisplayMode} from './accordion-base';
 import {MatExpansionPanelHeader} from './expansion-panel-header';
 

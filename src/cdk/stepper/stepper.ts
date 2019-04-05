@@ -6,10 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusableOption, FocusKeyManager} from '@angular/cdk/a11y';
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {coerceBooleanProperty, coerceNumberProperty} from '@angular/cdk/coercion';
-import {END, ENTER, HOME, SPACE, hasModifierKey} from '@angular/cdk/keycodes';
+import {DOCUMENT} from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -18,10 +15,11 @@ import {
   ContentChild,
   ContentChildren,
   Directive,
-  EventEmitter,
   ElementRef,
+  EventEmitter,
   forwardRef,
   Inject,
+  InjectionToken,
   Input,
   OnChanges,
   OnDestroy,
@@ -31,13 +29,16 @@ import {
   TemplateRef,
   ViewChild,
   ViewEncapsulation,
-  InjectionToken,
 } from '@angular/core';
-import {DOCUMENT} from '@angular/common';
-import {CdkStepLabel} from './step-label';
-import {Observable, Subject, of as obaservableOf} from 'rxjs';
+import {FocusableOption, FocusKeyManager} from '@cdk/a11y';
+import {Direction, Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty, coerceNumberProperty} from '@cdk/coercion';
+import {END, ENTER, hasModifierKey, HOME, SPACE} from '@cdk/keycodes';
+import {Observable, of as obaservableOf, Subject} from 'rxjs';
 import {startWith, takeUntil} from 'rxjs/operators';
+
 import {CdkStepHeader} from './step-header';
+import {CdkStepLabel} from './step-label';
 
 /** Used to generate unique ID for each stepper component. */
 let nextId = 0;

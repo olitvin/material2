@@ -9,6 +9,7 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -16,8 +17,8 @@ import {
   MatInputModule,
   MatSelectModule,
   MatSnackBarModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {SnackBarDemo} from './snack-bar-demo';
 
 @NgModule({

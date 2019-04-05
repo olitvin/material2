@@ -6,11 +6,12 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
-import {coerceNumberProperty} from '@angular/cdk/coercion';
 import {Directive, ElementRef, Input, OnDestroy, Optional, Renderer2} from '@angular/core';
-import {takeUntil} from 'rxjs/operators';
+import {Directionality} from '@cdk/bidi';
+import {coerceNumberProperty} from '@cdk/coercion';
 import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
+
 import {CdkTree, CdkTreeNode} from './tree';
 
 /** Regex used to split a string on its CSS units. */

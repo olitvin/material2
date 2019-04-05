@@ -5,9 +5,9 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import {FlatTreeControl} from '@angular/cdk/tree';
 import {Component, Injectable} from '@angular/core';
-import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import {FlatTreeControl} from '@cdk/tree';
+import {MatTreeFlatDataSource, MatTreeFlattener} from '@material/tree';
 import {BehaviorSubject, Observable} from 'rxjs';
 
 const LOAD_MORE = 'LOAD_MORE';

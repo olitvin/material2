@@ -8,12 +8,6 @@
 
 import {AnimationEvent} from '@angular/animations';
 import {
-  BasePortalOutlet,
-  CdkPortalOutlet,
-  ComponentPortal,
-  TemplatePortal,
-} from '@angular/cdk/portal';
-import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -25,8 +19,15 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import {
+  BasePortalOutlet,
+  CdkPortalOutlet,
+  ComponentPortal,
+  TemplatePortal,
+} from '@cdk/portal';
 import {Observable, Subject} from 'rxjs';
 import {take} from 'rxjs/operators';
+
 import {matSnackBarAnimations} from './snack-bar-animations';
 import {MatSnackBarConfig} from './snack-bar-config';
 

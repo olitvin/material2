@@ -7,7 +7,7 @@
  */
 
 import {Component} from '@angular/core';
-import {LiveAnnouncer} from '@angular/cdk/a11y';
+import {LiveAnnouncer} from '@cdk/a11y';
 
 
 @Component({

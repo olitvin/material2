@@ -10,7 +10,7 @@ exports_files(["theming/_theming.scss"])
 ng_module(
   name = "core",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/core",
+  module_name = "@material/core",
   assets = [
     ":selection/pseudo-checkbox/pseudo-checkbox.css",
     ":option/option.css",

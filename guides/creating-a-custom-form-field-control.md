@@ -226,7 +226,7 @@ For additional information about `ControlValueAccessor` see the [API docs](https
 This property indicates whether or not the form field control should be considered to be in a
 focused state. When it is in a focused state, the form field is displayed with a solid color
 underline. For the purposes of our component, we want to consider it focused if any of the part
-inputs are focused. We can use the `FocusMonitor` from `@angular/cdk` to easily check this. We also
+inputs are focused. We can use the `FocusMonitor` from `@cdk` to easily check this. We also
 need to remember to emit on the `stateChanges` stream so change detection can happen.
 
 ```ts

@@ -1,5 +1,5 @@
-import {DataSource} from '@angular/cdk/collections';
 import {Component} from '@angular/core';
+import {DataSource} from '@cdk/collections';
 import {BehaviorSubject, Observable} from 'rxjs';
 
 export interface PeriodicElement {

@@ -6,19 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusMonitor, FocusOrigin, isFakeMousedownFromScreenReader} from '@angular/cdk/a11y';
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {LEFT_ARROW, RIGHT_ARROW} from '@angular/cdk/keycodes';
-import {
-  FlexibleConnectedPositionStrategy,
-  HorizontalConnectionPos,
-  Overlay,
-  OverlayConfig,
-  OverlayRef,
-  VerticalConnectionPos,
-  ScrollStrategy,
-} from '@angular/cdk/overlay';
-import {TemplatePortal} from '@angular/cdk/portal';
 import {
   AfterContentInit,
   Directive,
@@ -33,9 +20,23 @@ import {
   Self,
   ViewContainerRef,
 } from '@angular/core';
-import {normalizePassiveListenerOptions} from '@angular/cdk/platform';
+import {FocusMonitor, FocusOrigin, isFakeMousedownFromScreenReader} from '@cdk/a11y';
+import {Direction, Directionality} from '@cdk/bidi';
+import {LEFT_ARROW, RIGHT_ARROW} from '@cdk/keycodes';
+import {
+  FlexibleConnectedPositionStrategy,
+  HorizontalConnectionPos,
+  Overlay,
+  OverlayConfig,
+  OverlayRef,
+  ScrollStrategy,
+  VerticalConnectionPos,
+} from '@cdk/overlay';
+import {normalizePassiveListenerOptions} from '@cdk/platform';
+import {TemplatePortal} from '@cdk/portal';
 import {asapScheduler, merge, of as observableOf, Subscription} from 'rxjs';
 import {delay, filter, take, takeUntil} from 'rxjs/operators';
+
 import {MatMenu} from './menu-directive';
 import {throwMatMenuMissingError} from './menu-errors';
 import {MatMenuItem} from './menu-item';

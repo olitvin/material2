@@ -1,5 +1,5 @@
 {
-  "name": "@angular/material-experimental",
+  "name": "@material-experimental",
   "version": "0.0.0-PLACEHOLDER",
   "description": "Experimental components for Angular Material",
   "main": "./bundles/material-experimental.umd.js",
@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/angular/material2#readme",
   "peerDependencies": {
-    "@angular/material": "0.0.0-PLACEHOLDER",
+    "@material": "0.0.0-PLACEHOLDER",
     "@angular/core": "0.0.0-NG"
   },
   "dependencies": {

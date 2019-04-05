@@ -6,12 +6,13 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Injectable, Inject, NgZone, ElementRef} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
-import {ViewportRuler} from '@angular/cdk/scrolling';
+import {ElementRef, Inject, Injectable, NgZone} from '@angular/core';
+import {ViewportRuler} from '@cdk/scrolling';
+
+import {DragDropRegistry} from './drag-drop-registry';
 import {DragRef, DragRefConfig} from './drag-ref';
 import {DropListRef} from './drop-list-ref';
-import {DragDropRegistry} from './drag-drop-registry';
 
 /** Default configuration to be used when creating a `DragRef`. */
 const DEFAULT_CONFIG = {

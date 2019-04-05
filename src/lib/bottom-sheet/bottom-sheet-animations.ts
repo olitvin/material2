@@ -7,13 +7,13 @@
  */
 import {
   animate,
+  AnimationTriggerMetadata,
   state,
   style,
   transition,
   trigger,
-  AnimationTriggerMetadata,
 } from '@angular/animations';
-import {AnimationCurves, AnimationDurations} from '@angular/material/core';
+import {AnimationCurves, AnimationDurations} from '@material/core';
 
 /** Animations used by the Material bottom sheet. */
 export const matBottomSheetAnimations: {

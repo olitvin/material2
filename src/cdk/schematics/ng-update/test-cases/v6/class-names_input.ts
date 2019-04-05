@@ -1,6 +1,6 @@
-import {ConnectedOverlayDirective, OverlayOrigin} from '@angular/cdk/overlay';
-import {ObserveContent} from '@angular/cdk/observers';
-import {FocusTrapDirective} from '@angular/cdk/a11y';
+import {FocusTrapDirective} from '@cdk/a11y';
+import {ObserveContent} from '@cdk/observers';
+import {ConnectedOverlayDirective, OverlayOrigin} from '@cdk/overlay';
 
 const a = new ConnectedOverlayDirective();
 const b = new OverlayOrigin();

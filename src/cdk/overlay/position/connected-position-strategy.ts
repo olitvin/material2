@@ -6,10 +6,14 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Direction} from '@angular/cdk/bidi';
-import {CdkScrollable, ViewportRuler} from '@angular/cdk/scrolling';
 import {ElementRef} from '@angular/core';
+import {Direction} from '@cdk/bidi';
+import {Platform} from '@cdk/platform';
+import {CdkScrollable, ViewportRuler} from '@cdk/scrolling';
 import {Observable} from 'rxjs';
+
+import {OverlayReference} from '../overlay-reference';
+
 import {
   ConnectedOverlayPositionChange,
   ConnectionPositionPair,
@@ -18,8 +22,6 @@ import {
 } from './connected-position';
 import {FlexibleConnectedPositionStrategy} from './flexible-connected-position-strategy';
 import {PositionStrategy} from './position-strategy';
-import {Platform} from '@angular/cdk/platform';
-import {OverlayReference} from '../overlay-reference';
 
 /**
  * A strategy for positioning overlays. Using this strategy, an overlay is given an

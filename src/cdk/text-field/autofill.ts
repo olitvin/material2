@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Platform, normalizePassiveListenerOptions} from '@angular/cdk/platform';
 import {
   Directive,
   ElementRef,
@@ -17,7 +16,8 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import {coerceElement} from '@angular/cdk/coercion';
+import {coerceElement} from '@cdk/coercion';
+import {normalizePassiveListenerOptions, Platform} from '@cdk/platform';
 import {EMPTY, Observable, Subject} from 'rxjs';
 
 

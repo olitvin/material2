@@ -6,10 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ObserversModule} from '@angular/cdk/observers';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {MatCommonModule, MatRippleModule} from '@angular/material/core';
+import {ObserversModule} from '@cdk/observers';
+import {MatCommonModule, MatRippleModule} from '@material/core';
+
 import {MatCheckbox} from './checkbox';
 import {MatCheckboxRequiredValidator} from './checkbox-required-validator';
 

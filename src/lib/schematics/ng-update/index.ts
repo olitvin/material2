@@ -7,9 +7,10 @@
  */
 
 import {Rule} from '@angular-devkit/schematics';
-import {TargetVersion, createUpgradeRule, UpgradeTSLintConfig} from '@angular/cdk/schematics';
+import {createUpgradeRule, TargetVersion, UpgradeTSLintConfig} from '@cdk/schematics';
 import {green, yellow} from 'chalk';
 import {sync as globSync} from 'glob';
+
 import {materialUpgradeData} from './upgrade-data';
 
 /** List of additional upgrade rules for Angular Material. */

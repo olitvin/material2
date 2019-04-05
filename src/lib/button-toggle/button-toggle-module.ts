@@ -7,7 +7,7 @@
  */
 
 import {NgModule} from '@angular/core';
-import {MatCommonModule, MatRippleModule} from '@angular/material/core';
+import {MatCommonModule, MatRippleModule} from '@material/core';
 import {MatButtonToggle, MatButtonToggleGroup} from './button-toggle';
 
 

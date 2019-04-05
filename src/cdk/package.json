@@ -1,5 +1,5 @@
 {
-    "name": "@angular/cdk",
+    "name": "@cdk",
     "version": "0.0.0-PLACEHOLDER",
     "description": "Angular Material Component Development Kit",
     "main": "./bundles/cdk.umd.js",

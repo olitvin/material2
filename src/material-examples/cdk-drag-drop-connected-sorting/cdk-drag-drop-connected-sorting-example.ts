@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@cdk/drag-drop';
 
 /**
  * @title Drag&Drop connected sorting

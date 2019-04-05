@@ -6,8 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {ContentChild, Directive, ElementRef, Input, TemplateRef} from '@angular/core';
+import {coerceBooleanProperty} from '@cdk/coercion';
+
 import {CanStick, CanStickCtor, mixinHasStickyInput} from './can-stick';
 
 

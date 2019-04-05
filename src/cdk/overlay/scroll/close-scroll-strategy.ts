@@ -6,10 +6,12 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import {NgZone} from '@angular/core';
-import {ScrollStrategy, getMatScrollStrategyAlreadyAttachedError} from './scroll-strategy';
-import {OverlayReference} from '../overlay-reference';
+import {ScrollDispatcher, ViewportRuler} from '@cdk/scrolling';
 import {Subscription} from 'rxjs';
-import {ScrollDispatcher, ViewportRuler} from '@angular/cdk/scrolling';
+
+import {OverlayReference} from '../overlay-reference';
+
+import {getMatScrollStrategyAlreadyAttachedError, ScrollStrategy} from './scroll-strategy';
 
 /**
  * Config options for the CloseScrollStrategy.

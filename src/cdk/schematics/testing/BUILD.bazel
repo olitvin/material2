@@ -4,7 +4,7 @@ load("//tools:defaults.bzl", "jasmine_node_test", "ts_library")
 
 ts_library(
   name = "testing",
-  module_name = "@angular/cdk/schematics/testing",
+  module_name = "@cdk/schematics/testing",
   srcs = glob(["**/*.ts"]),
   tsconfig = "tsconfig.json",
   deps = [

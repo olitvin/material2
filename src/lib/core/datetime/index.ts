@@ -6,8 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {PlatformModule} from '@angular/cdk/platform';
 import {NgModule} from '@angular/core';
+import {PlatformModule} from '@cdk/platform';
+
 import {DateAdapter} from './date-adapter';
 import {MAT_DATE_FORMATS} from './date-formats';
 import {NativeDateAdapter} from './native-date-adapter';

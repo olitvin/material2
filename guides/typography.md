@@ -60,7 +60,7 @@ Typography customization is an extension of Angular Material's Sass-based themin
 creating a custom theme, you can create a custom **typography configuration**.
 
 ```scss
-@import '~@angular/material/theming';
+@import '~@material/theming';
 
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
@@ -118,7 +118,7 @@ config and level.
 and a typography level, and outputs a short-hand CSS `font` declaration.
 
 ```scss
-@import '~@angular/material/theming';
+@import '~@material/theming';
 
 // Create a config with the default typography levels.
 $config: mat-typography-config();

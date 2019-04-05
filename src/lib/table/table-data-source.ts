@@ -6,19 +6,19 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {_isNumberValue} from '@angular/cdk/coercion';
-import {DataSource} from '@angular/cdk/table';
+import {_isNumberValue} from '@cdk/coercion';
+import {DataSource} from '@cdk/table';
+import {MatPaginator, PageEvent} from '@material/paginator';
+import {MatSort, Sort} from '@material/sort';
 import {
   BehaviorSubject,
   combineLatest,
   merge,
   Observable,
   of as observableOf,
-  Subscription,
   Subject,
+  Subscription,
 } from 'rxjs';
-import {MatPaginator, PageEvent} from '@angular/material/paginator';
-import {MatSort, Sort} from '@angular/material/sort';
 import {map} from 'rxjs/operators';
 
 /**

@@ -1,6 +1,6 @@
-import {SelectionModel} from '@angular/cdk/collections';
 import {Component} from '@angular/core';
-import {MatTableDataSource} from '@angular/material';
+import {SelectionModel} from '@cdk/collections';
+import {MatTableDataSource} from '@material';
 
 export interface PeriodicElement {
   name: string;

@@ -6,7 +6,7 @@ load("//:packages.bzl", "CDK_TARGETS", "ROLLUP_GLOBALS")
 ng_module(
   name = "material-experimental",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material-experimental",
+  module_name = "@material-experimental",
   deps = ["//src/lib:material"] + CDK_TARGETS,
 )
 

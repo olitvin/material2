@@ -1,6 +1,6 @@
-import {NestedTreeControl} from '@angular/cdk/tree';
 import {Component} from '@angular/core';
-import {MatTreeNestedDataSource} from '@angular/material/tree';
+import {NestedTreeControl} from '@cdk/tree';
+import {MatTreeNestedDataSource} from '@material/tree';
 
 /**
  * Food data with nested structure.

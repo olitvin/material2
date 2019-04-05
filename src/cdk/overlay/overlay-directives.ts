@@ -6,10 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {ESCAPE} from '@angular/cdk/keycodes';
-import {TemplatePortal} from '@angular/cdk/portal';
 import {
   Directive,
   ElementRef,
@@ -25,7 +21,12 @@ import {
   TemplateRef,
   ViewContainerRef,
 } from '@angular/core';
+import {Direction, Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {ESCAPE} from '@cdk/keycodes';
+import {TemplatePortal} from '@cdk/portal';
 import {Subscription} from 'rxjs';
+
 import {Overlay} from './overlay';
 import {OverlayConfig} from './overlay-config';
 import {OverlayRef} from './overlay-ref';

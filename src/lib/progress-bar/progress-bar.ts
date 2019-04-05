@@ -24,8 +24,8 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import {CanColor, CanColorCtor, mixinColor} from '@angular/material/core';
 import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+import {CanColor, CanColorCtor, mixinColor} from '@material/core';
 import {fromEvent, Subscription} from 'rxjs';
 import {filter} from 'rxjs/operators';
 

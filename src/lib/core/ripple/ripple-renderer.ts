@@ -6,8 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import {ElementRef, NgZone} from '@angular/core';
-import {Platform, normalizePassiveListenerOptions} from '@angular/cdk/platform';
-import {isFakeMousedownFromScreenReader} from '@angular/cdk/a11y';
+import {isFakeMousedownFromScreenReader} from '@cdk/a11y';
+import {normalizePassiveListenerOptions, Platform} from '@cdk/platform';
+
 import {RippleRef, RippleState} from './ripple-ref';
 
 export type RippleConfig = {

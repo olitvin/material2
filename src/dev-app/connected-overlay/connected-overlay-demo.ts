@@ -6,16 +6,16 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
+import {Component, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
+import {Directionality} from '@cdk/bidi';
 import {
   CdkOverlayOrigin,
   HorizontalConnectionPos,
   Overlay,
   OverlayRef,
   VerticalConnectionPos
-} from '@angular/cdk/overlay';
-import {TemplatePortal} from '@angular/cdk/portal';
-import {Component, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
+} from '@cdk/overlay';
+import {TemplatePortal} from '@cdk/portal';
 
 
 @Component({

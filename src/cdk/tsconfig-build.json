@@ -13,7 +13,7 @@
       "../../dist/packages/cdk"
     ],
     "paths": {
-      "@angular/cdk/*": ["../../dist/packages/cdk/*"]
+      "@cdk/*": ["../../dist/packages/cdk/*"]
     }
   },
   "files": [
@@ -24,7 +24,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/cdk",
+    "flatModuleId": "@cdk",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

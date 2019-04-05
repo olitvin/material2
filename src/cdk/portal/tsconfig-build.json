@@ -7,7 +7,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/cdk/portal",
+    "flatModuleId": "@cdk/portal",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

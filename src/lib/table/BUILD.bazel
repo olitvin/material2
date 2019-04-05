@@ -7,7 +7,7 @@ load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite"
 ng_module(
   name = "table",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/table",
+  module_name = "@material/table",
   assets = [":table.css"],
   deps = [
     "@angular//packages/common",

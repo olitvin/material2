@@ -6,9 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusMonitor} from '@angular/cdk/a11y';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {UniqueSelectionDispatcher} from '@angular/cdk/collections';
 import {
   AfterContentInit,
   AfterViewInit,
@@ -32,6 +29,10 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+import {FocusMonitor} from '@cdk/a11y';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {UniqueSelectionDispatcher} from '@cdk/collections';
 import {
   CanColor,
   CanColorCtor,
@@ -42,8 +43,7 @@ import {
   mixinColor,
   mixinDisableRipple,
   mixinTabIndex,
-} from '@angular/material/core';
-import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+} from '@material/core';
 
 
 // Increasing integer for generating unique ids for radio components.

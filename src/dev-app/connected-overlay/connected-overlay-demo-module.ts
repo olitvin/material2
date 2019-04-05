@@ -6,12 +6,13 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {OverlayModule} from '@angular/cdk/overlay';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatButtonModule, MatCheckboxModule, MatRadioModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {OverlayModule} from '@cdk/overlay';
+import {MatButtonModule, MatCheckboxModule, MatRadioModule} from '@material';
+
 import {ConnectedOverlayDemo} from './connected-overlay-demo';
 
 @NgModule({

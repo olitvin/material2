@@ -8,7 +8,7 @@
 
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {ObserversModule} from '@angular/cdk/observers';
+import {ObserversModule} from '@cdk/observers';
 import {MatError} from './error';
 import {MatFormField} from './form-field';
 import {MatHint} from './hint';

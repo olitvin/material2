@@ -6,7 +6,7 @@ load("//tools:defaults.bzl", "ng_module", "markdown_to_html")
 ng_module(
   name = "form-field",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/form-field",
+  module_name = "@material/form-field",
   assets = [
     ":form-field.css",
     ":form-field-fill.css",

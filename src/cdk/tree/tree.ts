@@ -5,8 +5,6 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import {FocusableOption} from '@angular/cdk/a11y';
-import {CollectionViewer, DataSource, isDataSource} from '@angular/cdk/collections';
 import {
   AfterContentChecked,
   ChangeDetectionStrategy,
@@ -22,13 +20,16 @@ import {
   OnDestroy,
   OnInit,
   QueryList,
+  TrackByFunction,
   ViewChild,
   ViewContainerRef,
-  ViewEncapsulation,
-  TrackByFunction
+  ViewEncapsulation
 } from '@angular/core';
+import {FocusableOption} from '@cdk/a11y';
+import {CollectionViewer, DataSource, isDataSource} from '@cdk/collections';
 import {BehaviorSubject, Observable, of as observableOf, Subject, Subscription} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+
 import {TreeControl} from './control/tree-control';
 import {CdkTreeNodeDef, CdkTreeNodeOutletContext} from './node';
 import {CdkTreeNodeOutlet} from './outlet';

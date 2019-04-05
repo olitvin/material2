@@ -3,11 +3,11 @@ package(default_visibility=["//visibility:public"])
 load("//:packages.bzl", "CDK_TARGETS", "CDK_PACKAGES", "ROLLUP_GLOBALS")
 load("//tools:defaults.bzl", "ng_module", "ng_package")
 
-# Root "@angular/cdk" entry-point that does not re-export individual entry-points.
+# Root "@cdk" entry-point that does not re-export individual entry-points.
 ng_module(
   name = "cdk",
   srcs = glob(["*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/cdk",
+  module_name = "@cdk",
   deps = [
     "@angular//packages/core",
   ],
@@ -18,7 +18,7 @@ filegroup(
   srcs = ["//src/cdk/%s:overview" % name for name in CDK_PACKAGES]
 )
 
-# Creates the @angular/cdk package published to npm.
+# Creates the @cdk package published to npm.
 ng_package(
   name = "npm_package",
   srcs = ["package.json"],

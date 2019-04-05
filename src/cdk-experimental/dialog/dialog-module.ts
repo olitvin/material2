@@ -6,21 +6,22 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {OverlayModule} from '@angular/cdk/overlay';
-import {PortalModule} from '@angular/cdk/portal';
-import {A11yModule} from '@angular/cdk/a11y';
+import {NgModule} from '@angular/core';
+import {A11yModule} from '@cdk/a11y';
+import {OverlayModule} from '@cdk/overlay';
+import {PortalModule} from '@cdk/portal';
+
 import {Dialog} from './dialog';
-import {CdkDialogContainer} from './dialog-container';
 import {DialogConfig} from './dialog-config';
-import {DialogRef} from './dialog-ref';
+import {CdkDialogContainer} from './dialog-container';
 import {
   DIALOG_CONFIG,
   DIALOG_CONTAINER,
   DIALOG_REF,
   MAT_DIALOG_SCROLL_STRATEGY_PROVIDER
 } from './dialog-injectors';
+import {DialogRef} from './dialog-ref';
 
 
 @NgModule({

@@ -1,4 +1,3 @@
-import {FocusMonitor, FocusOrigin} from '@angular/cdk/a11y';
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -8,6 +7,7 @@ import {
   OnDestroy,
   ViewChild
 } from '@angular/core';
+import {FocusMonitor, FocusOrigin} from '@cdk/a11y';
 
 /** @title Focusing with a specific FocusOrigin */
 @Component({

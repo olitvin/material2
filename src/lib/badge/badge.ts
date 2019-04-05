@@ -6,8 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {AriaDescriber} from '@angular/cdk/a11y';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {DOCUMENT} from '@angular/common';
 import {
   Directive,
@@ -19,7 +17,9 @@ import {
   Optional,
   Renderer2,
 } from '@angular/core';
-import {ThemePalette, mixinDisabled, CanDisableCtor, CanDisable} from '@angular/material/core';
+import {AriaDescriber} from '@cdk/a11y';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {CanDisable, CanDisableCtor, mixinDisabled, ThemePalette} from '@material/core';
 
 
 let nextId = 0;

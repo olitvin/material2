@@ -6,16 +6,17 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {OverlayModule} from '@angular/cdk/overlay';
-import {A11yModule} from '@angular/cdk/a11y';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {GestureConfig, MatCommonModule} from '@angular/material/core';
 import {HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
+import {A11yModule} from '@cdk/a11y';
+import {OverlayModule} from '@cdk/overlay';
+import {GestureConfig, MatCommonModule} from '@material/core';
+
 import {
+  MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER,
   MatTooltip,
   TooltipComponent,
-  MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER,
 } from './tooltip';
 
 @NgModule({

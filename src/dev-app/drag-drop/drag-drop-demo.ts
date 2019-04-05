@@ -6,10 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/core';
-import {MatIconRegistry} from '@angular/material/icon';
+import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@cdk/drag-drop';
+import {MatIconRegistry} from '@material/icon';
 
 @Component({
   moduleId: module.id,

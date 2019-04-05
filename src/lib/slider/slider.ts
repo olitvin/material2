@@ -6,20 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusMonitor, FocusOrigin} from '@angular/cdk/a11y';
-import {Directionality} from '@angular/cdk/bidi';
-import {coerceBooleanProperty, coerceNumberProperty} from '@angular/cdk/coercion';
-import {
-  DOWN_ARROW,
-  END,
-  hasModifierKey,
-  HOME,
-  LEFT_ARROW,
-  PAGE_DOWN,
-  PAGE_UP,
-  RIGHT_ARROW,
-  UP_ARROW,
-} from '@angular/cdk/keycodes';
 import {
   Attribute,
   ChangeDetectionStrategy,
@@ -39,6 +25,21 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+import {FocusMonitor, FocusOrigin} from '@cdk/a11y';
+import {Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty, coerceNumberProperty} from '@cdk/coercion';
+import {
+  DOWN_ARROW,
+  END,
+  hasModifierKey,
+  HOME,
+  LEFT_ARROW,
+  PAGE_DOWN,
+  PAGE_UP,
+  RIGHT_ARROW,
+  UP_ARROW,
+} from '@cdk/keycodes';
 import {
   CanColor,
   CanColorCtor,
@@ -50,8 +51,7 @@ import {
   mixinColor,
   mixinDisabled,
   mixinTabIndex,
-} from '@angular/material/core';
-import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+} from '@material/core';
 import {Subscription} from 'rxjs';
 
 /**

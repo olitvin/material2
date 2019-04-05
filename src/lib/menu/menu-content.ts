@@ -6,18 +6,18 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {
-  Directive,
-  TemplateRef,
-  ComponentFactoryResolver,
-  ApplicationRef,
-  Injector,
-  ViewContainerRef,
-  Inject,
-  OnDestroy,
-} from '@angular/core';
-import {TemplatePortal, DomPortalOutlet} from '@angular/cdk/portal';
 import {DOCUMENT} from '@angular/common';
+import {
+  ApplicationRef,
+  ComponentFactoryResolver,
+  Directive,
+  Inject,
+  Injector,
+  OnDestroy,
+  TemplateRef,
+  ViewContainerRef,
+} from '@angular/core';
+import {DomPortalOutlet, TemplatePortal} from '@cdk/portal';
 import {Subject} from 'rxjs';
 
 /**

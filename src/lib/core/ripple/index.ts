@@ -7,7 +7,7 @@
  */
 
 import {NgModule} from '@angular/core';
-import {PlatformModule} from '@angular/cdk/platform';
+import {PlatformModule} from '@cdk/platform';
 import {MatCommonModule} from '../common-behaviors/common-module';
 import {MatRipple} from './ripple';
 

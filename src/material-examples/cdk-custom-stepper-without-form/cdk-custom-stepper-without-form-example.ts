@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {CdkStepper} from '@angular/cdk/stepper';
+import {CdkStepper} from '@cdk/stepper';
 
 /** @title A custom CDK stepper without a form */
 @Component({

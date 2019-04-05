@@ -11,7 +11,7 @@ import {
   addModuleImportToModule,
   buildComponent,
   findModuleFromOptions,
-} from '@angular/cdk/schematics';
+} from '@cdk/schematics';
 import {Schema} from './schema';
 
 /**
@@ -34,11 +34,11 @@ export default function(options: Schema): Rule {
 function addFormModulesToModule(options: Schema) {
   return (host: Tree) => {
     const modulePath = findModuleFromOptions(host, options)!;
-    addModuleImportToModule(host, modulePath, 'MatInputModule', '@angular/material');
-    addModuleImportToModule(host, modulePath, 'MatButtonModule', '@angular/material');
-    addModuleImportToModule(host, modulePath, 'MatSelectModule', '@angular/material');
-    addModuleImportToModule(host, modulePath, 'MatRadioModule', '@angular/material');
-    addModuleImportToModule(host, modulePath, 'MatCardModule', '@angular/material');
+    addModuleImportToModule(host, modulePath, 'MatInputModule', '@material');
+    addModuleImportToModule(host, modulePath, 'MatButtonModule', '@material');
+    addModuleImportToModule(host, modulePath, 'MatSelectModule', '@material');
+    addModuleImportToModule(host, modulePath, 'MatRadioModule', '@material');
+    addModuleImportToModule(host, modulePath, 'MatCardModule', '@material');
     addModuleImportToModule(host, modulePath, 'ReactiveFormsModule', '@angular/forms');
     return host;
   };

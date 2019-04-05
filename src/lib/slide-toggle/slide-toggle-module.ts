@@ -6,10 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ObserversModule} from '@angular/cdk/observers';
 import {NgModule} from '@angular/core';
-import {GestureConfig, MatCommonModule, MatRippleModule} from '@angular/material/core';
 import {HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
+import {ObserversModule} from '@cdk/observers';
+import {GestureConfig, MatCommonModule, MatRippleModule} from '@material/core';
+
 import {MatSlideToggle} from './slide-toggle';
 
 

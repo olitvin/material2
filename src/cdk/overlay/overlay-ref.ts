@@ -6,15 +6,16 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {ComponentPortal, Portal, PortalOutlet, TemplatePortal} from '@angular/cdk/portal';
-import {ComponentRef, EmbeddedViewRef, NgZone} from '@angular/core';
 import {Location} from '@angular/common';
-import {Observable, Subject, merge, SubscriptionLike, Subscription, Observer} from 'rxjs';
+import {ComponentRef, EmbeddedViewRef, NgZone} from '@angular/core';
+import {Direction, Directionality} from '@cdk/bidi';
+import {coerceArray, coerceCssPixelValue} from '@cdk/coercion';
+import {ComponentPortal, Portal, PortalOutlet, TemplatePortal} from '@cdk/portal';
+import {merge, Observable, Observer, Subject, Subscription, SubscriptionLike} from 'rxjs';
 import {take, takeUntil} from 'rxjs/operators';
+
 import {OverlayKeyboardDispatcher} from './keyboard/overlay-keyboard-dispatcher';
 import {OverlayConfig} from './overlay-config';
-import {coerceCssPixelValue, coerceArray} from '@angular/cdk/coercion';
 import {OverlayReference} from './overlay-reference';
 import {PositionStrategy} from './position/position-strategy';
 

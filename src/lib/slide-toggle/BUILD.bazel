@@ -7,7 +7,7 @@ load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite"
 ng_module(
   name = "slide-toggle",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/slide-toggle",
+  module_name = "@material/slide-toggle",
   assets = [":slide-toggle.css"] + glob(["**/*.html"]),
   deps = [
     "@angular//packages/core",

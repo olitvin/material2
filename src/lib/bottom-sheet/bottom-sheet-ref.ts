@@ -7,8 +7,8 @@
  */
 
 import {Location} from '@angular/common';
-import {ESCAPE} from '@angular/cdk/keycodes';
-import {OverlayRef} from '@angular/cdk/overlay';
+import {ESCAPE} from '@cdk/keycodes';
+import {OverlayRef} from '@cdk/overlay';
 import {merge, Observable, Subject} from 'rxjs';
 import {filter, take} from 'rxjs/operators';
 import {MatBottomSheetContainer} from './bottom-sheet-container';

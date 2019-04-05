@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
-import {Component, ViewChild, AfterViewInit} from '@angular/core';
-import {MatPaginator, MatSort} from '@angular/material';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {MatPaginator, MatSort} from '@material';
 import {merge, Observable, of as observableOf} from 'rxjs';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 

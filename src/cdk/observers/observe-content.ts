@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty, coerceNumberProperty, coerceElement} from '@angular/cdk/coercion';
 import {
   AfterContentInit,
   Directive,
@@ -19,7 +18,8 @@ import {
   OnDestroy,
   Output,
 } from '@angular/core';
-import {Observable, Subject, Subscription, Observer} from 'rxjs';
+import {coerceBooleanProperty, coerceElement, coerceNumberProperty} from '@cdk/coercion';
+import {Observable, Observer, Subject, Subscription} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 
 /**

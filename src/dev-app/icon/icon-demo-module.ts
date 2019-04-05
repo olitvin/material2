@@ -7,8 +7,9 @@
  */
 
 import {NgModule} from '@angular/core';
-import {MatIconModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MatIconModule} from '@material';
+
 import {IconDemo} from './icon-demo';
 
 @NgModule({

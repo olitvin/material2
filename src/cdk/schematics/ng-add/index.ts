@@ -10,11 +10,11 @@ import {Rule, Tree} from '@angular-devkit/schematics';
 import {addPackageToPackageJson} from './package-config';
 
 /** Name of the Angular CDK version that is shipped together with the schematics. */
-export const cdkVersion = loadPackageVersionGracefully('@angular/cdk');
+export const cdkVersion = loadPackageVersionGracefully('@cdk');
 
 /**
  * Schematic factory entry-point for the `ng-add` schematic. The ng-add schematic will be
- * automatically executed if developers run `ng add @angular/cdk`.
+ * automatically executed if developers run `ng add @cdk`.
  *
  * By default, the CLI already installs the package that has been specified with `ng add`.
  * We just store the version in the `package.json` in case the package manager didn't. Also
@@ -24,7 +24,7 @@ export default function(): Rule {
   return (host: Tree) => {
     // In order to align the CDK version with the other Angular dependencies, we use tilde
     // instead of caret. This is default for Angular dependencies in new CLI projects.
-    addPackageToPackageJson(host, '@angular/cdk', `~${cdkVersion}`);
+    addPackageToPackageJson(host, '@cdk', `~${cdkVersion}`);
   };
 }
 

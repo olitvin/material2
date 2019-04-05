@@ -6,26 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import {AnimationEvent} from '@angular/animations';
-import {AriaDescriber, FocusMonitor} from '@angular/cdk/a11y';
-import {Directionality} from '@angular/cdk/bidi';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {ESCAPE} from '@angular/cdk/keycodes';
-import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
-import {HammerLoader, HAMMER_LOADER} from '@angular/platform-browser';
-import {
-  FlexibleConnectedPositionStrategy,
-  HorizontalConnectionPos,
-  OriginConnectionPosition,
-  Overlay,
-  OverlayConnectionPosition,
-  OverlayRef,
-  VerticalConnectionPos,
-  ScrollStrategy,
-} from '@angular/cdk/overlay';
-import {ScrollDispatcher} from '@angular/cdk/scrolling';
-import {Platform} from '@angular/cdk/platform';
-import {ComponentPortal} from '@angular/cdk/portal';
-import {take, takeUntil} from 'rxjs/operators';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -41,7 +21,28 @@ import {
   ViewContainerRef,
   ViewEncapsulation,
 } from '@angular/core';
-import {Subject, Observable} from 'rxjs';
+import {HAMMER_LOADER, HammerLoader} from '@angular/platform-browser';
+import {AriaDescriber, FocusMonitor} from '@cdk/a11y';
+import {Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {ESCAPE} from '@cdk/keycodes';
+import {BreakpointObserver, Breakpoints, BreakpointState} from '@cdk/layout';
+import {
+  FlexibleConnectedPositionStrategy,
+  HorizontalConnectionPos,
+  OriginConnectionPosition,
+  Overlay,
+  OverlayConnectionPosition,
+  OverlayRef,
+  ScrollStrategy,
+  VerticalConnectionPos,
+} from '@cdk/overlay';
+import {Platform} from '@cdk/platform';
+import {ComponentPortal} from '@cdk/portal';
+import {ScrollDispatcher} from '@cdk/scrolling';
+import {Observable, Subject} from 'rxjs';
+import {take, takeUntil} from 'rxjs/operators';
+
 import {matTooltipAnimations} from './tooltip-animations';
 
 

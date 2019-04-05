@@ -1,12 +1,6 @@
 import {Component, Input, OnDestroy, OnInit, Optional, ViewChild} from '@angular/core';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {
-    MatColumnDef,
-    MatSort,
-    MatSortHeader,
-    MatTable,
-    MatTableDataSource
-} from '@angular/material';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {MatColumnDef, MatSort, MatSortHeader, MatTable, MatTableDataSource} from '@material';
 
 export interface PeriodicElement {
   name: string;

@@ -6,12 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import {AnimationEvent} from '@angular/animations';
-import {FocusMonitor, FocusOrigin, FocusTrap, FocusTrapFactory} from '@angular/cdk/a11y';
-import {Directionality} from '@angular/cdk/bidi';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {ESCAPE} from '@angular/cdk/keycodes';
-import {Platform} from '@angular/cdk/platform';
-import {CdkScrollable, ScrollDispatcher, ViewportRuler} from '@angular/cdk/scrolling';
 import {DOCUMENT} from '@angular/common';
 import {
   AfterContentChecked,
@@ -36,18 +30,25 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+import {FocusMonitor, FocusOrigin, FocusTrap, FocusTrapFactory} from '@cdk/a11y';
+import {Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {ESCAPE} from '@cdk/keycodes';
+import {Platform} from '@cdk/platform';
+import {CdkScrollable, ScrollDispatcher, ViewportRuler} from '@cdk/scrolling';
 import {fromEvent, merge, Observable, Subject} from 'rxjs';
 import {
   debounceTime,
+  distinctUntilChanged,
   filter,
   map,
   startWith,
   take,
   takeUntil,
-  distinctUntilChanged,
 } from 'rxjs/operators';
+
 import {matDrawerAnimations} from './drawer-animations';
-import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
 
 
 /**

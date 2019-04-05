@@ -15,8 +15,8 @@ export {OverlayContainer} from './overlay-container';
 export {CdkOverlayOrigin, CdkConnectedOverlay} from './overlay-directives';
 export {FullscreenOverlayContainer} from './fullscreen-overlay-container';
 export {OverlayRef, OverlaySizeConfig} from './overlay-ref';
-export {ViewportRuler} from '@angular/cdk/scrolling';
-export {ComponentType} from '@angular/cdk/portal';
+export {ViewportRuler} from '@cdk/scrolling';
+export {ComponentType} from '@cdk/portal';
 export {OverlayKeyboardDispatcher} from './keyboard/overlay-keyboard-dispatcher';
 export {OverlayPositionBuilder} from './position/overlay-position-builder';
 
@@ -28,4 +28,4 @@ export {
   ConnectedPosition,
   FlexibleConnectedPositionStrategy,
 } from './position/flexible-connected-position-strategy';
-export {VIEWPORT_RULER_PROVIDER} from '@angular/cdk/scrolling';
+export {VIEWPORT_RULER_PROVIDER} from '@cdk/scrolling';

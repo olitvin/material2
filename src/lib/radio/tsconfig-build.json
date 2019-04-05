@@ -8,7 +8,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/material/radio",
+    "flatModuleId": "@material/radio",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

@@ -7,14 +7,16 @@
  */
 import {
   animate,
+  animateChild,
+  AnimationTriggerMetadata,
+  keyframes,
+  query,
   state,
   style,
   transition,
   trigger,
-  keyframes,
-  AnimationTriggerMetadata, query, animateChild,
 } from '@angular/animations';
-import {AnimationCurves, AnimationDurations} from '@angular/material/core';
+import {AnimationCurves, AnimationDurations} from '@material/core';
 
 const SORT_ANIMATION_TRANSITION = AnimationDurations.ENTERING + ' ' +
                                   AnimationCurves.STANDARD_CURVE;

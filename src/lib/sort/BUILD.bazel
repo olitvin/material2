@@ -7,7 +7,7 @@ load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite"
 ng_module(
   name = "sort",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/sort",
+  module_name = "@material/sort",
   assets = [":sort-header.css"] + glob(["**/*.html"]),
   deps = [
     "@angular//packages/animations",

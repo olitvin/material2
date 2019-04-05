@@ -6,15 +6,16 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusMonitor} from '@angular/cdk/a11y';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
+import {FocusMonitor} from '@cdk/a11y';
+
+import {CdkNestedTreeNode} from './nested-node';
+import {CdkTreeNodeDef} from './node';
 import {CdkTreeNodeOutlet} from './outlet';
 import {CdkTreeNodePadding} from './padding';
 import {CdkTreeNodeToggle} from './toggle';
 import {CdkTree, CdkTreeNode} from './tree';
-import {CdkTreeNodeDef} from './node';
-import {CdkNestedTreeNode} from './nested-node';
 
 const EXPORTED_DECLARATIONS = [
   CdkNestedTreeNode,

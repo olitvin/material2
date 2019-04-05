@@ -5,8 +5,8 @@ import {
   Inject,
   OnDestroy
 } from '@angular/core';
-import {MatCalendar} from '@angular/material';
-import {DateAdapter, MAT_DATE_FORMATS, MatDateFormats} from '@angular/material/core';
+import {MatCalendar} from '@material';
+import {DateAdapter, MAT_DATE_FORMATS, MatDateFormats} from '@material/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 

@@ -1,5 +1,5 @@
-import {FixedSizeVirtualScrollStrategy, VIRTUAL_SCROLL_STRATEGY} from '@angular/cdk/scrolling';
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {FixedSizeVirtualScrollStrategy, VIRTUAL_SCROLL_STRATEGY} from '@cdk/scrolling';
 
 export class CustomVirtualScrollStrategy extends FixedSizeVirtualScrollStrategy {
   constructor() {

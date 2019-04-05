@@ -6,19 +6,19 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {
+  AfterViewInit,
   Directive,
+  DoCheck,
   ElementRef,
   Input,
-  AfterViewInit,
-  DoCheck,
-  OnDestroy,
   NgZone,
+  OnDestroy,
 } from '@angular/core';
-import {Platform} from '@angular/cdk/platform';
-import {auditTime, takeUntil} from 'rxjs/operators';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {Platform} from '@cdk/platform';
 import {fromEvent, Subject} from 'rxjs';
+import {auditTime, takeUntil} from 'rxjs/operators';
 
 
 /** Directive to automatically resize a textarea to fit its content. */

@@ -8,7 +8,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/material/bottom-sheet",
+    "flatModuleId": "@material/bottom-sheet",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

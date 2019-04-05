@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Platform} from '@angular/cdk/platform';
 import {
   Directive,
   ElementRef,
@@ -18,9 +17,11 @@ import {
   OnInit,
   Optional,
 } from '@angular/core';
+import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+import {Platform} from '@cdk/platform';
+
 import {RippleRef} from './ripple-ref';
 import {RippleAnimationConfig, RippleConfig, RippleRenderer, RippleTarget} from './ripple-renderer';
-import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
 
 /** Configurable options for `matRipple`. */
 export interface RippleGlobalOptions {

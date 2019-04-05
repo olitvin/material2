@@ -1,7 +1,7 @@
-import {SelectionModel} from '@angular/cdk/collections';
-import {FlatTreeControl} from '@angular/cdk/tree';
 import {Component, Injectable} from '@angular/core';
-import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import {SelectionModel} from '@cdk/collections';
+import {FlatTreeControl} from '@cdk/tree';
+import {MatTreeFlatDataSource, MatTreeFlattener} from '@material/tree';
 import {BehaviorSubject} from 'rxjs';
 
 /**

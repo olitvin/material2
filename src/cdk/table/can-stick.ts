@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {coerceBooleanProperty} from '@cdk/coercion';
 
 /** @docs-private */
 export type Constructor<T> = new(...args: any[]) => T;

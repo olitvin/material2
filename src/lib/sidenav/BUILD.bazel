@@ -7,7 +7,7 @@ load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite"
 ng_module(
   name = "sidenav",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/sidenav",
+  module_name = "@material/sidenav",
   assets = [":drawer.css"] + glob(["**/*.html"]),
   deps = [
     "@angular//packages/animations",

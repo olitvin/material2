@@ -10,10 +10,12 @@ import {Directive, ElementRef, Input} from '@angular/core';
 import {
   CdkCell,
   CdkCellDef,
-  CdkColumnDef, CdkFooterCell, CdkFooterCellDef,
+  CdkColumnDef,
+  CdkFooterCell,
+  CdkFooterCellDef,
   CdkHeaderCell,
   CdkHeaderCellDef,
-} from '@angular/cdk/table';
+} from '@cdk/table';
 
 /**
  * Cell definition for the mat-table.

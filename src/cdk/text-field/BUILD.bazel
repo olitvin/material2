@@ -7,7 +7,7 @@ load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite"
 ng_module(
   name = "text-field",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/cdk/text-field",
+  module_name = "@cdk/text-field",
   deps = [
     "@angular//packages/core",
     "@rxjs",

@@ -6,9 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directive, ElementRef, Inject, Optional, Input, OnDestroy} from '@angular/core';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {Directive, ElementRef, Inject, Input, OnDestroy, Optional} from '@angular/core';
+import {coerceBooleanProperty} from '@cdk/coercion';
 import {Subject} from 'rxjs';
+
 import {CDK_DRAG_PARENT} from '../drag-parent';
 import {toggleNativeDragInteractions} from '../drag-styling';
 

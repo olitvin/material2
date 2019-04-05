@@ -7,7 +7,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/cdk/drag-drop",
+    "flatModuleId": "@cdk/drag-drop",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

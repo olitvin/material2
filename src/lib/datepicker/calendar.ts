@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ComponentPortal, ComponentType, Portal} from '@angular/cdk/portal';
 import {
   AfterContentInit,
   AfterViewChecked,
@@ -25,14 +24,16 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import {DateAdapter, MAT_DATE_FORMATS, MatDateFormats} from '@angular/material/core';
+import {ComponentPortal, ComponentType, Portal} from '@cdk/portal';
+import {DateAdapter, MAT_DATE_FORMATS, MatDateFormats} from '@material/core';
 import {Subject, Subscription} from 'rxjs';
+
+import {MatCalendarCellCssClasses} from './calendar-body';
 import {createMissingDateImplError} from './datepicker-errors';
 import {MatDatepickerIntl} from './datepicker-intl';
 import {MatMonthView} from './month-view';
 import {MatMultiYearView, yearsPerPage} from './multi-year-view';
 import {MatYearView} from './year-view';
-import {MatCalendarCellCssClasses} from './calendar-body';
 
 /**
  * Possible views for the calendar.

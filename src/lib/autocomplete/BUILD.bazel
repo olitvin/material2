@@ -7,7 +7,7 @@ load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite"
 ng_module(
   name = "autocomplete",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/autocomplete",
+  module_name = "@material/autocomplete",
   assets = [":autocomplete.css"] + glob(["**/*.html"]),
   deps = [
     "@angular//packages/common",

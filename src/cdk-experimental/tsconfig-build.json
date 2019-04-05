@@ -28,8 +28,8 @@
     "skipLibCheck": true,
     "types": ["jasmine", "tslib"],
     "paths": {
-      "@angular/cdk/*": ["../../dist/packages/cdk/*"],
-      "@angular/cdk-experimental/*": ["../../dist/packages/cdk-experimental/*"]
+      "@cdk/*": ["../../dist/packages/cdk/*"],
+      "@cdk-experimental/*": ["../../dist/packages/cdk-experimental/*"]
     }
   },
   "files": [
@@ -40,7 +40,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/cdk-experimental",
+    "flatModuleId": "@cdk-experimental",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   },

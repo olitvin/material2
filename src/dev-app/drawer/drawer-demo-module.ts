@@ -7,8 +7,9 @@
  */
 
 import {NgModule} from '@angular/core';
-import {MatButtonModule, MatListModule, MatSidenavModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatListModule, MatSidenavModule} from '@material';
+
 import {DrawerDemo} from './drawer-demo';
 
 @NgModule({

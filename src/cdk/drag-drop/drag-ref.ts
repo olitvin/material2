@@ -6,15 +6,16 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {EmbeddedViewRef, ElementRef, NgZone, ViewContainerRef, TemplateRef} from '@angular/core';
-import {ViewportRuler} from '@angular/cdk/scrolling';
-import {Direction} from '@angular/cdk/bidi';
-import {normalizePassiveListenerOptions} from '@angular/cdk/platform';
-import {coerceBooleanProperty, coerceElement} from '@angular/cdk/coercion';
-import {Subscription, Subject, Observable, Observer} from 'rxjs';
-import {DropListRefInternal as DropListRef} from './drop-list-ref';
+import {ElementRef, EmbeddedViewRef, NgZone, TemplateRef, ViewContainerRef} from '@angular/core';
+import {Direction} from '@cdk/bidi';
+import {coerceBooleanProperty, coerceElement} from '@cdk/coercion';
+import {normalizePassiveListenerOptions} from '@cdk/platform';
+import {ViewportRuler} from '@cdk/scrolling';
+import {Observable, Observer, Subject, Subscription} from 'rxjs';
+
 import {DragDropRegistry} from './drag-drop-registry';
 import {extendStyles, toggleNativeDragInteractions} from './drag-styling';
+import {DropListRefInternal as DropListRef} from './drop-list-ref';
 import {getTransformTransitionDurationInMs} from './transition-duration';
 
 /** Object that can be used to configure the behavior of DragRef. */

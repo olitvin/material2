@@ -9,6 +9,7 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -18,8 +19,8 @@ import {
   MatInputModule,
   MatNativeDateModule,
   MatSelectModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {CustomHeader, CustomHeaderNgContent, DatepickerDemo} from './datepicker-demo';
 
 @NgModule({

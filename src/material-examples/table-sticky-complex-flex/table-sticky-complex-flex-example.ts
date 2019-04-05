@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {MatButtonToggleGroup} from '@angular/material';
+import {MatButtonToggleGroup} from '@material';
 
 /**
  * @title Flex-layout tables with toggle-able sticky headers, footers, and columns

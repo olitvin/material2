@@ -6,11 +6,12 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {EventEmitter, TemplateRef, InjectionToken} from '@angular/core';
-import {MenuPositionX, MenuPositionY} from './menu-positions';
-import {Direction} from '@angular/cdk/bidi';
-import {FocusOrigin} from '@angular/cdk/a11y';
+import {EventEmitter, InjectionToken, TemplateRef} from '@angular/core';
+import {FocusOrigin} from '@cdk/a11y';
+import {Direction} from '@cdk/bidi';
+
 import {MatMenuContent} from './menu-content';
+import {MenuPositionX, MenuPositionY} from './menu-positions';
 
 /**
  * Injection token used to provide the parent menu to menu-specific components.

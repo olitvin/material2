@@ -8,13 +8,14 @@
 
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 import {
   MatButtonModule,
   MatButtonToggleModule,
   MatCheckboxModule,
   MatProgressSpinnerModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {ProgressSpinnerDemo} from './progress-spinner-demo';
 
 @NgModule({

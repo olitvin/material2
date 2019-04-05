@@ -9,27 +9,28 @@
 import {
   AfterContentInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ContentChild,
   ContentChildren,
   Directive,
   ElementRef,
+  OnChanges,
+  OnDestroy,
   Optional,
   QueryList,
   ViewEncapsulation,
-  OnChanges,
-  OnDestroy,
-  ChangeDetectorRef,
 } from '@angular/core';
 import {
   CanDisableRipple,
   CanDisableRippleCtor,
   MatLine,
-  setLines,
   mixinDisableRipple,
-} from '@angular/material/core';
+  setLines,
+} from '@material/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+
 
 // Boilerplate for applying mixins to MatList.
 /** @docs-private */

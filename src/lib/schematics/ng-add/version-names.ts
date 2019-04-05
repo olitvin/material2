@@ -8,8 +8,7 @@
 
 /** Name of the Material version that is shipped together with the schematics. */
 export const materialVersion =
-  loadPackageVersionGracefully('@angular/cdk') ||
-  loadPackageVersionGracefully('@angular/material');
+    loadPackageVersionGracefully('@cdk') || loadPackageVersionGracefully('@material');
 
 /**
  * Range of Angular versions that can be used together with the Angular Material version

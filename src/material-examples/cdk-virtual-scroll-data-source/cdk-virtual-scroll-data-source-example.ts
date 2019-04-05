@@ -1,5 +1,5 @@
-import {CollectionViewer, DataSource} from '@angular/cdk/collections';
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {CollectionViewer, DataSource} from '@cdk/collections';
 import {BehaviorSubject, Observable, Subscription} from 'rxjs';
 
 /** @title Virtual scroll with a custom data source */

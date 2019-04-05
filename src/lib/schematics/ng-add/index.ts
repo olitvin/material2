@@ -14,7 +14,7 @@ import {hammerjsVersion, materialVersion, requiredAngularVersionRange} from './v
 
 /**
  * Schematic factory entry-point for the `ng-add` schematic. The ng-add schematic will be
- * automatically executed if developers run `ng add @angular/material`.
+ * automatically executed if developers run `ng add @material`.
  *
  * Since the Angular Material schematics depend on the schematic utility functions from the CDK,
  * we need to install the CDK before loading the schematic files that import from the CDK.
@@ -28,8 +28,8 @@ export default function(options: Schema): Rule {
 
     // In order to align the Material and CDK version with the other Angular dependencies,
     // we use tilde instead of caret. This is default for Angular dependencies in new CLI projects.
-    addPackageToPackageJson(host, '@angular/cdk', `~${materialVersion}`);
-    addPackageToPackageJson(host, '@angular/material', `~${materialVersion}`);
+    addPackageToPackageJson(host, '@cdk', `~${materialVersion}`);
+    addPackageToPackageJson(host, '@material', `~${materialVersion}`);
     addPackageToPackageJson(host, '@angular/animations',
         ngCoreVersionTag || requiredAngularVersionRange);
 

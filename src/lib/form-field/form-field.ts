@@ -6,9 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {Platform} from '@angular/cdk/platform';
 import {
   AfterContentChecked,
   AfterContentInit,
@@ -31,6 +28,10 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import {NgControl} from '@angular/forms';
+import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+import {Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {Platform} from '@cdk/platform';
 import {
   CanColor,
   CanColorCtor,
@@ -38,8 +39,7 @@ import {
   LabelOptions,
   MAT_LABEL_GLOBAL_OPTIONS,
   mixinColor,
-} from '@angular/material/core';
-import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+} from '@material/core';
 import {fromEvent, merge, Subject} from 'rxjs';
 import {startWith, take, takeUntil} from 'rxjs/operators';
 

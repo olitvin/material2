@@ -5,8 +5,8 @@
     "rootDir": "..",
     "baseUrl": ".",
     "paths": {
-      "@angular/cdk/*": ["../cdk/*"],
-      "@angular/cdk-experimental/*": ["../cdk-experimental/*"]
+      "@cdk/*": ["../cdk/*"],
+      "@cdk-experimental/*": ["../cdk-experimental/*"]
     }
   },
   "include": ["./**/*.ts"]

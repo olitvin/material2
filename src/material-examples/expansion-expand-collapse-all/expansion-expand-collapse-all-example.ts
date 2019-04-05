@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {MatAccordion} from '@angular/material';
+import {MatAccordion} from '@material';
 
 /**
  * @title Accordion with expand/collapse all toggles

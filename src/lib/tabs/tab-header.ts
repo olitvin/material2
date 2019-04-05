@@ -6,13 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {coerceNumberProperty} from '@angular/cdk/coercion';
-import {END, ENTER, HOME, SPACE, hasModifierKey} from '@angular/cdk/keycodes';
-import {ViewportRuler} from '@angular/cdk/scrolling';
 import {
   AfterContentChecked,
   AfterContentInit,
+  AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -27,15 +24,19 @@ import {
   QueryList,
   ViewChild,
   ViewEncapsulation,
-  AfterViewInit,
 } from '@angular/core';
-import {CanDisableRipple, CanDisableRippleCtor, mixinDisableRipple} from '@angular/material/core';
-import {merge, of as observableOf, Subject, timer, fromEvent} from 'rxjs';
+import {FocusKeyManager} from '@cdk/a11y';
+import {Direction, Directionality} from '@cdk/bidi';
+import {coerceNumberProperty} from '@cdk/coercion';
+import {END, ENTER, hasModifierKey, HOME, SPACE} from '@cdk/keycodes';
+import {normalizePassiveListenerOptions, Platform} from '@cdk/platform';
+import {ViewportRuler} from '@cdk/scrolling';
+import {CanDisableRipple, CanDisableRippleCtor, mixinDisableRipple} from '@material/core';
+import {fromEvent, merge, of as observableOf, Subject, timer} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+
 import {MatInkBar} from './ink-bar';
 import {MatTabLabelWrapper} from './tab-label-wrapper';
-import {FocusKeyManager} from '@angular/cdk/a11y';
-import {Platform, normalizePassiveListenerOptions} from '@angular/cdk/platform';
 
 
 /** Config used to bind passive event listeners */

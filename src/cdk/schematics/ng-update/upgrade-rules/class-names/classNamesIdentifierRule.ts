@@ -37,12 +37,12 @@ export class Walker extends RuleWalker {
   data = getUpgradeDataFromWalker(this, 'classNames');
 
   /**
-   * List of identifier names that have been imported from `@angular/material` or `@angular/cdk`
+   * List of identifier names that have been imported from `@material` or `@cdk`
    * in the current source file and therefore can be considered trusted.
    */
   trustedIdentifiers: Set<string> = new Set();
 
-  /** List of namespaces that have been imported from `@angular/material` or `@angular/cdk`. */
+  /** List of namespaces that have been imported from `@material` or `@cdk`. */
   trustedNamespaces: Set<string> = new Set();
 
   /** Method that is called for every identifier inside of the specified project. */

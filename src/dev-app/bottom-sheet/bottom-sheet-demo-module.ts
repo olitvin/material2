@@ -9,6 +9,7 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 import {
   MatBottomSheetModule,
   MatButtonModule,
@@ -19,8 +20,8 @@ import {
   MatInputModule,
   MatListModule,
   MatSelectModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {BottomSheetDemo, ExampleBottomSheet} from './bottom-sheet-demo';
 
 @NgModule({

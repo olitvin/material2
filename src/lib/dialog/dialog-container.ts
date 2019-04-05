@@ -6,7 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
+import {AnimationEvent} from '@angular/animations';
+import {DOCUMENT} from '@angular/common';
 import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ComponentRef,
   ElementRef,
@@ -14,21 +18,13 @@ import {
   EventEmitter,
   Inject,
   Optional,
-  ChangeDetectorRef,
   ViewChild,
   ViewEncapsulation,
-  ChangeDetectionStrategy,
 } from '@angular/core';
-import {DOCUMENT} from '@angular/common';
-import {AnimationEvent} from '@angular/animations';
+import {FocusTrap, FocusTrapFactory} from '@cdk/a11y';
+import {BasePortalOutlet, CdkPortalOutlet, ComponentPortal, TemplatePortal} from '@cdk/portal';
+
 import {matDialogAnimations} from './dialog-animations';
-import {
-  BasePortalOutlet,
-  ComponentPortal,
-  CdkPortalOutlet,
-  TemplatePortal
-} from '@angular/cdk/portal';
-import {FocusTrap, FocusTrapFactory} from '@angular/cdk/a11y';
 import {MatDialogConfig} from './dialog-config';
 
 

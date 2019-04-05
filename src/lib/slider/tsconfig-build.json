@@ -8,7 +8,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/material/slider",
+    "flatModuleId": "@material/slider",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

@@ -6,35 +6,37 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceArray, coerceBooleanProperty} from '@angular/cdk/coercion';
+import {DOCUMENT} from '@angular/common';
 import {
+  AfterContentInit,
+  ChangeDetectorRef,
   ContentChildren,
+  Directive,
   ElementRef,
   EventEmitter,
   forwardRef,
+  Inject,
   Input,
   OnDestroy,
+  Optional,
   Output,
   QueryList,
-  Optional,
-  Directive,
-  ChangeDetectorRef,
   SkipSelf,
-  Inject,
-  AfterContentInit,
 } from '@angular/core';
-import {DOCUMENT} from '@angular/common';
-import {Directionality} from '@angular/cdk/bidi';
-import {CdkDrag} from './drag';
-import {DragDropRegistry} from '../drag-drop-registry';
-import {CdkDragDrop, CdkDragEnter, CdkDragExit, CdkDragSortEvent} from '../drag-events';
-import {CDK_DROP_LIST_CONTAINER, CdkDropListContainer} from '../drop-list-container';
-import {CdkDropListGroup} from './drop-list-group';
-import {DropListRef} from '../drop-list-ref';
-import {DragRef} from '../drag-ref';
-import {DragDrop} from '../drag-drop';
+import {Directionality} from '@cdk/bidi';
+import {coerceArray, coerceBooleanProperty} from '@cdk/coercion';
 import {Subject} from 'rxjs';
 import {startWith, takeUntil} from 'rxjs/operators';
+
+import {DragDrop} from '../drag-drop';
+import {DragDropRegistry} from '../drag-drop-registry';
+import {CdkDragDrop, CdkDragEnter, CdkDragExit, CdkDragSortEvent} from '../drag-events';
+import {DragRef} from '../drag-ref';
+import {CDK_DROP_LIST_CONTAINER, CdkDropListContainer} from '../drop-list-container';
+import {DropListRef} from '../drop-list-ref';
+
+import {CdkDrag} from './drag';
+import {CdkDropListGroup} from './drop-list-group';
 
 /** Counter used to generate unique ids for drop zones. */
 let _uniqueIdCounter = 0;

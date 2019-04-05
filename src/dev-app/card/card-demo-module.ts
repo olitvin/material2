@@ -7,13 +7,9 @@
  */
 
 import {NgModule} from '@angular/core';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatDividerModule,
-  MatProgressBarModule
-} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatCardModule, MatDividerModule, MatProgressBarModule} from '@material';
+
 import {CardDemo} from './card-demo';
 
 @NgModule({

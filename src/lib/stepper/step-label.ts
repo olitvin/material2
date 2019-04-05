@@ -7,7 +7,7 @@
  */
 
 import {Directive} from '@angular/core';
-import {CdkStepLabel} from '@angular/cdk/stepper';
+import {CdkStepLabel} from '@cdk/stepper';
 
 @Directive({
   selector: '[matStepLabel]',

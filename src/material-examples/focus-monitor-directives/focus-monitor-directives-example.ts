@@ -1,5 +1,5 @@
-import {FocusOrigin} from '@angular/cdk/a11y';
 import {ChangeDetectorRef, Component, NgZone} from '@angular/core';
+import {FocusOrigin} from '@cdk/a11y';
 
 /** @title Monitoring focus with FocusMonitor */
 @Component({

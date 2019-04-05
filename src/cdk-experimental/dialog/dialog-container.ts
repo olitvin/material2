@@ -7,13 +7,6 @@
  */
 
 import {animate, AnimationEvent, state, style, transition, trigger} from '@angular/animations';
-import {FocusTrapFactory} from '@angular/cdk/a11y';
-import {
-  BasePortalOutlet,
-  ComponentPortal,
-  PortalHostDirective,
-  TemplatePortal
-} from '@angular/cdk/portal';
 import {DOCUMENT} from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -29,8 +22,11 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import {FocusTrapFactory} from '@cdk/a11y';
+import {BasePortalOutlet, ComponentPortal, PortalHostDirective, TemplatePortal} from '@cdk/portal';
 import {Subject} from 'rxjs';
 import {distinctUntilChanged} from 'rxjs/operators';
+
 import {DialogConfig} from './dialog-config';
 
 

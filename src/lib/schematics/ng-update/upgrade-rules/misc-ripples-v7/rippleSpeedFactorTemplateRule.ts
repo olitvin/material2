@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ComponentWalker, ExternalResource} from '@angular/cdk/schematics';
+import {ComponentWalker, ExternalResource} from '@cdk/schematics';
 import {Replacement, RuleFailure, Rules} from 'tslint';
 import * as ts from 'typescript';
 import {

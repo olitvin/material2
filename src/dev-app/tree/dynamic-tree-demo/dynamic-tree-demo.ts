@@ -7,8 +7,9 @@
  */
 
 import {Component} from '@angular/core';
-import {FlatTreeControl} from '@angular/cdk/tree';
-import {DynamicDataSource, DynamicFlatNode, DynamicDatabase} from './dynamic-database';
+import {FlatTreeControl} from '@cdk/tree';
+
+import {DynamicDatabase, DynamicDataSource, DynamicFlatNode} from './dynamic-database';
 
 
 @Component({

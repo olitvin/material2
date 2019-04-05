@@ -6,8 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
-import {DomPortalOutlet} from '@angular/cdk/portal';
 import {DOCUMENT, Location} from '@angular/common';
 import {
   ApplicationRef,
@@ -18,6 +16,9 @@ import {
   NgZone,
   Optional,
 } from '@angular/core';
+import {Directionality} from '@cdk/bidi';
+import {DomPortalOutlet} from '@cdk/portal';
+
 import {OverlayKeyboardDispatcher} from './keyboard/overlay-keyboard-dispatcher';
 import {OverlayConfig} from './overlay-config';
 import {OverlayContainer} from './overlay-container';

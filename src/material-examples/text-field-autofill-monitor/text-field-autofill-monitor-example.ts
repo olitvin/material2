@@ -1,5 +1,5 @@
-import {AutofillMonitor} from '@angular/cdk/text-field';
 import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
+import {AutofillMonitor} from '@cdk/text-field';
 
 /** @title Monitoring autofill state with AutofillMonitor */
 @Component({

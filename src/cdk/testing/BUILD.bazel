@@ -5,7 +5,7 @@ load("//tools:defaults.bzl", "ng_module")
 ng_module(
   name = "testing",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/cdk/testing",
+  module_name = "@cdk/testing",
   deps = [
     "@angular//packages/core",
   ],

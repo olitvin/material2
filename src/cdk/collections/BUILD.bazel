@@ -5,7 +5,7 @@ load("//tools:defaults.bzl", "ng_module", "ts_library", "jasmine_node_test", "ma
 ng_module(
   name = "collections",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/cdk/collections",
+  module_name = "@cdk/collections",
   deps = [
     "@angular//packages/core",
     "@rxjs"

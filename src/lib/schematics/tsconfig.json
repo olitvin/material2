@@ -19,7 +19,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@angular/cdk/schematics": ["../../cdk/schematics"]
+      "@cdk/schematics": ["../../cdk/schematics"]
     }
   },
   "references": [

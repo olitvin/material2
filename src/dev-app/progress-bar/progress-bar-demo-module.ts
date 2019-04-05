@@ -8,8 +8,9 @@
 
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatButtonModule, MatButtonToggleModule, MatProgressBarModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatButtonToggleModule, MatProgressBarModule} from '@material';
+
 import {ProgressBarDemo} from './progress-bar-demo';
 
 @NgModule({

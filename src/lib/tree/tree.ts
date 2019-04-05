@@ -6,8 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {CdkTree} from '@angular/cdk/tree';
 import {ChangeDetectionStrategy, Component, ViewChild, ViewEncapsulation} from '@angular/core';
+import {CdkTree} from '@cdk/tree';
+
 import {MatTreeNodeOutlet} from './outlet';
 
 /**

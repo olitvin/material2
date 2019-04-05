@@ -7,19 +7,20 @@
  */
 
 import {
-  Output,
+  ChangeDetectorRef,
   Directive,
   EventEmitter,
   Input,
   OnDestroy,
   Optional,
-  ChangeDetectorRef,
+  Output,
   SkipSelf,
 } from '@angular/core';
-import {UniqueSelectionDispatcher} from '@angular/cdk/collections';
-import {CdkAccordion} from './accordion';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {UniqueSelectionDispatcher} from '@cdk/collections';
 import {Subscription} from 'rxjs';
+
+import {CdkAccordion} from './accordion';
 
 /** Used to generate unique ID for each accordion item. */
 let nextId = 0;

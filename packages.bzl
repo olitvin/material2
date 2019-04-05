@@ -89,24 +89,24 @@ VERSION_PLACEHOLDER_REPLACEMENTS = {
 ROLLUP_GLOBALS = {
   'tslib': 'tslib',
   'moment': 'moment',
-  '@angular/cdk': 'ng.cdk',
-  '@angular/cdk-experimental': 'ng.cdkExperimental',
-  '@angular/material': 'ng.material',
-  '@angular/material-experimental': 'ng.materialExperimental',
+  '@cdk': 'ng.cdk',
+  '@cdk-experimental': 'ng.cdkExperimental',
+  '@material': 'ng.material',
+  '@material-experimental': 'ng.materialExperimental',
 }
 
-# Rollup globals for cdk subpackages in the form of, e.g., {"@angular/cdk/table": "ng.cdk.table"}
+# Rollup globals for cdk subpackages in the form of, e.g., {"@cdk/table": "ng.cdk.table"}
 ROLLUP_GLOBALS.update({
-  "@angular/cdk/%s" % p: "ng.cdk.%s" % p for p in CDK_PACKAGES
+  "@cdk/%s" % p: "ng.cdk.%s" % p for p in CDK_PACKAGES
 })
 
 # Rollup globals for cdk subpackages in the form of, e.g.,
-# {"@angular/cdk-experimental/scrolling": "ng.cdkExperimental.scrolling"}
+# {"@cdk-experimental/scrolling": "ng.cdkExperimental.scrolling"}
 ROLLUP_GLOBALS.update({
-  "@angular/cdk-experimental/%s" % p: "ng.cdkExperimental.%s" % p for p in CDK_EXPERIMENTAL_PACKAGES
+  "@cdk-experimental/%s" % p: "ng.cdkExperimental.%s" % p for p in CDK_EXPERIMENTAL_PACKAGES
 })
 
-# Rollup globals for material subpackages, e.g., {"@angular/material/list": "ng.material.list"}
+# Rollup globals for material subpackages, e.g., {"@material/list": "ng.material.list"}
 ROLLUP_GLOBALS.update({
-  "@angular/material/%s" % p: "ng.material.%s" % p for p in MATERIAL_PACKAGES
+  "@material/%s" % p: "ng.material.%s" % p for p in MATERIAL_PACKAGES
 })

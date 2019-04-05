@@ -11,7 +11,7 @@ import {
   MatBottomSheet,
   MatBottomSheetConfig,
   MatBottomSheetRef,
-} from '@angular/material/bottom-sheet';
+} from '@material/bottom-sheet';
 
 
 const defaultConfig = new MatBottomSheetConfig();

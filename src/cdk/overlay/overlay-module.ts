@@ -6,10 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {BidiModule} from '@angular/cdk/bidi';
-import {PortalModule} from '@angular/cdk/portal';
-import {ScrollingModule, VIEWPORT_RULER_PROVIDER} from '@angular/cdk/scrolling';
 import {NgModule, Provider} from '@angular/core';
+import {BidiModule} from '@cdk/bidi';
+import {PortalModule} from '@cdk/portal';
+import {ScrollingModule, VIEWPORT_RULER_PROVIDER} from '@cdk/scrolling';
+
 import {OVERLAY_KEYBOARD_DISPATCHER_PROVIDER} from './keyboard/overlay-keyboard-dispatcher';
 import {Overlay} from './overlay';
 import {OVERLAY_CONTAINER_PROVIDER} from './overlay-container';

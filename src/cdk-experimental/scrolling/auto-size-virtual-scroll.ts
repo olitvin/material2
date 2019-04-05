@@ -6,14 +6,14 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceNumberProperty} from '@angular/cdk/coercion';
-import {ListRange} from '@angular/cdk/collections';
+import {Directive, forwardRef, Input, OnChanges} from '@angular/core';
+import {coerceNumberProperty} from '@cdk/coercion';
+import {ListRange} from '@cdk/collections';
 import {
   CdkVirtualScrollViewport,
   VIRTUAL_SCROLL_STRATEGY,
   VirtualScrollStrategy
-} from '@angular/cdk/scrolling';
-import {Directive, forwardRef, Input, OnChanges} from '@angular/core';
+} from '@cdk/scrolling';
 import {Observable} from 'rxjs';
 
 

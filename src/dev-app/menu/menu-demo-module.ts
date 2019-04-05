@@ -8,14 +8,15 @@
 
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 import {
   MatButtonModule,
   MatDividerModule,
   MatIconModule,
   MatMenuModule,
   MatToolbarModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {MenuDemo} from './menu-demo';
 
 @NgModule({

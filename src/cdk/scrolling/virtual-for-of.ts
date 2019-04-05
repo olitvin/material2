@@ -7,13 +7,6 @@
  */
 
 import {
-  ArrayDataSource,
-  CollectionViewer,
-  DataSource,
-  ListRange,
-  isDataSource,
-} from '@angular/cdk/collections';
-import {
   Directive,
   DoCheck,
   EmbeddedViewRef,
@@ -30,8 +23,16 @@ import {
   TrackByFunction,
   ViewContainerRef,
 } from '@angular/core';
+import {
+  ArrayDataSource,
+  CollectionViewer,
+  DataSource,
+  isDataSource,
+  ListRange,
+} from '@cdk/collections';
 import {Observable, Subject} from 'rxjs';
 import {pairwise, shareReplay, startWith, switchMap, takeUntil} from 'rxjs/operators';
+
 import {CdkVirtualScrollViewport} from './virtual-scroll-viewport';
 
 

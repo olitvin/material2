@@ -8,7 +8,7 @@ load("//tools/package-docs-content:index.bzl", "package_docs_content")
 ng_module(
   name = "examples",
   srcs = glob(["**/*.ts"]) + [":example-module"],
-  module_name = "@angular/material-examples",
+  module_name = "@material-examples",
   assets = glob(["**/*.html", "**/*.css"]),
   deps = [
     "@angular//packages/common",
@@ -48,7 +48,7 @@ package_docs_content(
     # plain source files into the docs-content.
     ":example-source-files": "examples-source",
 
-    # Package the overviews for "@angular/material" and "@angular/cdk" into the docs content
+    # Package the overviews for "@material" and "@cdk" into the docs content
     "//src/lib:overviews": "overviews/material",
     "//src/cdk:overviews": "overviews/cdk",
 

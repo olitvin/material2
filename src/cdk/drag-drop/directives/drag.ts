@@ -6,11 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
-import {ViewportRuler} from '@angular/cdk/scrolling';
 import {DOCUMENT} from '@angular/common';
 import {
   AfterViewInit,
+  ChangeDetectorRef,
   ContentChild,
   ContentChildren,
   Directive,
@@ -20,19 +19,22 @@ import {
   InjectionToken,
   Input,
   NgZone,
+  OnChanges,
   OnDestroy,
   Optional,
   Output,
   QueryList,
+  SimpleChanges,
   SkipSelf,
   ViewContainerRef,
-  OnChanges,
-  SimpleChanges,
-  ChangeDetectorRef,
 } from '@angular/core';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {Observable, Observer, Subject, merge} from 'rxjs';
-import {startWith, take, map, takeUntil, switchMap, tap} from 'rxjs/operators';
+import {Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {ViewportRuler} from '@cdk/scrolling';
+import {merge, Observable, Observer, Subject} from 'rxjs';
+import {map, startWith, switchMap, take, takeUntil, tap} from 'rxjs/operators';
+
+import {DragDrop} from '../drag-drop';
 import {DragDropRegistry} from '../drag-drop-registry';
 import {
   CdkDragDrop,
@@ -40,18 +42,18 @@ import {
   CdkDragEnter,
   CdkDragExit,
   CdkDragMove,
-  CdkDragStart,
   CdkDragRelease,
+  CdkDragStart,
 } from '../drag-events';
+import {CDK_DRAG_PARENT} from '../drag-parent';
+import {DragRef, DragRefConfig} from '../drag-ref';
+import {CDK_DROP_LIST} from '../drop-list-container';
+import {DropListRef} from '../drop-list-ref';
+
 import {CdkDragHandle} from './drag-handle';
 import {CdkDragPlaceholder} from './drag-placeholder';
 import {CdkDragPreview} from './drag-preview';
-import {CDK_DROP_LIST} from '../drop-list-container';
-import {CDK_DRAG_PARENT} from '../drag-parent';
-import {DragRef, DragRefConfig} from '../drag-ref';
-import {DropListRef} from '../drop-list-ref';
 import {CdkDropListInternal as CdkDropList} from './drop-list';
-import {DragDrop} from '../drag-drop';
 
 /** Injection token that can be used to configure the behavior of `CdkDrag`. */
 export const CDK_DRAG_CONFIG = new InjectionToken<DragRefConfig>('CDK_DRAG_CONFIG', {

@@ -7,7 +7,7 @@
  */
 
 import {Component} from '@angular/core';
-import {EXAMPLE_COMPONENTS} from '@angular/material-examples';
+import {EXAMPLE_COMPONENTS} from '@material-examples';
 
 
 @Component({

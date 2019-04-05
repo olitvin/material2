@@ -1,5 +1,5 @@
-import {Component, ViewChild, TemplateRef} from '@angular/core';
-import {MatDialog, MatDialogRef, MatDialogConfig} from '@angular/material';
+import {Component, TemplateRef, ViewChild} from '@angular/core';
+import {MatDialog, MatDialogConfig, MatDialogRef} from '@material';
 
 @Component({
   selector: 'dialog-e2e',

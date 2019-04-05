@@ -6,9 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
+import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {MatTable} from './table';
-import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTableModule} from '@cdk/table';
+import {MatCommonModule} from '@material/core';
+
 import {
   MatCell,
   MatCellDef,
@@ -26,8 +28,7 @@ import {
   MatRow,
   MatRowDef
 } from './row';
-import {CommonModule} from '@angular/common';
-import {MatCommonModule} from '@angular/material/core';
+import {MatTable} from './table';
 
 const EXPORTED_DECLARATIONS = [
   // Table

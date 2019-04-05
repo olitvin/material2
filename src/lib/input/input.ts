@@ -6,9 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {getSupportedInputTypes, Platform} from '@angular/cdk/platform';
-import {AutofillMonitor} from '@angular/cdk/text-field';
 import {
   Directive,
   DoCheck,
@@ -23,14 +20,18 @@ import {
   Self,
 } from '@angular/core';
 import {FormGroupDirective, NgControl, NgForm} from '@angular/forms';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {getSupportedInputTypes, Platform} from '@cdk/platform';
+import {AutofillMonitor} from '@cdk/text-field';
 import {
   CanUpdateErrorState,
   CanUpdateErrorStateCtor,
   ErrorStateMatcher,
   mixinErrorState,
-} from '@angular/material/core';
-import {MatFormFieldControl} from '@angular/material/form-field';
+} from '@material/core';
+import {MatFormFieldControl} from '@material/form-field';
 import {Subject} from 'rxjs';
+
 import {getMatInputUnsupportedTypeError} from './input-errors';
 import {MAT_INPUT_VALUE_ACCESSOR} from './input-value-accessor';
 

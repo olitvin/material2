@@ -6,9 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Platform} from '@angular/cdk/platform';
 import {Inject, Injectable, Optional} from '@angular/core';
+import {Platform} from '@cdk/platform';
+
 import {DateAdapter, MAT_DATE_LOCALE} from './date-adapter';
+
 
 // TODO(mmalerba): Remove when we no longer support safari 9.
 /** Whether the browser supports the Intl API. */

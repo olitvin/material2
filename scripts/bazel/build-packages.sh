@@ -29,7 +29,7 @@ do
   cp -r --no-preserve=mode ${bazel_bin}/src/${p}/npm_package/* ${packages_dist}/${out_dir}
 done
 
-# Update the root @angular/material metadata file to re-export metadata from each entry-point.
+# Update the root @material metadata file to re-export metadata from each entry-point.
 ./scripts/bazel/update-material-metadata-reexports.js
 
 # Create a tgz for each package with `npm pack`. Change directory in a subshell because

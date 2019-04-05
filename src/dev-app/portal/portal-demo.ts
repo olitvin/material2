@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ComponentPortal, Portal, CdkPortal} from '@angular/cdk/portal';
 import {Component, QueryList, ViewChildren} from '@angular/core';
+import {CdkPortal, ComponentPortal, Portal} from '@cdk/portal';
 
 
 @Component({

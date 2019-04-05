@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty, coerceNumberProperty} from '@angular/cdk/coercion';
 import {
   AfterContentChecked,
   AfterContentInit,
@@ -27,6 +26,7 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import {coerceBooleanProperty, coerceNumberProperty} from '@cdk/coercion';
 import {
   CanColor,
   CanColorCtor,
@@ -35,7 +35,7 @@ import {
   mixinColor,
   mixinDisableRipple,
   ThemePalette,
-} from '@angular/material/core';
+} from '@material/core';
 import {merge, Subscription} from 'rxjs';
 
 import {MatTab} from './tab';

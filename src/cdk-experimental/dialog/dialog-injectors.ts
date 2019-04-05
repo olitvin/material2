@@ -11,10 +11,11 @@ import {
   ComponentType,
   Overlay,
   ScrollStrategy,
-} from '@angular/cdk/overlay';
-import {DialogRef} from './dialog-ref';
-import {CdkDialogContainer} from './dialog-container';
+} from '@cdk/overlay';
+
 import {DialogConfig} from './dialog-config';
+import {CdkDialogContainer} from './dialog-container';
+import {DialogRef} from './dialog-ref';
 
 /** Injection token for the Dialog's ScrollStrategy. */
 export const DIALOG_SCROLL_STRATEGY =

@@ -6,10 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {PlatformModule} from '@angular/cdk/platform';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {PlatformModule} from '@cdk/platform';
+
 import {PlatformDemo} from './platform-demo';
 
 @NgModule({

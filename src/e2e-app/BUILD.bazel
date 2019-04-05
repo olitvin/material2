@@ -16,7 +16,7 @@ ng_module(
     "//src/cdk/drag-drop",
     "//src/cdk/overlay",
     "//src/cdk/scrolling",
-    # TODO(devversion): be more explicit by using "@angular/material" with individual entry points.
+    # TODO(devversion): be more explicit by using "@material" with individual entry points.
     "//src/lib:material",
     "//src/material-examples:examples",
     "//src/cdk-experimental/dialog",

@@ -9,8 +9,9 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatBadgeModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MatBadgeModule, MatButtonModule, MatIconModule} from '@material';
+
 import {BadgeDemo} from './badge-demo';
 
 @NgModule({

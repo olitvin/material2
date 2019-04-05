@@ -6,8 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceNumberProperty} from '@angular/cdk/coercion';
-import {Platform} from '@angular/cdk/platform';
 import {DOCUMENT} from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -20,8 +18,10 @@ import {
   Renderer2,
   ViewEncapsulation,
 } from '@angular/core';
-import {CanColor, CanColorCtor, mixinColor} from '@angular/material/core';
 import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+import {coerceNumberProperty} from '@cdk/coercion';
+import {Platform} from '@cdk/platform';
+import {CanColor, CanColorCtor, mixinColor} from '@material/core';
 
 
 /** Possible mode for a progress spinner. */

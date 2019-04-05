@@ -21,9 +21,9 @@
     "types": [],
     "baseUrl": ".",
     "paths": {
-      "@angular/material": ["./material"],
-      "@angular/cdk/*": ["./cdk/*"],
-      "@angular/material/*": ["./material/*"]
+      "@material": ["./material"],
+      "@cdk/*": ["./cdk/*"],
+      "@material/*": ["./material/*"]
     }
   },
   "files": [

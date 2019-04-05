@@ -6,10 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {Overlay, OverlayConfig, OverlayRef} from '@angular/cdk/overlay';
-import {ComponentPortal, ComponentType, PortalInjector, TemplatePortal} from '@angular/cdk/portal';
 import {
   ComponentRef,
   EmbeddedViewRef,
@@ -17,12 +13,17 @@ import {
   Injectable,
   InjectionToken,
   Injector,
+  OnDestroy,
   Optional,
   SkipSelf,
   TemplateRef,
-  OnDestroy,
 } from '@angular/core';
+import {LiveAnnouncer} from '@cdk/a11y';
+import {BreakpointObserver, Breakpoints} from '@cdk/layout';
+import {Overlay, OverlayConfig, OverlayRef} from '@cdk/overlay';
+import {ComponentPortal, ComponentType, PortalInjector, TemplatePortal} from '@cdk/portal';
 import {take, takeUntil} from 'rxjs/operators';
+
 import {SimpleSnackBar} from './simple-snack-bar';
 import {MAT_SNACK_BAR_DATA, MatSnackBarConfig} from './snack-bar-config';
 import {MatSnackBarContainer} from './snack-bar-container';

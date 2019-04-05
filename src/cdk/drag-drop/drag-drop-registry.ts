@@ -6,9 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Injectable, NgZone, OnDestroy, Inject} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
-import {normalizePassiveListenerOptions} from '@angular/cdk/platform';
+import {Inject, Injectable, NgZone, OnDestroy} from '@angular/core';
+import {normalizePassiveListenerOptions} from '@cdk/platform';
 import {Subject} from 'rxjs';
 
 /** Event options that can be used to bind an active, capturing event. */

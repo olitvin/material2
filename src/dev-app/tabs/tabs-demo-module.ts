@@ -7,9 +7,11 @@
  */
 
 import {NgModule} from '@angular/core';
-import {MatTabsModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MatTabsModule} from '@material';
+
 import {ExampleModule} from '../example/example-module';
+
 import {TabsDemo} from './tabs-demo';
 
 @NgModule({

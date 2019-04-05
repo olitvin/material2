@@ -7,7 +7,7 @@
  */
 
 import {Component} from '@angular/core';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatSnackBar} from '@material/snack-bar';
 
 
 @Component({

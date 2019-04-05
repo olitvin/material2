@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusMonitor} from '@angular/cdk/a11y';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -14,14 +13,16 @@ import {
   ElementRef,
   Input,
   OnDestroy,
-  ViewEncapsulation,
   TemplateRef,
+  ViewEncapsulation,
 } from '@angular/core';
+import {FocusMonitor} from '@cdk/a11y';
+import {CdkStepHeader, StepState} from '@cdk/stepper';
 import {Subscription} from 'rxjs';
+
 import {MatStepLabel} from './step-label';
-import {MatStepperIntl} from './stepper-intl';
 import {MatStepperIconContext} from './stepper-icon';
-import {CdkStepHeader, StepState} from '@angular/cdk/stepper';
+import {MatStepperIntl} from './stepper-intl';
 
 
 @Component({

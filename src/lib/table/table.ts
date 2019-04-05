@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {CDK_TABLE_TEMPLATE, CdkTable} from '@angular/cdk/table';
 import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
+import {CDK_TABLE_TEMPLATE, CdkTable} from '@cdk/table';
 
 /**
  * Wrapper for the CdkTable with Material design styles.

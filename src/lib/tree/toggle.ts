@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {CdkTreeNodeToggle} from '@angular/cdk/tree';
 import {Directive, Input} from '@angular/core';
+import {CdkTreeNodeToggle} from '@cdk/tree';
 
 /**
  * Wrapper for the CdkTree's toggle with Material design styles.

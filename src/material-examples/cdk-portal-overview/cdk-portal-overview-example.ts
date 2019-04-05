@@ -1,5 +1,5 @@
-import {Component, AfterViewInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
-import {ComponentPortal, Portal, TemplatePortal} from '@angular/cdk/portal';
+import {AfterViewInit, Component, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
+import {ComponentPortal, Portal, TemplatePortal} from '@cdk/portal';
 
 /**
  * @title Portal overview

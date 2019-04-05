@@ -6,7 +6,7 @@ load("//tools:defaults.bzl", "ng_module", "markdown_to_html")
 ng_module(
   name = "card",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/card",
+  module_name = "@material/card",
   assets = [":card.css"] + glob(["**/*.html"]),
   deps = [
     "@angular//packages/core",

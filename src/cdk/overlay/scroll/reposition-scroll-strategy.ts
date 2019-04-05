@@ -7,11 +7,13 @@
  */
 
 import {NgZone} from '@angular/core';
+import {ScrollDispatcher, ViewportRuler} from '@cdk/scrolling';
 import {Subscription} from 'rxjs';
-import {ScrollStrategy, getMatScrollStrategyAlreadyAttachedError} from './scroll-strategy';
+
 import {OverlayReference} from '../overlay-reference';
-import {ScrollDispatcher, ViewportRuler} from '@angular/cdk/scrolling';
 import {isElementScrolledOutsideView} from '../position/scroll-clip';
+
+import {getMatScrollStrategyAlreadyAttachedError, ScrollStrategy} from './scroll-strategy';
 
 /**
  * Config options for the RepositionScrollStrategy.

@@ -6,9 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
+import {coerceCssPixelValue} from '@cdk/coercion';
+import {ViewportRuler} from '@cdk/scrolling';
+
 import {ScrollStrategy} from './scroll-strategy';
-import {ViewportRuler} from '@angular/cdk/scrolling';
-import {coerceCssPixelValue} from '@angular/cdk/coercion';
 
 /**
  * Extended `CSSStyleDeclaration` that includes `scrollBehavior` which isn't part of the

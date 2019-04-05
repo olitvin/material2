@@ -9,6 +9,7 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 import {
   MatButtonModule,
   MatButtonToggleModule,
@@ -20,8 +21,8 @@ import {
   MatSelectModule,
   MatTabsModule,
   MatToolbarModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {InputDemo} from './input-demo';
 
 @NgModule({

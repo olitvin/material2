@@ -8,7 +8,7 @@
 
 import {Component} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import {ErrorStateMatcher, MatSelectChange} from '@angular/material';
+import {ErrorStateMatcher, MatSelectChange} from '@material';
 
 /** Error any time control is invalid */
 export class MyErrorStateMatcher implements ErrorStateMatcher {

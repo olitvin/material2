@@ -26,7 +26,7 @@ function addDragDropModulesToModule(options: Schema) {
   return (host: Tree) => {
     const modulePath = findModuleFromOptions(host, options)!;
 
-    addModuleImportToModule(host, modulePath, 'DragDropModule', '@angular/cdk/drag-drop');
+    addModuleImportToModule(host, modulePath, 'DragDropModule', '@cdk/drag-drop');
     return host;
   };
 }

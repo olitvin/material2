@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
 import {Component} from '@angular/core';
+import {BreakpointObserver, Breakpoints, BreakpointState} from '@cdk/layout';
 import {Observable} from 'rxjs';
 
 

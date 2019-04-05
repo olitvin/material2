@@ -1,9 +1,12 @@
-import {DialogModule} from '@angular/cdk-experimental/dialog';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {ScrollingModule as ExperimentalScrollingModule} from '@angular/cdk-experimental/scrolling';
-import {ScrollingModule} from '@angular/cdk/scrolling';
 import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule} from '@angular/router';
+import {DialogModule} from '@cdk-experimental/dialog';
+import {ScrollingModule as ExperimentalScrollingModule} from '@cdk-experimental/scrolling';
+import {DragDropModule} from '@cdk/drag-drop';
+import {ScrollingModule} from '@cdk/scrolling';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -23,11 +26,9 @@ import {
   MatSlideToggleModule,
   MatStepperModule,
   MatTabsModule,
-} from '@angular/material';
-import {ExampleModule} from '@angular/material-examples';
-import {BrowserModule} from '@angular/platform-browser';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {RouterModule} from '@angular/router';
+} from '@material';
+import {ExampleModule} from '@material-examples';
+
 import {BlockScrollStrategyE2E} from './block-scroll-strategy/block-scroll-strategy-e2e';
 import {ButtonE2E} from './button/button-e2e';
 import {SimpleCheckboxes} from './checkbox/checkbox-e2e';

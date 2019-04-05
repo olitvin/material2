@@ -6,9 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {PortalModule} from '@angular/cdk/portal';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {PortalModule} from '@cdk/portal';
+
 import {PortalDemo, ScienceJoke} from './portal-demo';
 
 @NgModule({

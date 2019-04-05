@@ -1,6 +1,6 @@
-import {CdkConnectedOverlay, CdkOverlayOrigin} from '@angular/cdk/overlay';
-import {CdkObserveContent} from '@angular/cdk/observers';
-import {CdkTrapFocus} from '@angular/cdk/a11y';
+import {CdkTrapFocus} from '@cdk/a11y';
+import {CdkObserveContent} from '@cdk/observers';
+import {CdkConnectedOverlay, CdkOverlayOrigin} from '@cdk/overlay';
 
 const a = new CdkConnectedOverlay();
 const b = new CdkOverlayOrigin();

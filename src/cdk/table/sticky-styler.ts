@@ -10,7 +10,7 @@
  * Directions that can be used when setting sticky positioning.
  * @docs-private
  */
-import {Direction} from '@angular/cdk/bidi';
+import {Direction} from '@cdk/bidi';
 
 export type StickyDirection = 'top' | 'bottom' | 'left' | 'right';
 

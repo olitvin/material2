@@ -7,7 +7,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/cdk/keycodes",
+    "flatModuleId": "@cdk/keycodes",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

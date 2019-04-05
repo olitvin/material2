@@ -503,8 +503,8 @@
 
 ### Highlights
 
-* Support for [Drag and Drop](https://material.angular.io/cdk/drag-drop/overview) in `@angular/cdk/drag-drop`.
-* Support for [Virtual Scrolling](https://material.angular.io/cdk/scrolling/overview) in `@angular/cdk/scrolling`.
+* Support for [Drag and Drop](https://material.angular.io/cdk/drag-drop/overview) in `@cdk/drag-drop`.
+* Support for [Virtual Scrolling](https://material.angular.io/cdk/scrolling/overview) in `@cdk/scrolling`.
 * Support for native `<select>` element in `<mat-form-field>` .
 * Added `<mat-action-list>`, a list where each item is a `<button>`.
 * Updated component styles throughout the library matching the 2018 Material Design Spec refresh.
@@ -517,10 +517,10 @@
 
 Using the Angular CLI, you can use the `ng update` command to automatically migrate to the new APIs in for Material and CDK.
 ```
-ng update @angular/material
+ng update @material
 ```
 
-**NOTE:** If you are **using only the CDK** you can automatically migrate using `ng update @angular/cdk` instead.
+**NOTE:** If you are **using only the CDK** you can automatically migrate using `ng update @cdk` instead.
 
 
 ### Breaking Changes
@@ -537,7 +537,7 @@ Additionally, users who want to use themed elevations in their custom components
 their own shorthand mixin:
 
 ```sass
-@import '~@angular/material/theming';
+@import '~@material/theming';
 
 $myTheme: ...
 
@@ -777,7 +777,7 @@ Additionally, users who want to use themed elevations in their custom components
 their own shorthand mixin:
 
 ```sass
-@import '~@angular/material/theming';
+@import '~@material/theming';
 
 $myTheme: ...
 
@@ -849,8 +849,8 @@ and then invoke `angular-material-theme` with the `$myTheme` variable.
 # [7.0.0-beta.0](https://github.com/angular/material2/compare/6.4.0...7.0.0-beta.0) (2018-08-30)
 
 ### Highlights
-* Support for drag and drop in `@angular/cdk/drag-drop`!
-* Support for virtual scrolling in `@angular/cdk/scrolling`!
+* Support for drag and drop in `@cdk/drag-drop`!
+* Support for virtual scrolling in `@cdk/scrolling`!
 * You can now use a native `<select>` element in `<mat-form-field>`
 * Updated visuals for 2018 Material Design update (in-progress, not all components are done)
 
@@ -1440,7 +1440,7 @@ You can view a beta version of the docs at https://beta-angular-material-io.fire
 
 ### Highlights
 
-* An initial implementation of virtual scrolling is now available in @angular/cdk-experimental.
+* An initial implementation of virtual scrolling is now available in @cdk-experimental.
   Please note that, since these components are still experimental, they may have bugs and the API
   is subject to change.
 
@@ -1595,9 +1595,9 @@ You can view a beta version of the docs at https://beta-angular-material-io.fire
 * [Schematics](https://material.angular.io/guides/schematics) are now available for Angular Material, [@jelbourn](https://github.com/jelbourn) recently gave a [talk at ng-conf about using schematics](https://www.youtube.com/watch?v=v__RuD9RX3I)
 * `MatTabs` content can now be [lazy loaded](https://material.angular.io/components/tabs/overview#lazy_loading)
 * [`MatBadge`](https://material.angular.io/components/badge/overview) and [`MatBottomSheet`](https://material.angular.io/components/bottom-sheet/overview) components are now available
-* `@angular/cdk/overlay` has a new positioning strategy available, [`FlexibleConnectedPositionStrategy`](https://material.angular.io/cdk/overlay/overview#position-strategies), which intelligently handles sizing and positioning to ensure that overlay contents always remain on the screen
+* `@cdk/overlay` has a new positioning strategy available, [`FlexibleConnectedPositionStrategy`](https://material.angular.io/cdk/overlay/overview#position-strategies), which intelligently handles sizing and positioning to ensure that overlay contents always remain on the screen
 * `MatIcon` now allows SVG icons to be registered from strings
-* `@angular/cdk/keycodes` now includes most keycodes you might need for building a web application
+* `@cdk/keycodes` now includes most keycodes you might need for building a web application
 * 130+ bug fixes
 * Docs for v5 are now available at [v5.material.angular.io](https://v5.material.angular.io)
 * A version picker is available [material.angular.io](https://material.angular.io) to switch between docs versions
@@ -1607,7 +1607,7 @@ You can view a beta version of the docs at https://beta-angular-material-io.fire
 
 With the Angular CLI v6.0+, you can use the `ng update` command to automatically migrate to the new APIs
 ```
-ng update @angular/material
+ng update @material
 ```
 **NOTE:** There may be some cases where the tool may be unable to automatically migrate, but will notify you of those cases
 
@@ -2039,8 +2039,8 @@ We expect to have the tool ready when we release version 6.0.0.
 
 ### Highlights
 
-* New tree component! The base behavior lives in `@angular/cdk` with Material Design flavors in
-  `@angular/material`.
+* New tree component! The base behavior lives in `@cdk` with Material Design flavors in
+  `@material`.
 
 
 ### Bug Fixes
@@ -2847,7 +2847,7 @@ StackBlitz instead of Plunker.
   help us eliminate more bugs from the forthcoming 5.0.0 release. Moving forward, the _major_
   version number of Angular Material and CDK will update alongside Angular itself.
 * A [moment.js](http://momentjs.com/) implementation of the `DateAdapter` for `MatDatepicker` is
-  now available as `@angular/material-moment-adapter`
+  now available as `@material-moment-adapter`
 * Based on Angular 5.0
 * More consistent naming conventions across the board
 * 60+ bug fixes
@@ -2857,15 +2857,15 @@ StackBlitz instead of Plunker.
 * `mat-icon` now uses `HttpClient` from `@angular/common/http` instead of `Http` from
   `@angular/http`. Any unit tests that faked icon responses should be changed to use an
   `HttpInterceptor`.
-* `@angular/cdk/rxjs` has been removed in favor of [RxJS 5.5's lettable operators](https://github.com/ReactiveX/rxjs/blob/master/doc/lettable-operators.md).
+* `@cdk/rxjs` has been removed in favor of [RxJS 5.5's lettable operators](https://github.com/ReactiveX/rxjs/blob/master/doc/lettable-operators.md).
 * **toolbar:** in previous versions, any content of `mat-toolbar` not wrapped in a
   `mat-toolbar-row` would be rendered inside of an implicitly created `mat-toolbar-row`. As of rc0,
   this implicit row will no longer be created. This means that any custom application CSS that
   targeted this implicitly created `mat-toolbar-row` will no longer apply. Users can re-add the
   `mat-toolbar-row` in their own templates to match the original output structure. This
   resolves a longstanding issue where `display: flex` styles were difficult to use on `mat-toolbar`.
-* **accordion:** move CdkAccordion to `@angular/cdk/accordion`
-  - `CdkAccordion` and associated classes live in `@angular/cdk/accordion`
+* **accordion:** move CdkAccordion to `@cdk/accordion`
+  - `CdkAccordion` and associated classes live in `@cdk/accordion`
   - `AccordionChild` is renamed to `CdkAccordionChild`
   - `CdkAccordion` no longer has displayMode and hideToggle `@Inputs`
   - `CdkAccordionItem` is now a `@Directive`
@@ -2891,7 +2891,7 @@ StackBlitz instead of Plunker.
     // After
     scrollDispatcher.scrolled(50).subscribe(() => ...);
     ```
-* **unique-selection:** move UniqueSelectionDispatcher to `@angular/cdk/collections`
+* **unique-selection:** move UniqueSelectionDispatcher to `@cdk/collections`
   (`UniqueSelectionDispatcher`, `UniqueSelectionDispatcherListener`, and
    `UNIQUE_SELECTION_DISPATCHER_PROVIDER`)
 * `MATERIAL_COMPATIBILITY_MODE`, `CompatibilityModule`, `NoConflictStyleCompatibilityMode`,
@@ -3038,11 +3038,11 @@ StackBlitz instead of Plunker.
 
 * All "md" prefixes have been removed. See the [deprecation notice in the beta.11 notes for more
 information](https://github.com/angular/material2/blob/master/CHANGELOG.md#deprecation-of-md-prefix).
-* All cdk re-exports in `@angular/material` have been removed. See the [the beta.10 notes for more
+* All cdk re-exports in `@material` have been removed. See the [the beta.10 notes for more
 information](https://github.com/angular/material2/blob/master/CHANGELOG.md#breaking-changes-2).
 * Previously the `ScrollDispatcher.scrolled` subscription would react both on scroll events and on window resize events. Now it only reacts to scroll events. To react to resize events, subscribe to the `ViewportRuler.change()` stream.
 * `UniqueSelectionDispatcher`, `UniqueSelectionDispatcherListener` and `UNIQUE_SELECTION_DISPATCHER_PROVIDER` are no longer
-available from @angular/material and instead must be imported from @angular/cdk/collections
+available from @material and instead must be imported from @cdk/collections
 * `isFocusTrapEnabled` is now properly marked internal.
 * The `OverlayRef.getState` method has been renamed to `OverlayRef.getConfig`.
 * `defaultErrorStateMatcher` has been replaced by `ErrorStateMatcher`. For more info, see the [input docs](https://github.com/angular/material2/blob/master/src/lib/input/input.md#custom-error-matcher).
@@ -3130,10 +3130,10 @@ available from @angular/material and instead must be imported from @angular/cdk/
 
 
 ### Highlights
-* Each `@angular/material` component is now bundled into its own javascript file. This will allow
+* Each `@material` component is now bundled into its own javascript file. This will allow
 tools like webpack to more easily load _only_ the components being used in an application.
-* New stepper component! The base behavior lives in `@angular/cdk` with Material Design flavors in
-`@angular/material`.
+* New stepper component! The base behavior lives in `@cdk` with Material Design flavors in
+`@material`.
 
 
 ### Breaking changes
@@ -3141,9 +3141,9 @@ tools like webpack to more easily load _only_ the components being used in an ap
 * Angular Material now requires **Angular 4.4.3 or greater**
 * `MaterialModule` has been removed. ([cf1ece0](https://github.com/angular/material2/commit/cf1ece0)) (#6803)
 [See the deprecation notice from beta.3 for more information](https://github.com/angular/material2/blob/master/CHANGELOG.md#materialmodule).
-* `MdCoreModule` has been removed. Most of its functionality has been moved to `@angular/cdk` over
+* `MdCoreModule` has been removed. Most of its functionality has been moved to `@cdk` over
 the last few releases.
-* `FocusOriginMonitor` has been renamed to `FocusMonitor` and moved to `@angular/cdk`.
+* `FocusOriginMonitor` has been renamed to `FocusMonitor` and moved to `@cdk`.
 * **chip-list:**  The outputs `select` and `deselect` have been removed in favor of a single
   `onSelectionChange` output.
 * **overlay:** OverlayState has been renamed to OverlayConfig
@@ -3194,7 +3194,7 @@ broken countless custom styles that relied on a particular specificity working.
 
 ### Other deprecations
 * `StyleModule` is deprecated. `FocusOriginMonitor` (the only thing it contained) has been renamed
-to `FocusMonitor` and moved to `@angular/cdk/a11y` (`A11yModule`).
+to `FocusMonitor` and moved to `@cdk/a11y` (`A11yModule`).
 
 
 ### Bug Fixes
@@ -3274,7 +3274,7 @@ to `FocusMonitor` and moved to `@angular/cdk/a11y` (`A11yModule`).
   * Nested menus
     * Nested menus!
 * Autocomplete supports `md-optgroup`
-* `Overlay` moved to `@angular/cdk`
+* `Overlay` moved to `@cdk`
 * New component `MdSelectionList`
 * `md-input-container` renamed to `md-form-field` (while still being backwards compatible)
 * Almost all components now use `OnPush` change detection (dialog being the exception)
@@ -3285,31 +3285,31 @@ split views. While there are no differences introduced between the two in this r
 releases will see different features added to each
 
 ### Breaking changes
-* Imports from `@angular/cdk` are now scoped to a specific sub-package. For example, if you
+* Imports from `@cdk` are now scoped to a specific sub-package. For example, if you
 previously had:
 ```ts
-import {LiveAnnouncer, Overlay, Directionality} from '@angular/cdk';
+import {LiveAnnouncer, Overlay, Directionality} from '@cdk';
 ```
 You will now need to write:
 ```ts
-import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {Directionality} from '@angular/cdk/bidi';
-import {Overlay} from '@angular/cdk/overlay';
+import {LiveAnnouncer} from '@cdk/a11y';
+import {Directionality} from '@cdk/bidi';
+import {Overlay} from '@cdk/overlay';
 ```
 
 This helps ensure you're only pulling in the pieces of the cdk being used as well as providing more
 context about what an imported symbol is being used for.
 
-The current set of public `@angular/cdk` subpackages are:
+The current set of public `@cdk` subpackages are:
 a11y, bidi, coercion, collections, keycodes, observers, overlay, platform, portal, rxjs,
 scrolling, table.
 
 If you are using SystemJS, each package you use must be added to the SystemJS configuration.
-* All `Overlay` code has been moved from `@angular/material` to `@angular/cdk`. The symbols are
-still re-exported through `@angular/material`, but these re-exports will be removed in a
+* All `Overlay` code has been moved from `@material` to `@cdk`. The symbols are
+still re-exported through `@material`, but these re-exports will be removed in a
 subsequent release.
 * `cdkScrollable`, `ScrollDispatcher`, and `ViewportRuler` have been moved from overlay into its
-own `scrolling` subpackage in `@angular/cdk`.
+own `scrolling` subpackage in `@cdk`.
 * **input:** Inputs have a width of `200px` by default (similar to native input elements). The
 width can be overridden by via the `mat-form-field` css class.
 * **input:** CSS classes have changed from `mat-input-container-` to `mat-form-field-`.
@@ -3370,7 +3370,7 @@ such that both select and input share the same features and appearance.
 unchanged. The unprefixed inputs will be removed in a subsequent release. Affected directives are
 `cdkPortalHost`, `cdkConnectedOverlay`, `mdTooltip`, `mdTextareaAutosize`, and `mdMenuTriggerFor`.
 * `MdCoreModule` is deprecated and will be removed in a subsequent release now that most of its
-functionality has been moved to `@angular/cdk`
+functionality has been moved to `@cdk`
 * Reminder that `MaterialModule` is deprecated and will be removed in a subsequent release (see
 changelog from beta.3 for more information).
 
@@ -3583,10 +3583,10 @@ changelog from beta.3 for more information).
 
 
 ### Highlights
-* This version marks the release of `@angular/cdk` (component dev kit)! This package contains
+* This version marks the release of `@cdk` (component dev kit)! This package contains
 general building blocks for UI components decoupled from the visuals of Material Design. In the
 initial release, code from Angular Material's `core/` have been moved for `a11y/`, `bidi/`,
-`coercion/`, `observe-content/`, `platform/`, `portal/`. The `@angular/material` package now
+`coercion/`, `observe-content/`, `platform/`, `portal/`. The `@material` package now
 re-exports these symbols, marked as deprecated. The re-exports will be removed in a subsequent
 release.
 * Initial version of data-table component. There is both a `<cdk-table>` (the core) and the
@@ -3594,11 +3594,11 @@ release.
 information.
 * Initial version of `<md-paginator>` and `<md-sort-header>` components, which can be used either
 with `<md-table>` or any other table.
-* Both `@angular/material` and `@angular/cdk` are now strict null compliant.
+* Both `@material` and `@cdk` are now strict null compliant.
 
 
 ### Breaking changes
-* `@angular/material` now depends on `@angular/cdk` as a peer dependency.
+* `@material` now depends on `@cdk` as a peer dependency.
 * Some types have expanded to include `| null` or `| undefined` for strict null compatibility. If
 your application uses strict null checks, you may have to update the types in your app to match up
 with the more accurate types coming from Angular Material.
@@ -3910,19 +3910,19 @@ a few bugs, but things should mostly work.
 #### Package structure
 The package structure for Angular Material has changed to match that of Angular itself. This has
 a few ramifications on applications consuming Angular Material:
-* Deep imports will no longer work, e.g., `@angular/material/core/a11y`. All public symbols
-should be imported directly from `@angular/material`. Deep imports have always been an anti-pattern,
+* Deep imports will no longer work, e.g., `@material/core/a11y`. All public symbols
+should be imported directly from `@material`. Deep imports have always been an anti-pattern,
 but our previous package structure inadvertently allowed them.
 * The imports for theming have changed.
 ** For prebuilt themes, you can now find the CSS files in the `prebuilt-themes/` directory in the
 package root. For angular-cli projects, this will look something like
 ```scss
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@material/prebuilt-themes/deeppurple-amber.css';
 ```
 ** For custom themes, you can now import `theming.scss` directly from the package root. Again, with
 angular-cli, this will look something like:
 ```scss
-@import '~@angular/material/theming';
+@import '~@material/theming';
 ```
 
 #### Removal of deprecated symbols
@@ -3946,7 +3946,7 @@ imports only the set of components actually used in the application.
 
 #### Angular 4
 * Angular Material now depends on Angular 4.
-* Now that animations have been refactored into a separate package, users of `@angular/material`
+* Now that animations have been refactored into a separate package, users of `@material`
 need to explicitly import `BrowserAnimationsModule` (or `NoopAnimationsModule`) from
 `@angular/platform-browser/animations` as well as installing `@angular/animations`.
 
@@ -4345,7 +4345,7 @@ should no longer throw an error if it is missing.
 # [2.0.0-alpha.11 polyester-golem](https://github.com/angular/material2/compare/2.0.0-alpha.9...2.0.0-alpha.11) (2016-12-08)
 
 
-**NOTE:** Be sure to delete your previous install of `@angular/material` and install it fresh, as
+**NOTE:** Be sure to delete your previous install of `@material` and install it fresh, as
 `npm` sometimes doesn't see that there is a more recent alpha release.
 
 ### Bug Fixes
@@ -4529,7 +4529,7 @@ should no longer throw an error if it is missing.
 ## Breaking Changes
 
 Angular Material has changed from `@angular2-material/...` packages to a single package under
-`@angular/material`. Along with this change, there is a new NgModule, `MaterialModule`, that
+`@material`. Along with this change, there is a new NgModule, `MaterialModule`, that
 contains all of the components. Build tools such as [`rollup.js`](http://rollupjs.org/) can perform
 tree-shaking to eliminate the code for components that you aren't using.
 

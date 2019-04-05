@@ -9,11 +9,11 @@ You can use either the npm or yarn command-line tool to install packages. Use wh
 
 #### NPM
 ```bash
-npm install --save @angular/material @angular/cdk @angular/animations
+npm install --save @material @cdk @angular/animations
 ```
 #### Yarn
 ```bash
-yarn add @angular/material @angular/cdk @angular/animations
+yarn add @material @cdk @angular/animations
 ```
 
 
@@ -36,7 +36,7 @@ yarn add angular/material2-builds angular/cdk-builds angular/animations-builds
 Using the Angular CLI `ng add` command will update your Angular project with the correct dependencies, perform configuration changes and execute initialization code. 
 
 ```bash
-ng add @angular/material
+ng add @material
 ```
 
 ### Step 2: Configure animations
@@ -72,7 +72,7 @@ export class PizzaPartyAppModule { }
 Import the NgModule for each component you want to use:
 
 ```ts
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule} from '@material';
 
 @NgModule({
   ...
@@ -87,7 +87,7 @@ Angular Material components that you will use in your application. You can then
 include this module wherever you'd like to use the components.
 
 ```ts
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule} from '@material';
 
 @NgModule({
   imports: [MatButtonModule, MatCheckboxModule],
@@ -106,7 +106,7 @@ Including a theme is **required** to apply all of the core and theme styles to y
 To get started with a prebuilt theme, include one of Angular Material's prebuilt themes globally
 in your application. If you're using the Angular CLI, you can add this to your `styles.css`:
 ```css
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@material/prebuilt-themes/indigo-pink.css";
 ```
 
 If you are not using the Angular CLI, you can include a prebuilt theme via a `<link>` element in
@@ -159,14 +159,14 @@ Note that `mat-icon` supports any font or svg icons; using Material Icons is one
 
 ### Appendix: Configuring SystemJS
 
-If your project is using SystemJS for module loading, you will need to add `@angular/material` and
-`@angular/cdk` to the SystemJS configuration.
+If your project is using SystemJS for module loading, you will need to add `@material` and
+`@cdk` to the SystemJS configuration.
 
-The `@angular/cdk` package is organized of multiple entry-points.
+The `@cdk` package is organized of multiple entry-points.
 Each of these entry-points must be registered individually with SystemJS.
 
-Here is a example configuration where `@angular/material`, `@angular/cdk/platform` and
-`@angular/cdk/a11y` are used:
+Here is a example configuration where `@material`, `@cdk/platform` and
+`@cdk/a11y` are used:
 
 
 ```js
@@ -174,11 +174,11 @@ System.config({
   // Existing configuration options
   map: {
     // ...
-    '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
+    '@material': 'npm:@material/bundles/material.umd.js',
 
     // CDK individual packages
-    '@angular/cdk/platform': 'npm:@angular/cdk/bundles/cdk-platform.umd.js',
-    '@angular/cdk/a11y': 'npm:@angular/cdk/bundles/cdk-a11y.umd.js',
+    '@cdk/platform': 'npm:@cdk/bundles/cdk-platform.umd.js',
+    '@cdk/a11y': 'npm:@cdk/bundles/cdk-a11y.umd.js',
     // ...
     'hammerjs': 'npm:hammerjs',
   },

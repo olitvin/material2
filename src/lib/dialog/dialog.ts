@@ -6,15 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
-import {
-  Overlay,
-  OverlayConfig,
-  OverlayContainer,
-  OverlayRef,
-  ScrollStrategy,
-} from '@angular/cdk/overlay';
-import {ComponentPortal, ComponentType, PortalInjector, TemplatePortal} from '@angular/cdk/portal';
 import {Location} from '@angular/common';
 import {
   Inject,
@@ -26,8 +17,18 @@ import {
   SkipSelf,
   TemplateRef,
 } from '@angular/core';
+import {Directionality} from '@cdk/bidi';
+import {
+  Overlay,
+  OverlayConfig,
+  OverlayContainer,
+  OverlayRef,
+  ScrollStrategy,
+} from '@cdk/overlay';
+import {ComponentPortal, ComponentType, PortalInjector, TemplatePortal} from '@cdk/portal';
 import {Observable, of as observableOf, Subject} from 'rxjs';
 import {startWith} from 'rxjs/operators';
+
 import {MatDialogConfig} from './dialog-config';
 import {MatDialogContainer} from './dialog-container';
 import {MatDialogRef} from './dialog-ref';

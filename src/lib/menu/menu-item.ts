@@ -6,26 +6,30 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusableOption, FocusMonitor, FocusOrigin} from '@angular/cdk/a11y';
+import {DOCUMENT} from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  OnDestroy,
-  ViewEncapsulation,
   Inject,
-  Optional,
   Input,
+  OnDestroy,
+  Optional,
+  ViewEncapsulation,
 } from '@angular/core';
+import {FocusableOption, FocusMonitor, FocusOrigin} from '@cdk/a11y';
 import {
-  CanDisable, CanDisableCtor,
-  CanDisableRipple, CanDisableRippleCtor,
+  CanDisable,
+  CanDisableCtor,
+  CanDisableRipple,
+  CanDisableRippleCtor,
   mixinDisabled,
   mixinDisableRipple,
-} from '@angular/material/core';
+} from '@material/core';
 import {Subject} from 'rxjs';
-import {DOCUMENT} from '@angular/common';
+
 import {MAT_MENU_PANEL, MatMenuPanel} from './menu-panel';
+
 
 // Boilerplate for applying mixins to MatMenuItem.
 /** @docs-private */

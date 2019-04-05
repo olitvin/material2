@@ -7,9 +7,11 @@
  */
 
 import {NgModule} from '@angular/core';
-import {MatTooltipModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MatTooltipModule} from '@material';
+
 import {ExampleModule} from '../example/example-module';
+
 import {TooltipDemo} from './tooltip-demo';
 
 @NgModule({

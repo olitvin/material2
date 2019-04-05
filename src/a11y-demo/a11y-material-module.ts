@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {CdkTableModule} from '@angular/cdk/table';
 import {NgModule} from '@angular/core';
+import {CdkTableModule} from '@cdk/table';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -36,7 +36,7 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-} from '@angular/material';
+} from '@material';
 
 /**
  * NgModule that includes all Material modules that are required to serve the dev-app.

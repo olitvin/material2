@@ -9,8 +9,8 @@
     "target": "es5",
     "types": ["jasmine"],
     "paths": {
-      "@angular/material/*": ["./*"],
-      "@angular/cdk/*": ["../../dist/packages/cdk/*"]
+      "@material/*": ["./*"],
+      "@cdk/*": ["../../dist/packages/cdk/*"]
     }
   },
   "angularCompilerOptions": {

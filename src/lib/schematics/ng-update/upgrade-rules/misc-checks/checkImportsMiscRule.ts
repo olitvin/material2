@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {isMaterialImportDeclaration} from '@angular/cdk/schematics';
+import {isMaterialImportDeclaration} from '@cdk/schematics';
 import {red} from 'chalk';
 import {ProgramAwareRuleWalker, RuleFailure, Rules} from 'tslint';
 import * as ts from 'typescript';

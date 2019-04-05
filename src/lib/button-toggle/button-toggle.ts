@@ -6,9 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusMonitor} from '@angular/cdk/a11y';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {SelectionModel} from '@angular/cdk/collections';
 import {
   AfterContentInit,
   Attribute,
@@ -20,6 +17,8 @@ import {
   ElementRef,
   EventEmitter,
   forwardRef,
+  Inject,
+  InjectionToken,
   Input,
   OnDestroy,
   OnInit,
@@ -28,15 +27,16 @@ import {
   QueryList,
   ViewChild,
   ViewEncapsulation,
-  InjectionToken,
-  Inject,
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {FocusMonitor} from '@cdk/a11y';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {SelectionModel} from '@cdk/collections';
 import {
   CanDisableRipple,
-  mixinDisableRipple,
   CanDisableRippleCtor,
-} from '@angular/material/core';
+  mixinDisableRipple,
+} from '@material/core';
 
 
 /** Acceptable types for a button toggle. */

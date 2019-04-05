@@ -6,8 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {PlatformModule} from '@angular/cdk/platform';
 import {NgModule} from '@angular/core';
+import {PlatformModule} from '@cdk/platform';
+
 import {CdkAutofill} from './autofill';
 import {CdkTextareaAutosize} from './autosize';
 

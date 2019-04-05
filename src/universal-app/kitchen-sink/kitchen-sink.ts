@@ -1,12 +1,14 @@
-import {ViewportRuler, ScrollingModule} from '@angular/cdk/scrolling';
-import {
-  CdkTableModule,
-  DataSource
-} from '@angular/cdk/table';
 import {Component, ElementRef, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {ServerModule} from '@angular/platform-server';
+import {FocusMonitor} from '@cdk/a11y';
+import {DragDropModule} from '@cdk/drag-drop';
+import {ScrollingModule, ViewportRuler} from '@cdk/scrolling';
+import {CdkTableModule, DataSource} from '@cdk/table';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
+  MatBottomSheet,
   MatBottomSheetModule,
   MatButtonModule,
   MatButtonToggleModule,
@@ -42,12 +44,7 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatBottomSheet,
-} from '@angular/material';
-import {BrowserModule} from '@angular/platform-browser';
-import {ServerModule} from '@angular/platform-server';
-import {FocusMonitor} from '@angular/cdk/a11y';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+} from '@material';
 import {Observable, of as observableOf} from 'rxjs';
 
 export class TableDataSource extends DataSource<any> {

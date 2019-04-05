@@ -6,15 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
-import {
-  ComponentType,
-  Overlay,
-  OverlayConfig,
-  OverlayRef,
-  ScrollStrategy,
-} from '@angular/cdk/overlay';
-import {ComponentPortal, PortalInjector, TemplatePortal} from '@angular/cdk/portal';
 import {Location} from '@angular/common';
 import {
   ComponentRef,
@@ -27,6 +18,15 @@ import {
   TemplateRef,
   Type
 } from '@angular/core';
+import {Directionality} from '@cdk/bidi';
+import {
+  ComponentType,
+  Overlay,
+  OverlayConfig,
+  OverlayRef,
+  ScrollStrategy,
+} from '@cdk/overlay';
+import {ComponentPortal, PortalInjector, TemplatePortal} from '@cdk/portal';
 import {Observable, of as observableOf, Subject} from 'rxjs';
 import {startWith} from 'rxjs/operators';
 

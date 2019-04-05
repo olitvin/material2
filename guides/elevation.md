@@ -29,10 +29,10 @@ Since an elevation shadow consists of multiple shadow components of varying opac
 `$opacity` argument of the mixin is considered a factor by which to scale these initial values
 rather than an absolute value.
 
-In order to use the mixin, you must import `~@angular/material/theming`:
+In order to use the mixin, you must import `~@material/theming`:
 
 ```scss
-@import '~@angular/material/theming';
+@import '~@material/theming';
 
 .my-class-with-default-shadow {
   // Adds a shadow for elevation level 2 with default color and full opacity:
@@ -49,7 +49,7 @@ For convenience, you can use the `mat-elevation-transition` mixin to add a trans
 elevation changes:
 
 ```scss
-@import '~@angular/material/theming';
+@import '~@material/theming';
 
 .my-class {
   @include mat-elevation-transition;

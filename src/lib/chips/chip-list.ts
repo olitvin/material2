@@ -6,11 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusKeyManager} from '@angular/cdk/a11y';
-import {Directionality} from '@angular/cdk/bidi';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {SelectionModel} from '@angular/cdk/collections';
-import {BACKSPACE, END, HOME} from '@angular/cdk/keycodes';
 import {
   AfterContentInit,
   ChangeDetectionStrategy,
@@ -30,15 +25,21 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import {ControlValueAccessor, FormGroupDirective, NgControl, NgForm} from '@angular/forms';
+import {FocusKeyManager} from '@cdk/a11y';
+import {Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {SelectionModel} from '@cdk/collections';
+import {BACKSPACE, END, HOME} from '@cdk/keycodes';
 import {
   CanUpdateErrorState,
   CanUpdateErrorStateCtor,
   ErrorStateMatcher,
   mixinErrorState,
-} from '@angular/material/core';
-import {MatFormFieldControl} from '@angular/material/form-field';
+} from '@material/core';
+import {MatFormFieldControl} from '@material/form-field';
 import {merge, Observable, Subject, Subscription} from 'rxjs';
 import {startWith, takeUntil} from 'rxjs/operators';
+
 import {MatChip, MatChipEvent, MatChipSelectionChange} from './chip';
 import {MatChipTextControl} from './chip-text-control';
 

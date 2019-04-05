@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ViewContainerRef, InjectionToken} from '@angular/core';
-import {Direction} from '@angular/cdk/bidi';
+import {InjectionToken, ViewContainerRef} from '@angular/core';
+import {Direction} from '@cdk/bidi';
 
 /** Injection token that can be used to access the data that was passed in to a bottom sheet. */
 export const MAT_BOTTOM_SHEET_DATA = new InjectionToken<any>('MatBottomSheetData');

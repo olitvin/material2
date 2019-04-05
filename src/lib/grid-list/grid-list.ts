@@ -7,23 +7,24 @@
  */
 
 import {
-  Component,
-  ViewEncapsulation,
   AfterContentChecked,
-  OnInit,
-  Input,
-  ContentChildren,
-  QueryList,
-  ElementRef,
-  Optional,
   ChangeDetectionStrategy,
+  Component,
+  ContentChildren,
+  ElementRef,
+  Input,
+  OnInit,
+  Optional,
+  QueryList,
+  ViewEncapsulation,
 } from '@angular/core';
+import {Directionality} from '@cdk/bidi';
+import {coerceNumberProperty} from '@cdk/coercion';
+
+import {MAT_GRID_LIST, MatGridListBase} from './grid-list-base';
 import {MatGridTile} from './grid-tile';
 import {TileCoordinator} from './tile-coordinator';
-import {TileStyler, FitTileStyler, RatioTileStyler, FixedTileStyler} from './tile-styler';
-import {Directionality} from '@angular/cdk/bidi';
-import {coerceNumberProperty} from '@angular/cdk/coercion';
-import {MAT_GRID_LIST, MatGridListBase} from './grid-list-base';
+import {FitTileStyler, FixedTileStyler, RatioTileStyler, TileStyler} from './tile-styler';
 
 
 // TODO(kara): Conditional (responsive) column count / row size.

@@ -26,10 +26,10 @@
     "types": [],
     "baseUrl": ".",
     "paths": {
-      "@angular/material/*": ["../../dist/packages/material/*"],
-      "@angular/material": ["../../dist/packages/material"],
-      "@angular/material-moment-adapter": ["../../dist/packages/material-moment-adapter"],
-      "@angular/cdk/*": ["../../dist/packages/cdk/*"]
+      "@material/*": ["../../dist/packages/material/*"],
+      "@material": ["../../dist/packages/material"],
+      "@material-moment-adapter": ["../../dist/packages/material-moment-adapter"],
+      "@cdk/*": ["../../dist/packages/cdk/*"]
     }
   },
   "files": [
@@ -39,7 +39,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/material-examples",
+    "flatModuleId": "@material-examples",
     "skipTemplateCodegen": true,
     // TODO(paul): Needs to stay disabled for now because when building the examples in non-release
     // format the metadata of Material which is required to build the examples package, are not

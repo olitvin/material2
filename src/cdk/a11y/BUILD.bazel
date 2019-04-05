@@ -7,7 +7,7 @@ load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite"
 ng_module(
   name = "a11y",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/cdk/a11y",
+  module_name = "@cdk/a11y",
   deps = [
     "@angular//packages/common",
     "@angular//packages/core",

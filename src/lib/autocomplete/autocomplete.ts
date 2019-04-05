@@ -6,8 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ActiveDescendantKeyManager} from '@angular/cdk/a11y';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {
   AfterContentInit,
   ChangeDetectionStrategy,
@@ -25,6 +23,8 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import {ActiveDescendantKeyManager} from '@cdk/a11y';
+import {coerceBooleanProperty} from '@cdk/coercion';
 import {
   CanDisableRipple,
   CanDisableRippleCtor,
@@ -32,7 +32,7 @@ import {
   MatOptgroup,
   MatOption,
   mixinDisableRipple,
-} from '@angular/material/core';
+} from '@material/core';
 
 
 /**

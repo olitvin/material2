@@ -6,8 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {ENTER, SPACE, hasModifierKey} from '@angular/cdk/keycodes';
 import {
   AfterViewChecked,
   ChangeDetectionStrategy,
@@ -24,7 +22,10 @@ import {
   QueryList,
   ViewEncapsulation,
 } from '@angular/core';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {ENTER, hasModifierKey, SPACE} from '@cdk/keycodes';
 import {Subject} from 'rxjs';
+
 import {MatOptgroup} from './optgroup';
 
 /**

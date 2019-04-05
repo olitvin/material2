@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import {Injectable} from '@angular/core';
-import {FlatTreeControl} from '@angular/cdk/tree';
-import {CollectionViewer, SelectionChange} from '@angular/cdk/collections';
+import {CollectionViewer, SelectionChange} from '@cdk/collections';
+import {FlatTreeControl} from '@cdk/tree';
 import {BehaviorSubject, merge, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 

@@ -9,13 +9,9 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {
-  MatButtonModule,
-  MatCheckboxModule,
-  MatSidenavModule,
-  MatToolbarModule
-} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule} from '@material';
+
 import {SidenavDemo} from './sidenav-demo';
 
 @NgModule({

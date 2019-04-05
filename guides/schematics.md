@@ -2,7 +2,7 @@ Angular Material comes packaged with Angular CLI schematics to make
 creating Material applications easier.
 
 ### Install Schematics
-Schematics are included with both `@angular/cdk` and `@angular/material`. Once you install the npm
+Schematics are included with both `@cdk` and `@material`. Once you install the npm
 packages, they will be available through the Angular CLI.
 
 Using the command below will install Angular Material, the [Component Dev Kit](https://material.angular.io/cdk) (CDK),
@@ -10,13 +10,13 @@ and [Angular Animations](https://angular.io/guide/animations) in your project. T
 install schematic.
 
 ```
-ng add @angular/material
+ng add @material
 ```
 
-In case you just want to install the `@angular/cdk`, there are also schematics for the [Component Dev Kit](https://material.angular.io/cdk)
+In case you just want to install the `@cdk`, there are also schematics for the [Component Dev Kit](https://material.angular.io/cdk)
 
 ```
-ng add @angular/cdk
+ng add @cdk
 ```
 
 The Angular Material `ng add` schematic helps you setup an Angular CLI project that uses Material. Running `ng add` will:
@@ -52,7 +52,7 @@ Additionally the Angular CDK also comes with a collection of component schematic
 
 | Name           | Description                                                                                        |
 |----------------|----------------------------------------------------------------------------------------------------|
-| `drag-drop`    | Component that uses the `@angular/cdk/drag-drop` directives for creating an interactive to-do list |
+| `drag-drop`    | Component that uses the `@cdk/drag-drop` directives for creating an interactive to-do list |
 
 #### Address form schematic
 
@@ -64,7 +64,7 @@ started with a Material Design form group consisting of:
 * Material Design buttons
 
 ```
-ng generate @angular/material:address-form <component-name>
+ng generate @material:address-form <component-name>
 ```
 
 #### Navigation schematic
@@ -73,7 +73,7 @@ a toolbar with the app name and a responsive side nav based on Material
 breakpoints.
 
 ```
-ng generate @angular/material:nav <component-name>
+ng generate @material:nav <component-name>
 ```
 
 #### Table schematic
@@ -81,7 +81,7 @@ The table schematic will create a component that renders an Angular Material `<t
 been pre-configured with a datasource for sorting and pagination.
 
 ```
-ng generate @angular/material:table <component-name>
+ng generate @material:table <component-name>
 ```
 
 #### Dashboard schematic
@@ -89,7 +89,7 @@ The `dashboard` schematic will create a new component that contains
 a dynamic grid list of Material Design cards.
 
 ```
-ng generate @angular/material:dashboard <component-name>
+ng generate @material:dashboard <component-name>
 ```
 
 #### Tree schematic
@@ -97,13 +97,13 @@ The `tree` schematic can be used to quickly generate an Angular component that u
 Material `<mat-tree>` component to visualize a nested folder structure.
 
 ```
-ng generate @angular/material:tree <component-name>
+ng generate @material:tree <component-name>
 ```
 
 #### Drag and Drop schematic
-The `drag-drop` schematic is provided by the `@angular/cdk` and can be used to generate a component
+The `drag-drop` schematic is provided by the `@cdk` and can be used to generate a component
 that uses the CDK drag and drop directives.
 
 ```
-ng generate @angular/cdk:drag-drop <component-name>
+ng generate @cdk:drag-drop <component-name>
 ```

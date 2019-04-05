@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {PropertyNameUpgradeData, TargetVersion, VersionChanges} from '@angular/cdk/schematics';
+import {PropertyNameUpgradeData, TargetVersion, VersionChanges} from '@cdk/schematics';
 
 export const propertyNames: VersionChanges<PropertyNameUpgradeData> = {
   [TargetVersion.V6]: [

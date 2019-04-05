@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directive, OnDestroy, Input} from '@angular/core';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {Directive, Input, OnDestroy} from '@angular/core';
+import {coerceBooleanProperty} from '@cdk/coercion';
 
 /**
  * Declaratively connects sibling `cdkDropList` instances together. All of the `cdkDropList`

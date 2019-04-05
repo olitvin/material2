@@ -1,7 +1,7 @@
 import { Component<% if (!!viewEncapsulation) { %>, ViewEncapsulation<% }%><% if (changeDetection !== 'Default') { %>, ChangeDetectionStrategy<% }%> } from '@angular/core';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
+import {MatTreeFlatDataSource, MatTreeFlattener} from '@material/tree';
 import { of as observableOf } from 'rxjs';
-import { FlatTreeControl } from '@angular/cdk/tree';
+import {FlatTreeControl} from '@cdk/tree';
 import { files } from './example-data';
 
 /** File node data with possible child nodes. */

@@ -7,7 +7,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/cdk/coercion",
+    "flatModuleId": "@cdk/coercion",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

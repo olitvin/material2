@@ -204,7 +204,7 @@ it is not the only way to incorporate row selection in your table.
 
 ##### 1. Add a selection model
 
-Get started by setting up a `SelectionModel` from `@angular/cdk/collections` that will maintain the 
+Get started by setting up a `SelectionModel` from `@cdk/collections` that will maintain the 
 selection state.
 
 ```js

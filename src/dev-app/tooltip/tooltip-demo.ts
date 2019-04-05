@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import {Component} from '@angular/core';
-import {EXAMPLE_COMPONENTS} from '@angular/material-examples';
+import {EXAMPLE_COMPONENTS} from '@material-examples';
 
 @Component({
   moduleId: module.id,

@@ -7,7 +7,7 @@ load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite"
 ng_module(
   name = "input",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/input",
+  module_name = "@material/input",
   assets = glob(["**/*.html"]),
   deps = [
     "@angular//packages/common",

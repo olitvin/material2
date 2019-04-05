@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Platform, normalizePassiveListenerOptions} from '@angular/cdk/platform';
 import {
   Directive,
   ElementRef,
@@ -18,8 +17,9 @@ import {
   Output,
   SkipSelf,
 } from '@angular/core';
+import {coerceElement} from '@cdk/coercion';
+import {normalizePassiveListenerOptions, Platform} from '@cdk/platform';
 import {Observable, of as observableOf, Subject, Subscription} from 'rxjs';
-import {coerceElement} from '@angular/cdk/coercion';
 
 
 // This is the value used by AngularJS Material. Through trial and error (on iPhone 6S) they found

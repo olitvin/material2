@@ -7,7 +7,7 @@ load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite"
 ng_module(
   name = "select",
   srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
-  module_name = "@angular/material/select",
+  module_name = "@material/select",
   assets = [":select.css"] + glob(["**/*.html"]),
   deps = [
     "@angular//packages/animations",

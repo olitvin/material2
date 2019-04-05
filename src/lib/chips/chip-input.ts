@@ -6,9 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {Directive, ElementRef, EventEmitter, Inject, Input, OnChanges, Output} from '@angular/core';
-import {hasModifierKey} from '@angular/cdk/keycodes';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {hasModifierKey} from '@cdk/keycodes';
+
 import {MAT_CHIPS_DEFAULT_OPTIONS, MatChipsDefaultOptions} from './chip-default-options';
 import {MatChipList} from './chip-list';
 import {MatChipTextControl} from './chip-text-control';

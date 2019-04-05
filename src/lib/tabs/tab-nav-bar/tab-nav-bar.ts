@@ -5,10 +5,6 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import {FocusMonitor} from '@angular/cdk/a11y';
-import {Directionality} from '@angular/cdk/bidi';
-import {Platform} from '@angular/cdk/platform';
-import {ViewportRuler} from '@angular/cdk/scrolling';
 import {
   AfterContentChecked,
   AfterContentInit,
@@ -30,6 +26,10 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import {FocusMonitor} from '@cdk/a11y';
+import {Directionality} from '@cdk/bidi';
+import {Platform} from '@cdk/platform';
+import {ViewportRuler} from '@cdk/scrolling';
 import {
   CanColor,
   CanColorCtor,
@@ -49,7 +49,7 @@ import {
   RippleRenderer,
   RippleTarget,
   ThemePalette,
-} from '@angular/material/core';
+} from '@material/core';
 import {merge, of as observableOf, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 

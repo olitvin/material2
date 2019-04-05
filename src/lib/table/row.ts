@@ -13,12 +13,14 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {
-  CDK_ROW_TEMPLATE, CdkFooterRow, CdkFooterRowDef,
+  CDK_ROW_TEMPLATE,
+  CdkFooterRow,
+  CdkFooterRowDef,
   CdkHeaderRow,
   CdkHeaderRowDef,
   CdkRow,
   CdkRowDef,
-} from '@angular/cdk/table';
+} from '@cdk/table';
 
 /**
  * Header row definition for the mat-table.

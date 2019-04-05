@@ -9,8 +9,9 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatCheckboxModule, MatPseudoCheckboxModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {MatCheckboxModule, MatPseudoCheckboxModule} from '@material';
+
 import {CheckboxDemo, MatCheckboxDemoNestedChecklist} from './checkbox-demo';
 
 @NgModule({

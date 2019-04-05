@@ -13,8 +13,8 @@
       "../../dist/packages/material"
     ],
     "paths": {
-      "@angular/cdk/*": ["../../dist/packages/cdk/*"],
-      "@angular/material/*": ["../../dist/packages/material/*"]
+      "@cdk/*": ["../../dist/packages/cdk/*"],
+      "@material/*": ["../../dist/packages/material/*"]
     }
   },
   "files": [
@@ -25,7 +25,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/material",
+    "flatModuleId": "@material",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

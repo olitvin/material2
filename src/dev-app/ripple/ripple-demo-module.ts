@@ -8,6 +8,7 @@
 
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -15,9 +16,10 @@ import {
   MatIconModule,
   MatInputModule,
   MatRippleModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {ExampleModule} from '../example/example-module';
+
 import {RippleDemo} from './ripple-demo';
 
 @NgModule({

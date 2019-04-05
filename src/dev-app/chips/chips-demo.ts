@@ -6,9 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {Component} from '@angular/core';
-import {MatChipInputEvent, ThemePalette} from '@angular/material';
+import {COMMA, ENTER} from '@cdk/keycodes';
+import {MatChipInputEvent, ThemePalette} from '@material';
 
 
 export interface Person {

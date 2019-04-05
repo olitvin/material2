@@ -8,6 +8,7 @@
 
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 import {
   MatCardModule,
   MatCheckboxModule,
@@ -16,8 +17,8 @@ import {
   MatRadioModule,
   MatSelectModule,
   MatToolbarModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
+
 import {BaselineDemo} from './baseline-demo';
 
 @NgModule({

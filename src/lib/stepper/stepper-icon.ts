@@ -7,7 +7,7 @@
  */
 
 import {Directive, Input, TemplateRef} from '@angular/core';
-import {StepState} from '@angular/cdk/stepper';
+import {StepState} from '@cdk/stepper';
 
 /** Template context available to an attached `matStepperIcon`. */
 export interface MatStepperIconContext {

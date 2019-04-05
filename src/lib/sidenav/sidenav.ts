@@ -12,18 +12,19 @@ import {
   Component,
   ContentChild,
   ContentChildren,
+  ElementRef,
   forwardRef,
   Inject,
   Input,
-  ViewEncapsulation,
-  QueryList,
-  ElementRef,
   NgZone,
+  QueryList,
+  ViewEncapsulation,
 } from '@angular/core';
+import {coerceBooleanProperty, coerceNumberProperty} from '@cdk/coercion';
+import {ScrollDispatcher} from '@cdk/scrolling';
+
 import {MatDrawer, MatDrawerContainer, MatDrawerContent} from './drawer';
 import {matDrawerAnimations} from './drawer-animations';
-import {coerceBooleanProperty, coerceNumberProperty} from '@angular/cdk/coercion';
-import {ScrollDispatcher} from '@angular/cdk/scrolling';
 
 
 @Component({

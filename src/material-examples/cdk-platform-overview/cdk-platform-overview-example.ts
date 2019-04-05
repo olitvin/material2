@@ -4,7 +4,7 @@ import {
   Platform,
   supportsPassiveEventListeners,
   supportsScrollBehavior,
-} from '@angular/cdk/platform';
+} from '@cdk/platform';
 
 /**
  * @title Platform overview

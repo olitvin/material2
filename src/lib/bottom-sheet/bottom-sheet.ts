@@ -6,22 +6,23 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
-import {Overlay, OverlayConfig, OverlayRef} from '@angular/cdk/overlay';
-import {ComponentPortal, ComponentType, PortalInjector, TemplatePortal} from '@angular/cdk/portal';
+import {Location} from '@angular/common';
 import {
   ComponentRef,
+  Inject,
   Injectable,
+  InjectionToken,
   Injector,
+  OnDestroy,
   Optional,
   SkipSelf,
   TemplateRef,
-  InjectionToken,
-  Inject,
-  OnDestroy,
 } from '@angular/core';
-import {Location} from '@angular/common';
+import {Directionality} from '@cdk/bidi';
+import {Overlay, OverlayConfig, OverlayRef} from '@cdk/overlay';
+import {ComponentPortal, ComponentType, PortalInjector, TemplatePortal} from '@cdk/portal';
 import {of as observableOf} from 'rxjs';
+
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetConfig} from './bottom-sheet-config';
 import {MatBottomSheetContainer} from './bottom-sheet-container';
 import {MatBottomSheetModule} from './bottom-sheet-module';

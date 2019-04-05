@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {OverlayRef} from '@angular/cdk/overlay';
+import {OverlayRef} from '@cdk/overlay';
 import {Observable, Subject} from 'rxjs';
 import {MatSnackBarContainer} from './snack-bar-container';
 

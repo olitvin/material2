@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Platform} from '@angular/cdk/platform';
 import {Injectable} from '@angular/core';
+import {Platform} from '@cdk/platform';
 
 
 // The InteractivityChecker leans heavily on the ally.js accessibility utilities.

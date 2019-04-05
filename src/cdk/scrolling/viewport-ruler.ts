@@ -6,9 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Platform} from '@angular/cdk/platform';
 import {Injectable, NgZone, OnDestroy, Optional, SkipSelf} from '@angular/core';
-import {merge, of as observableOf, fromEvent, Observable, Subscription} from 'rxjs';
+import {Platform} from '@cdk/platform';
+import {fromEvent, merge, Observable, of as observableOf, Subscription} from 'rxjs';
 import {auditTime} from 'rxjs/operators';
 
 /** Time in ms to throttle the resize events by default. */

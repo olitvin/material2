@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ContentObserver} from '@angular/cdk/observers';
 import {DOCUMENT} from '@angular/common';
 import {
   Directive,
@@ -20,7 +19,9 @@ import {
   Provider,
   SkipSelf,
 } from '@angular/core';
+import {ContentObserver} from '@cdk/observers';
 import {Subscription} from 'rxjs';
+
 import {LIVE_ANNOUNCER_ELEMENT_TOKEN} from './live-announcer-token';
 
 

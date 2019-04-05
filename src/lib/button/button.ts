@@ -6,8 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusMonitor} from '@angular/cdk/a11y';
-import {Platform} from '@angular/cdk/platform';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -20,6 +18,9 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+import {FocusMonitor} from '@cdk/a11y';
+import {Platform} from '@cdk/platform';
 import {
   CanColor,
   CanColorCtor,
@@ -31,8 +32,7 @@ import {
   mixinColor,
   mixinDisabled,
   mixinDisableRipple,
-} from '@angular/material/core';
-import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
+} from '@material/core';
 
 /** Default color palette for round buttons (mat-fab and mat-mini-fab) */
 const DEFAULT_ROUND_BUTTON_COLOR = 'accent';

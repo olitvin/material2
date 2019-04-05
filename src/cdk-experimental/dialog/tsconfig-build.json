@@ -8,7 +8,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@angular/cdk-experimental/dialog",
+    "flatModuleId": "@cdk-experimental/dialog",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }

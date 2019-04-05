@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {
   AfterContentInit,
   Attribute,
@@ -19,11 +18,13 @@ import {
   OnChanges,
   OnDestroy,
   SimpleChanges,
-  ViewEncapsulation,
   ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
-import {MatButton} from '@angular/material/button';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {MatButton} from '@material/button';
 import {merge, of as observableOf, Subscription} from 'rxjs';
+
 import {MatDatepicker} from './datepicker';
 import {MatDatepickerIntl} from './datepicker-intl';
 

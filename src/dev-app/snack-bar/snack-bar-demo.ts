@@ -6,14 +6,14 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
 import {Component, TemplateRef, ViewChild} from '@angular/core';
+import {Directionality} from '@cdk/bidi';
 import {
   MatSnackBar,
   MatSnackBarConfig,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
-} from '@angular/material';
+} from '@material';
 
 
 @Component({

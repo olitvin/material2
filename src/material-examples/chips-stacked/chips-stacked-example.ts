@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ThemePalette} from '@angular/material/core';
+import {ThemePalette} from '@material/core';
 
 export interface ChipColor {
   name: string;

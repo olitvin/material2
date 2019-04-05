@@ -5,10 +5,11 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import {CdkTreeModule} from '@angular/cdk/tree';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {CdkTreeModule} from '@cdk/tree';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -18,8 +19,7 @@ import {
   MatInputModule,
   MatProgressBarModule,
   MatTreeModule
-} from '@angular/material';
-import {RouterModule} from '@angular/router';
+} from '@material';
 
 import {ExampleModule} from '../example/example-module';
 

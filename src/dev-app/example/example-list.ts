@@ -7,8 +7,8 @@
  */
 
 import {Component, Input} from '@angular/core';
-import {EXAMPLE_COMPONENTS} from '@angular/material-examples';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {EXAMPLE_COMPONENTS} from '@material-examples';
 
 /** Displays a set of material examples in a mat-accordion. */
 @Component({

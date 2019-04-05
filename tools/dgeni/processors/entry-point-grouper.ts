@@ -90,7 +90,7 @@ export class EntryPointGrouper implements Processor {
       const packageName = moduleInfo.packageName;
       const packageDisplayName = packageName === 'cdk' ? 'CDK' : 'Material';
 
-      const moduleImportPath = `@angular/${packageName}/${moduleInfo.entryPointName}`;
+      const moduleImportPath = `@${packageName}/${moduleInfo.entryPointName}`;
       const entryPointName = packageName + '-' + moduleInfo.name;
 
       // Compute a public URL that refers to the document. This is helpful if we want to
@@ -149,7 +149,7 @@ function getModulePackageInfo(doc: Document): ModuleInfo {
   // guaranteed because we can also export a module from lib/core. e.g. the ripple module.
   let moduleName = pathSegments[1];
 
-  // The ripples are technically part of the `@angular/material/core` entry-point, but we
+  // The ripples are technically part of the `@material/core` entry-point, but we
   // want to show the ripple API separately in the docs. In order to archive this, we treat
   // the ripple folder as its own module.
   if (pathSegments[1] === 'core' && pathSegments[2] === 'ripple') {

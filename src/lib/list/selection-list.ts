@@ -6,19 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusableOption, FocusKeyManager} from '@angular/cdk/a11y';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {SelectionModel} from '@angular/cdk/collections';
-import {
-  SPACE,
-  ENTER,
-  HOME,
-  END,
-  UP_ARROW,
-  DOWN_ARROW,
-  A,
-  hasModifierKey,
-} from '@angular/cdk/keycodes';
 import {
   AfterContentInit,
   Attribute,
@@ -32,23 +19,38 @@ import {
   forwardRef,
   Inject,
   Input,
+  OnChanges,
   OnDestroy,
   OnInit,
   Output,
   QueryList,
+  SimpleChanges,
   ViewChild,
   ViewEncapsulation,
-  SimpleChanges,
-  OnChanges,
 } from '@angular/core';
-import {
-  CanDisableRipple, CanDisableRippleCtor,
-  MatLine,
-  setLines,
-  mixinDisableRipple,
-} from '@angular/material/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {FocusableOption, FocusKeyManager} from '@cdk/a11y';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {SelectionModel} from '@cdk/collections';
+import {
+  A,
+  DOWN_ARROW,
+  END,
+  ENTER,
+  hasModifierKey,
+  HOME,
+  SPACE,
+  UP_ARROW,
+} from '@cdk/keycodes';
+import {
+  CanDisableRipple,
+  CanDisableRippleCtor,
+  MatLine,
+  mixinDisableRipple,
+  setLines,
+} from '@material/core';
 import {Subscription} from 'rxjs';
+
 import {MatListAvatarCssMatStyler, MatListIconCssMatStyler} from './list';
 
 

@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {CollectionViewer, DataSource, isDataSource} from '@angular/cdk/collections';
+import {DOCUMENT} from '@angular/common';
 import {
   AfterContentChecked,
   Attribute,
@@ -17,6 +17,7 @@ import {
   Directive,
   ElementRef,
   EmbeddedViewRef,
+  Inject,
   Input,
   isDevMode,
   IterableChangeRecord,
@@ -31,11 +32,14 @@ import {
   ViewChild,
   ViewContainerRef,
   ViewEncapsulation,
-  Inject,
 } from '@angular/core';
-import {DOCUMENT} from '@angular/common';
+import {Direction, Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {CollectionViewer, DataSource, isDataSource} from '@cdk/collections';
+import {Platform} from '@cdk/platform';
 import {BehaviorSubject, Observable, of as observableOf, Subject, Subscription} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+
 import {CdkColumnDef} from './cell';
 import {
   BaseRowDef,
@@ -46,6 +50,7 @@ import {
   CdkHeaderRowDef,
   CdkRowDef
 } from './row';
+import {StickyStyler} from './sticky-styler';
 import {
   getTableDuplicateColumnNameError,
   getTableMissingMatchingRowDefError,
@@ -54,10 +59,6 @@ import {
   getTableUnknownColumnError,
   getTableUnknownDataSourceError
 } from './table-errors';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {StickyStyler} from './sticky-styler';
-import {Direction, Directionality} from '@angular/cdk/bidi';
-import {Platform} from '@angular/cdk/platform';
 
 /** Interface used to provide an outlet for rows to be inserted into. */
 export interface RowOutlet {

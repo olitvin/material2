@@ -6,16 +6,16 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {NgModule} from '@angular/core';
-
-import {CdkTreeModule} from '@angular/cdk/tree';
 import {CommonModule} from '@angular/common';
-import {MatCommonModule} from '@angular/material/core';
-import {MatNestedTreeNode, MatTreeNodeDef, MatTreeNode} from './node';
-import {MatTree} from './tree';
-import {MatTreeNodeToggle} from './toggle';
+import {NgModule} from '@angular/core';
+import {CdkTreeModule} from '@cdk/tree';
+import {MatCommonModule} from '@material/core';
+
+import {MatNestedTreeNode, MatTreeNode, MatTreeNodeDef} from './node';
 import {MatTreeNodeOutlet} from './outlet';
 import {MatTreeNodePadding} from './padding';
+import {MatTreeNodeToggle} from './toggle';
+import {MatTree} from './tree';
 
 const MAT_TREE_DIRECTIVES = [
   MatNestedTreeNode,

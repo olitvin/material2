@@ -1,7 +1,7 @@
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {MatAutocompleteSelectedEvent, MatChipInputEvent, MatAutocomplete} from '@angular/material';
+import {COMMA, ENTER} from '@cdk/keycodes';
+import {MatAutocomplete, MatAutocompleteSelectedEvent, MatChipInputEvent} from '@material';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 

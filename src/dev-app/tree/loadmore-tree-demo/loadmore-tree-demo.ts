@@ -6,10 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FlatTreeControl} from '@angular/cdk/tree';
 import {Component} from '@angular/core';
-import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import {FlatTreeControl} from '@cdk/tree';
+import {MatTreeFlatDataSource, MatTreeFlattener} from '@material/tree';
 import {Observable} from 'rxjs';
+
 import {LoadmoreDatabase, LoadmoreFlatNode, LoadmoreNode} from './loadmore-database';
 
 

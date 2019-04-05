@@ -34,14 +34,14 @@ export class PackageBundler {
     await this.bundlePrimaryEntryPoint();
   }
 
-  /** Bundles the primary entry-point w/ given entry file, e.g. @angular/cdk */
+  /** Bundles the primary entry-point w/ given entry file, e.g. @cdk */
   private async bundlePrimaryEntryPoint() {
     const packageName = this.buildPackage.name;
 
     return this.bundleEntryPoint({
       entryFile: this.buildPackage.entryFilePath,
       esm5EntryFile: join(this.buildPackage.esm5OutputDir, 'index.js'),
-      importName: `@angular/${packageName}`,
+      importName: `@${packageName}`,
       moduleName: this.primaryAmdModuleName,
       esm2015Dest: join(bundlesDir, `${packageName}.js`),
       esm5Dest: join(bundlesDir, `${packageName}.es5.js`),
@@ -50,7 +50,7 @@ export class PackageBundler {
     });
   }
 
-  /** Bundles a single secondary entry-point w/ given entry file, e.g. @angular/cdk/a11y */
+  /** Bundles a single secondary entry-point w/ given entry file, e.g. @cdk/a11y */
   private async bundleSecondaryEntryPoint(entryPointName: string) {
     const packageName = this.buildPackage.name;
     const entryFile = join(this.buildPackage.outputDir, entryPointName, 'index.js');
@@ -59,7 +59,7 @@ export class PackageBundler {
     return this.bundleEntryPoint({
       entryFile,
       esm5EntryFile,
-      importName: `@angular/${packageName}/${entryPointName}`,
+      importName: `@${packageName}/${entryPointName}`,
       moduleName: this.getAmdModuleName(packageName, entryPointName),
       esm2015Dest: join(bundlesDir, `${packageName}`, `${entryPointName}.js`),
       esm5Dest: join(bundlesDir, `${packageName}`, `${entryPointName}.es5.js`),
@@ -160,11 +160,10 @@ export class PackageBundler {
       // primary entry-point to include *all* of the sources for those entry-points.
       if (this.buildPackage.exportsSecondaryEntryPointsAtRoot &&
           config.moduleName === this.primaryAmdModuleName) {
-
-        const importRegex = new RegExp(`@angular/${this.buildPackage.name}/.+`);
+        const importRegex = new RegExp(`@${this.buildPackage.name}/.+`);
         external = external.filter(e => !importRegex.test(e));
 
-        // Use the rollup-alias plugin to map imports of the form `@angular/material/button`
+        // Use the rollup-alias plugin to map imports of the form `@material/button`
         // to the actual file location so that rollup can resolve the imports (otherwise they
         // will be treated as external dependencies and not included in the bundle).
         bundleOptions.plugins.push(
@@ -178,14 +177,14 @@ export class PackageBundler {
   }
 
   /**
-   * Gets mapping of import aliases (e.g. `@angular/material/button`) to the path of the es5
+   * Gets mapping of import aliases (e.g. `@material/button`) to the path of the es5
    * bundle output.
    * @param bundleOutputDir Path to the bundle output directory.
    * @returns Map of alias to resolved path.
    */
   private getResolvedSecondaryEntryPointImportPaths(bundleOutputDir: string) {
     return this.buildPackage.secondaryEntryPoints.reduce((map, p) => {
-      map[`@angular/${this.buildPackage.name}/${p}`] =
+      map[`@${this.buildPackage.name}/${p}`] =
           join(dirname(bundleOutputDir), this.buildPackage.name, `${p}.es5.js`);
       return map;
     }, {} as {[key: string]: string});
@@ -196,12 +195,12 @@ export class PackageBundler {
    * to the module name format being used in "angular/angular".
    */
   private getAmdModuleName(packageName: string, entryPointName?: string) {
-    // For example, the AMD module name for the "@angular/material-examples" package should be
+    // For example, the AMD module name for the "@material-examples" package should be
     // "ng.materialExamples". We camel-case the package name in case it contains dashes.
     let amdModuleName = `ng.${dashCaseToCamelCase(packageName)}`;
 
     if (entryPointName) {
-      // For example, the "@angular/material/bottom-sheet" entry-point should be converted into
+      // For example, the "@material/bottom-sheet" entry-point should be converted into
       // the following AMD module name: "ng.material.bottomSheet". Similar to the package name,
       // the entry-point name needs to be camel-cased in case it contains dashes.
       amdModuleName += `.${dashCaseToCamelCase(entryPointName)}`;

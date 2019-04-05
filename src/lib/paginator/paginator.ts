@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {coerceNumberProperty, coerceBooleanProperty} from '@angular/cdk/coercion';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -18,17 +17,19 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import {Subscription} from 'rxjs';
-import {MatPaginatorIntl} from './paginator-intl';
+import {coerceBooleanProperty, coerceNumberProperty} from '@cdk/coercion';
 import {
+  CanDisable,
+  CanDisableCtor,
   HasInitialized,
   HasInitializedCtor,
+  mixinDisabled,
   mixinInitialized,
   ThemePalette,
-  mixinDisabled,
-  CanDisableCtor,
-  CanDisable,
-} from '@angular/material/core';
+} from '@material/core';
+import {Subscription} from 'rxjs';
+
+import {MatPaginatorIntl} from './paginator-intl';
 
 /** The default page size if there is no page size and there are no provided page size options. */
 const DEFAULT_PAGE_SIZE = 50;

@@ -1,4 +1,4 @@
-import {FloatLabelType, LabelOptions, MAT_LABEL_GLOBAL_OPTIONS} from '@angular/material';
+import {FloatLabelType, LabelOptions, MAT_LABEL_GLOBAL_OPTIONS} from '@material';
 
 const a: FloatLabelType = 'test';
 const b: LabelOptions = 'opt2';

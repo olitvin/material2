@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Platform} from '@angular/cdk/platform';
 import {
   ElementRef,
   Injectable,
@@ -15,8 +14,10 @@ import {
   Optional,
   SkipSelf,
 } from '@angular/core';
-import {fromEvent, of as observableOf, Subject, Subscription, Observable, Observer} from 'rxjs';
+import {Platform} from '@cdk/platform';
+import {fromEvent, Observable, Observer, of as observableOf, Subject, Subscription} from 'rxjs';
 import {auditTime, filter} from 'rxjs/operators';
+
 import {CdkScrollable} from './scrollable';
 
 

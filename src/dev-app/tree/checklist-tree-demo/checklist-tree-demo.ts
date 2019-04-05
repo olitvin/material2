@@ -5,12 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import {ChangeDetectorRef, ChangeDetectionStrategy, Component} from '@angular/core';
-import {SelectionModel} from '@angular/cdk/collections';
-import {FlatTreeControl} from '@angular/cdk/tree';
-import {MatTreeFlattener, MatTreeFlatDataSource} from '@angular/material/tree';
-import {TodoItemNode, ChecklistDatabase} from './checklist-database';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
+import {SelectionModel} from '@cdk/collections';
+import {FlatTreeControl} from '@cdk/tree';
+import {MatTreeFlatDataSource, MatTreeFlattener} from '@material/tree';
 import {BehaviorSubject} from 'rxjs';
+
+import {ChecklistDatabase, TodoItemNode} from './checklist-database';
 
 
 /**

@@ -6,10 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusableOption} from '@angular/cdk/a11y';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {BACKSPACE, DELETE, SPACE} from '@angular/cdk/keycodes';
-import {Platform} from '@angular/cdk/platform';
 import {
   ContentChild,
   Directive,
@@ -24,6 +20,10 @@ import {
   Output,
   Renderer2,
 } from '@angular/core';
+import {FocusableOption} from '@cdk/a11y';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {BACKSPACE, DELETE, SPACE} from '@cdk/keycodes';
+import {Platform} from '@cdk/platform';
 import {
   CanColor,
   CanColorCtor,
@@ -39,7 +39,7 @@ import {
   RippleGlobalOptions,
   RippleRenderer,
   RippleTarget,
-} from '@angular/material/core';
+} from '@material/core';
 import {Subject} from 'rxjs';
 import {take} from 'rxjs/operators';
 

@@ -5,19 +5,6 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import {Directionality} from '@angular/cdk/bidi';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {DOWN_ARROW, ENTER, ESCAPE, TAB, UP_ARROW} from '@angular/cdk/keycodes';
-import {
-  FlexibleConnectedPositionStrategy,
-  Overlay,
-  OverlayConfig,
-  OverlayRef,
-  PositionStrategy,
-  ScrollStrategy,
-} from '@angular/cdk/overlay';
-import {TemplatePortal} from '@angular/cdk/portal';
-import {ViewportRuler} from '@angular/cdk/scrolling';
 import {DOCUMENT} from '@angular/common';
 import {
   ChangeDetectorRef,
@@ -34,13 +21,26 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {DOWN_ARROW, ENTER, ESCAPE, TAB, UP_ARROW} from '@cdk/keycodes';
+import {
+  FlexibleConnectedPositionStrategy,
+  Overlay,
+  OverlayConfig,
+  OverlayRef,
+  PositionStrategy,
+  ScrollStrategy,
+} from '@cdk/overlay';
+import {TemplatePortal} from '@cdk/portal';
+import {ViewportRuler} from '@cdk/scrolling';
 import {
   _countGroupLabelsBeforeOption,
   _getOptionScrollPosition,
   MatOption,
   MatOptionSelectionChange,
-} from '@angular/material/core';
-import {MatFormField} from '@angular/material/form-field';
+} from '@material/core';
+import {MatFormField} from '@material/form-field';
 import {defer, fromEvent, merge, Observable, of as observableOf, Subject, Subscription} from 'rxjs';
 import {delay, filter, map, switchMap, take, tap} from 'rxjs/operators';
 

@@ -7,6 +7,7 @@ import {
   QueryList,
   ViewChild
 } from '@angular/core';
+import {DataSource} from '@cdk/collections';
 import {
   MatColumnDef,
   MatHeaderRowDef,
@@ -14,8 +15,7 @@ import {
   MatSort,
   MatTable,
   MatTableDataSource
-} from '@angular/material';
-import {DataSource} from '@angular/cdk/collections';
+} from '@material';
 
 export interface PeriodicElement {
   name: string;

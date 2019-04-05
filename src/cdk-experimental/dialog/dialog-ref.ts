@@ -7,10 +7,11 @@
  */
 
 
-import {OverlayRef, GlobalPositionStrategy, OverlaySizeConfig} from '@angular/cdk/overlay';
-import {ESCAPE} from '@angular/cdk/keycodes';
+import {ESCAPE} from '@cdk/keycodes';
+import {GlobalPositionStrategy, OverlayRef, OverlaySizeConfig} from '@cdk/overlay';
 import {Observable} from 'rxjs';
-import {map, filter} from 'rxjs/operators';
+import {filter, map} from 'rxjs/operators';
+
 import {DialogPosition} from './dialog-config';
 import {CdkDialogContainer} from './dialog-container';
 

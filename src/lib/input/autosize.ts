@@ -6,12 +6,12 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {Directive, Input} from '@angular/core';
+import {CdkTextareaAutosize} from '@cdk/text-field';
 
 /**
  * Directive to automatically resize a textarea to fit its content.
- * @deprecated Use `cdkTextareaAutosize` from `@angular/cdk/text-field` instead.
+ * @deprecated Use `cdkTextareaAutosize` from `@cdk/text-field` instead.
  * @breaking-change 8.0.0
  */
 @Directive({

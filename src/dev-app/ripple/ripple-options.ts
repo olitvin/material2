@@ -7,7 +7,7 @@
  */
 
 import {Injectable} from '@angular/core';
-import {RippleGlobalOptions} from '@angular/material';
+import {RippleGlobalOptions} from '@material';
 
 /**
  * Global ripple options for the dev-app. The ripple options are used as a class

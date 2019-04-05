@@ -6,8 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Directionality} from '@angular/cdk/bidi';
-import {ListRange} from '@angular/cdk/collections';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -23,8 +21,11 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import {animationFrameScheduler, asapScheduler, Observable, Subject, Observer} from 'rxjs';
+import {Directionality} from '@cdk/bidi';
+import {ListRange} from '@cdk/collections';
+import {animationFrameScheduler, asapScheduler, Observable, Observer, Subject} from 'rxjs';
 import {auditTime, startWith, takeUntil} from 'rxjs/operators';
+
 import {ScrollDispatcher} from './scroll-dispatcher';
 import {CdkScrollable, ExtendedScrollToOptions} from './scrollable';
 import {CdkVirtualForOf} from './virtual-for-of';

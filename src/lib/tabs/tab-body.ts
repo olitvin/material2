@@ -6,31 +6,32 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
+import {AnimationEvent} from '@angular/animations';
 import {
-  Component,
+  ChangeDetectionStrategy,
   ChangeDetectorRef,
-  Input,
-  Inject,
-  Output,
+  Component,
+  ComponentFactoryResolver,
+  Directive,
+  ElementRef,
   EventEmitter,
+  forwardRef,
+  Inject,
+  Input,
   OnDestroy,
   OnInit,
-  ElementRef,
-  Directive,
   Optional,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
-  ComponentFactoryResolver,
-  ViewContainerRef,
-  forwardRef,
+  Output,
   ViewChild,
+  ViewContainerRef,
+  ViewEncapsulation,
 } from '@angular/core';
-import {AnimationEvent} from '@angular/animations';
-import {TemplatePortal, CdkPortalOutlet, PortalHostDirective} from '@angular/cdk/portal';
-import {Directionality, Direction} from '@angular/cdk/bidi';
-import {Subscription, Subject} from 'rxjs';
+import {Direction, Directionality} from '@cdk/bidi';
+import {CdkPortalOutlet, PortalHostDirective, TemplatePortal} from '@cdk/portal';
+import {Subject, Subscription} from 'rxjs';
+import {distinctUntilChanged, startWith} from 'rxjs/operators';
+
 import {matTabsAnimations} from './tabs-animations';
-import {startWith, distinctUntilChanged} from 'rxjs/operators';
 
 /**
  * These position states are used internally as animation states for the tab body. Setting the

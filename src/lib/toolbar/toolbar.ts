@@ -6,7 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {Platform} from '@angular/cdk/platform';
 import {DOCUMENT} from '@angular/common';
 import {
   AfterViewInit,
@@ -21,7 +20,8 @@ import {
   Renderer2,
   ViewEncapsulation,
 } from '@angular/core';
-import {CanColor, CanColorCtor, mixinColor} from '@angular/material/core';
+import {Platform} from '@cdk/platform';
+import {CanColor, CanColorCtor, mixinColor} from '@material/core';
 
 
 // Boilerplate for applying mixins to MatToolbar.

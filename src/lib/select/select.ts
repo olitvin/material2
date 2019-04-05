@@ -6,24 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ActiveDescendantKeyManager, LiveAnnouncer} from '@angular/cdk/a11y';
-import {Directionality} from '@angular/cdk/bidi';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {SelectionModel} from '@angular/cdk/collections';
-import {
-  A,
-  DOWN_ARROW,
-  END,
-  ENTER,
-  hasModifierKey,
-  HOME,
-  LEFT_ARROW,
-  RIGHT_ARROW,
-  SPACE,
-  UP_ARROW,
-} from '@angular/cdk/keycodes';
-import {CdkConnectedOverlay, Overlay, ScrollStrategy} from '@angular/cdk/overlay';
-import {ViewportRuler} from '@angular/cdk/scrolling';
 import {
   AfterContentInit,
   Attribute,
@@ -53,6 +35,24 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import {ControlValueAccessor, FormGroupDirective, NgControl, NgForm} from '@angular/forms';
+import {ActiveDescendantKeyManager, LiveAnnouncer} from '@cdk/a11y';
+import {Directionality} from '@cdk/bidi';
+import {coerceBooleanProperty} from '@cdk/coercion';
+import {SelectionModel} from '@cdk/collections';
+import {
+  A,
+  DOWN_ARROW,
+  END,
+  ENTER,
+  hasModifierKey,
+  HOME,
+  LEFT_ARROW,
+  RIGHT_ARROW,
+  SPACE,
+  UP_ARROW,
+} from '@cdk/keycodes';
+import {CdkConnectedOverlay, Overlay, ScrollStrategy} from '@cdk/overlay';
+import {ViewportRuler} from '@cdk/scrolling';
 import {
   _countGroupLabelsBeforeOption,
   _getOptionScrollPosition,
@@ -73,8 +73,8 @@ import {
   mixinDisableRipple,
   mixinErrorState,
   mixinTabIndex,
-} from '@angular/material/core';
-import {MatFormField, MatFormFieldControl} from '@angular/material/form-field';
+} from '@material/core';
+import {MatFormField, MatFormFieldControl} from '@material/form-field';
 import {defer, merge, Observable, Subject} from 'rxjs';
 import {
   distinctUntilChanged,
